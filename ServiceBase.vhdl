@@ -3,18 +3,18 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
--- 取号器, 从Counter取号并发送出去
-ENTITY Waiting IS
+-- 叫号并输出号码
+ENTITY ServiceBase IS
   PORT (
-    get : IN std_logic;
-    enable_in : OUT std_logic;
+    call : IN std_logic; -- 叫号
+    enable_in : OUT std_logic; -- 打开后等待下一数据后关闭
 
     data_in : IN std_logic_vector(7 DOWNTO 0);
     data_out : OUT std_logic_vector(7 DOWNTO 0)
   );
-END Waiting;
+END ServiceBase;
 
-ARCHITECTURE arch OF Waiting IS
+ARCHITECTURE arch OF ServiceBase IS
   TYPE states IS(pedding, resloved);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
@@ -23,9 +23,9 @@ ARCHITECTURE arch OF Waiting IS
   SIGNAL received_flag : std_logic;
   SIGNAL data : std_logic_vector(7 DOWNTO 0);
 BEGIN
-  get_number : PROCESS (get, data)
+  caller : PROCESS (call)
   BEGIN
-    IF (get'event AND get = '1') THEN
+    IF (call'event AND call = '1') THEN
       enable_in_flag <= NOT enable_in_flag;
     END IF;
   END PROCESS;

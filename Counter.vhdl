@@ -11,10 +11,8 @@ ENTITY Counter IS
 END Counter;
 
 ARCHITECTURE arch OF Counter IS
-  SIGNAL data : INTEGER RANGE 0 TO 127;
+  SIGNAL data : INTEGER RANGE 0 TO 127 := 0;
 BEGIN
-  data <= 0;
-
   heartbeat : PROCESS (clock)
   BEGIN
     IF (clock'event AND clock = '1') THEN
@@ -24,8 +22,6 @@ BEGIN
 
   data_output : PROCESS (data)
   BEGIN
-    IF (data'event) THEN
-      data_out <= conv_std_logic_vector(data, 7);
-    END IF;
+    data_out <= conv_std_logic_vector(data, 8);
   END PROCESS;
 END arch;
