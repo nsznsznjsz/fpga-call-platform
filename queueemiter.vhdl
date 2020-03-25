@@ -20,13 +20,11 @@ ENTITY QueueEmiter IS
 END QueueEmiter;
 
 ARCHITECTURE arch OF QueueEmiter IS
-  CONSTANT LENGTH : INTEGER := 7; -- 8
-
   TYPE states IS(waiting, pedding, resloved);
   SIGNAL present_state : states := resloved;
   SIGNAL next_state : states;
 
-  SIGNAL data : std_logic_vector(LENGTH DOWNTO 0);
+  SIGNAL data : std_logic_vector(7 DOWNTO 0);
 BEGIN
   trigger : PROCESS (clock)
   BEGIN
@@ -39,17 +37,17 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN waiting =>
-        IF (data_in(LENGTH DOWNTO 0) = data(LENGTH DOWNTO 0)) THEN
+        IF (data_in(7 DOWNTO 0) = data(7 DOWNTO 0)) THEN
           next_state <= waiting;
         ELSE
-          data(LENGTH DOWNTO 0) <= data_in(LENGTH DOWNTO 0);
+          data(7 DOWNTO 0) <= data_in(7 DOWNTO 0);
           emitted <= '0';
           next_state <= pedding;
         END IF;
       WHEN pedding =>
         IF (full = '0' AND allow_push = '1') THEN
           push <= '1';
-          data_out(LENGTH DOWNTO 0) <= data(LENGTH DOWNTO 0);
+          data_out(7 DOWNTO 0) <= data(7 DOWNTO 0);
           next_state <= resloved;
         ELSE
           next_state <= pedding;

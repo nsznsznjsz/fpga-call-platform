@@ -9,7 +9,8 @@ ENTITY Waiting IS
     clock : IN std_logic;
 
     get : IN std_logic;
-    enable_in : OUT std_logic;
+    enable_in : IN std_logic;
+    enable_next : OUT std_logic;
 
     data_in : IN std_logic_vector(7 DOWNTO 0);
     data_out : OUT std_logic_vector(7 DOWNTO 0)
@@ -17,13 +18,11 @@ ENTITY Waiting IS
 END Waiting;
 
 ARCHITECTURE arch OF Waiting IS
-  CONSTANT LENGTH : INTEGER := 7; -- 8
-
   TYPE states IS(waiting, pedding, resloved);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
-  SIGNAL data : std_logic_vector(LENGTH DOWNTO 0);
+  SIGNAL data : std_logic_vector(7 DOWNTO 0);
 BEGIN
   trigger : PROCESS (clock)
   BEGIN
@@ -37,21 +36,22 @@ BEGIN
     CASE present_state IS
       WHEN waiting =>
         IF (get = '1') THEN
-          enable_in <= '1';
+          enable_next <= '1';
           next_state <= pedding;
         ELSE
+          enable_next <= '0';
           next_state <= waiting;
         END IF;
       WHEN pedding =>
-        -- IF (data(LENGTH DOWNTO 0) = data_in(LENGTH DOWNTO 0)) THEN
-        --  next_state <= pedding;
-        -- ELSE
-        data(LENGTH DOWNTO 0) <= data_in(LENGTH DOWNTO 0);
-        next_state <= resloved;
-        -- END IF;
+        IF (enable_in = '1') THEN
+          data(7 DOWNTO 0) <= data_in(7 DOWNTO 0);
+          next_state <= resloved;
+        ELSE
+          next_state <= pedding;
+        END IF;
       WHEN resloved =>
-        enable_in <= '0';
-        data_out(LENGTH DOWNTO 0) <= data(LENGTH DOWNTO 0);
+        enable_next <= '0';
+        data_out(7 DOWNTO 0) <= data(7 DOWNTO 0);
         next_state <= waiting;
       WHEN OTHERS =>
         next_state <= waiting;
