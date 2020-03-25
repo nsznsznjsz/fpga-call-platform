@@ -1,0 +1,12 @@
+# ide
+*.bak
+
+# compile
+/db
+/incremental_db
+*.done
+*.pin
+*.pof
+*.sof
+*.rpt
+*.summary
