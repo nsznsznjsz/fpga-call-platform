@@ -6,6 +6,8 @@ USE ieee.std_logic_unsigned.ALL;
 -- 取号器, 从Counter取号并发送出去
 ENTITY Waiting IS
   PORT (
+    clock : IN std_logic;
+
     get : IN std_logic;
     enable_in : OUT std_logic;
 
@@ -15,46 +17,44 @@ ENTITY Waiting IS
 END Waiting;
 
 ARCHITECTURE arch OF Waiting IS
-  TYPE states IS(pedding, resloved);
+  CONSTANT LENGTH : INTEGER := 7; -- 8
+
+  TYPE states IS(waiting, pedding, resloved);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
-  SIGNAL enable_in_flag : std_logic;
-  SIGNAL received_flag : std_logic;
-  SIGNAL data : std_logic_vector(7 DOWNTO 0);
+  SIGNAL data : std_logic_vector(LENGTH DOWNTO 0);
 BEGIN
-  get_number : PROCESS (get, data)
+  trigger : PROCESS (clock)
   BEGIN
-    IF (get'event AND get = '1') THEN
-      enable_in_flag <= NOT enable_in_flag;
+    IF (clock'event AND clock = '1') THEN
+      present_state <= next_state;
     END IF;
-  END PROCESS;
-
-  receiver : PROCESS (enable_in_flag, data_in)
-  BEGIN
-    IF (present_state = pedding AND data /= data_in) THEN
-      data <= data_in;
-      received_flag <= NOT received_flag;
-    END IF;
-  END PROCESS;
-
-  trigger : PROCESS (enable_in_flag, received_flag)
-  BEGIN
-    present_state <= next_state;
   END PROCESS;
 
   fsm : PROCESS (present_state)
   BEGIN
     CASE present_state IS
+      WHEN waiting =>
+        IF (get = '1') THEN
+          enable_in <= '1';
+          next_state <= pedding;
+        ELSE
+          next_state <= waiting;
+        END IF;
       WHEN pedding =>
-        enable_in <= '1';
+        -- IF (data(LENGTH DOWNTO 0) = data_in(LENGTH DOWNTO 0)) THEN
+        --  next_state <= pedding;
+        -- ELSE
+        data(LENGTH DOWNTO 0) <= data_in(LENGTH DOWNTO 0);
         next_state <= resloved;
+        -- END IF;
       WHEN resloved =>
         enable_in <= '0';
-        data_out <= data;
-        next_state <= pedding;
+        data_out(LENGTH DOWNTO 0) <= data(LENGTH DOWNTO 0);
+        next_state <= waiting;
       WHEN OTHERS =>
-        next_state <= resloved;
+        next_state <= waiting;
     END CASE;
   END PROCESS;
 END arch;
