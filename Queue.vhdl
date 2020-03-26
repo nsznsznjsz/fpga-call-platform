@@ -5,6 +5,8 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY Queue IS
   PORT (
+    clock : IN std_logic;
+
     -- operate
     reset : IN std_logic;
     pop : IN std_logic;
@@ -21,61 +23,99 @@ ENTITY Queue IS
 END Queue;
 
 ARCHITECTURE arch OF Queue IS
-  CONSTANT LENGTH : INTEGER := 7; -- 8
-  CONSTANT DEPTH : INTEGER := 7; -- 8
-
-  SUBTYPE word IS std_logic_vector(DEPTH DOWNTO 0);
-  TYPE queue_array IS ARRAY(LENGTH DOWNTO 0) OF word;
+  SUBTYPE word IS std_logic_vector(7 DOWNTO 0);
+  TYPE queue_array IS ARRAY(7 DOWNTO 0) OF word;
   SIGNAL queue : queue_array;
 
-  SIGNAL front : INTEGER RANGE 0 TO LENGTH := 0;
-  SIGNAL rear : INTEGER RANGE 0 TO LENGTH := 0;
+  TYPE states IS(init, idle, state_pop, state_push, state_full, state_empty);
+  SIGNAL present_state : states;
+  SIGNAL next_state : states;
 
-  SIGNAL s_full : std_logic;
-  SIGNAL s_empty : std_logic;
+  SIGNAL front : INTEGER RANGE 0 TO 7 := 0;
+  SIGNAL rear : INTEGER RANGE 0 TO 7 := 0;
 BEGIN
-  -- TODO
-  --  handle_reset : PROCESS (reset)
-  --  BEGIN
-  --    IF (reset'event AND reset = '1') THEN
-  --      front <= 0;
-  --      rear <= 0;
-  --    END IF;
-  --  END PROCESS;
-
-  handle_push : PROCESS (push, data_in, queue)
+  -- clock trigger
+  PROCESS (clock)
   BEGIN
-    IF (push'event AND push = '1' AND s_full = '0') THEN
-      front <= front + 1;
-      queue(front) <= data_in;
+    IF (reset = '1') THEN
+      present_state <= init;
+    ELSIF (clock'event AND clock = '1') THEN
+      present_state <= next_state;
     END IF;
   END PROCESS;
 
-  handle_pop : PROCESS (pop, queue)
+  -- state change
+  PROCESS (present_state)
   BEGIN
-    IF (pop'event AND pop = '1' AND s_empty = '0') THEN
-      data_out <= queue(rear);
-      rear <= rear + 1;
-    END IF;
+    CASE present_state IS
+      WHEN init =>
+        next_state <= state_empty;
+
+      WHEN state_push =>
+        IF (front + 1 = rear) THEN
+          next_state <= state_full;
+        ELSE
+          next_state <= idle;
+        END IF;
+
+      WHEN state_pop =>
+        IF (front = rear + 1) THEN
+          next_state <= state_full;
+        ELSE
+          next_state <= idle;
+        END IF;
+
+      WHEN state_empty =>
+        IF (push = '1') THEN
+          next_state <= state_push;
+        END IF;
+
+      WHEN state_full =>
+        IF (pop = '1') THEN
+          next_state <= state_pop;
+        END IF;
+
+      WHEN idle =>
+        IF push = '1' THEN
+          next_state <= state_push;
+        ELSIF pop = '1' THEN
+          next_state <= state_pop;
+        ELSE
+          next_state <= idle;
+        END IF;
+
+      WHEN OTHERS =>
+        next_state <= idle;
+    END CASE;
   END PROCESS;
 
-  handle_state_update : PROCESS (front, rear, s_full, s_empty)
+  -- state events
+  PROCESS (present_state)
   BEGIN
-    IF (front + 1 = rear) THEN
-      s_full <= '1';
-      s_empty <= '0';
-    ELSIF (front = rear) THEN
-      s_full <= '0';
-      s_empty <= '1';
-    ELSE
-      s_full <= '0';
-      s_empty <= '0';
-    END IF;
-  END PROCESS;
+    CASE present_state IS
+      WHEN init =>
+        front <= 0;
+        rear <= 0;
 
-  state_listener : PROCESS (s_full, s_empty)
-  BEGIN
-    full <= s_full;
-    empty <= s_empty;
+      WHEN state_push =>
+        front <= front + 1;
+        queue(front) <= data_in;
+
+      WHEN state_pop =>
+        data_out <= queue(rear);
+        rear <= rear + 1;
+
+      WHEN state_empty =>
+        full <= '0';
+        empty <= '1';
+
+      WHEN state_full =>
+        full <= '1';
+        empty <= '0';
+
+      WHEN idle =>
+        full <= '0';
+        empty <= '0';
+    END CASE;
   END PROCESS;
 END arch;

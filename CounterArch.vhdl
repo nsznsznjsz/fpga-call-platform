@@ -27,9 +27,8 @@ ARCHITECTURE arch OF CounterArch IS
   TYPE states IS(idle, a, b, c, d);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
-  SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
 
-  -- SIGNAL lock : std_logic;
+  SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
 BEGIN
 
   PROCESS (data_in)

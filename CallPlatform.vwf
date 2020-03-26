@@ -342,7 +342,7 @@ SIGNAL("getted_number1[0]")
 	PARENT = "getted_number1";
 }
 
-SIGNAL("CounterArch:inst5|data_out")
+SIGNAL("QueueEmiter:inst9|data_out")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -352,97 +352,87 @@ SIGNAL("CounterArch:inst5|data_out")
 	PARENT = "";
 }
 
-SIGNAL("CounterArch:inst5|data_out[7]")
+SIGNAL("QueueEmiter:inst9|data_out[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[6]")
+SIGNAL("QueueEmiter:inst9|data_out[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[5]")
+SIGNAL("QueueEmiter:inst9|data_out[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[4]")
+SIGNAL("QueueEmiter:inst9|data_out[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[3]")
+SIGNAL("QueueEmiter:inst9|data_out[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[2]")
+SIGNAL("QueueEmiter:inst9|data_out[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[1]")
+SIGNAL("QueueEmiter:inst9|data_out[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("CounterArch:inst5|data_out[0]")
+SIGNAL("QueueEmiter:inst9|data_out[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "CounterArch:inst5|data_out";
+	PARENT = "QueueEmiter:inst9|data_out";
 }
 
-SIGNAL("Waiting:inst3|present_state.waiting")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
-SIGNAL("Waiting:inst3|present_state.resloved")
+SIGNAL("QueueEmiter:inst9|present_state.idle")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -452,7 +442,27 @@ SIGNAL("Waiting:inst3|present_state.resloved")
 	PARENT = "";
 }
 
-SIGNAL("Waiting:inst3|present_state.pedding")
+SIGNAL("QueueEmiter:inst9|present_state.sending")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("QueueEmiter:inst9|present_state.sent")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("QueueEmiter:inst9|present_state.waiting")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -724,7 +734,7 @@ TRANSITION_LIST("getted_number1[0]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[7]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[7]")
 {
 	NODE
 	{
@@ -733,7 +743,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[7]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[6]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[6]")
 {
 	NODE
 	{
@@ -742,7 +752,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[6]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[5]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[5]")
 {
 	NODE
 	{
@@ -751,7 +761,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[5]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[4]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[4]")
 {
 	NODE
 	{
@@ -760,7 +770,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[4]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[3]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[3]")
 {
 	NODE
 	{
@@ -769,7 +779,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[3]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[2]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[2]")
 {
 	NODE
 	{
@@ -778,7 +788,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[2]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[1]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[1]")
 {
 	NODE
 	{
@@ -787,7 +797,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[1]")
 	}
 }
 
-TRANSITION_LIST("CounterArch:inst5|data_out[0]")
+TRANSITION_LIST("QueueEmiter:inst9|data_out[0]")
 {
 	NODE
 	{
@@ -796,7 +806,7 @@ TRANSITION_LIST("CounterArch:inst5|data_out[0]")
 	}
 }
 
-TRANSITION_LIST("Waiting:inst3|present_state.waiting")
+TRANSITION_LIST("QueueEmiter:inst9|present_state.idle")
 {
 	NODE
 	{
@@ -805,7 +815,7 @@ TRANSITION_LIST("Waiting:inst3|present_state.waiting")
 	}
 }
 
-TRANSITION_LIST("Waiting:inst3|present_state.resloved")
+TRANSITION_LIST("QueueEmiter:inst9|present_state.sending")
 {
 	NODE
 	{
@@ -814,7 +824,16 @@ TRANSITION_LIST("Waiting:inst3|present_state.resloved")
 	}
 }
 
-TRANSITION_LIST("Waiting:inst3|present_state.pedding")
+TRANSITION_LIST("QueueEmiter:inst9|present_state.sent")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("QueueEmiter:inst9|present_state.waiting")
 {
 	NODE
 	{
@@ -1131,7 +1150,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out";
+	CHANNEL = "QueueEmiter:inst9|data_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 31;
@@ -1141,7 +1160,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[7]";
+	CHANNEL = "QueueEmiter:inst9|data_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 32;
@@ -1151,7 +1170,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[6]";
+	CHANNEL = "QueueEmiter:inst9|data_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 33;
@@ -1161,7 +1180,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[5]";
+	CHANNEL = "QueueEmiter:inst9|data_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 34;
@@ -1171,7 +1190,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[4]";
+	CHANNEL = "QueueEmiter:inst9|data_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 35;
@@ -1181,7 +1200,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[3]";
+	CHANNEL = "QueueEmiter:inst9|data_out[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 36;
@@ -1191,7 +1210,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[2]";
+	CHANNEL = "QueueEmiter:inst9|data_out[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 37;
@@ -1201,7 +1220,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[1]";
+	CHANNEL = "QueueEmiter:inst9|data_out[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 38;
@@ -1211,7 +1230,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CounterArch:inst5|data_out[0]";
+	CHANNEL = "QueueEmiter:inst9|data_out[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 39;
@@ -1221,7 +1240,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Waiting:inst3|present_state.waiting";
+	CHANNEL = "QueueEmiter:inst9|present_state.idle";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 40;
@@ -1230,7 +1249,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Waiting:inst3|present_state.pedding";
+	CHANNEL = "QueueEmiter:inst9|present_state.waiting";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 41;
@@ -1239,10 +1258,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Waiting:inst3|present_state.resloved";
+	CHANNEL = "QueueEmiter:inst9|present_state.sending";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 42;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "QueueEmiter:inst9|present_state.sent";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 43;
 	TREE_LEVEL = 0;
 }
 
