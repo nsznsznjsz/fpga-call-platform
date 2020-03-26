@@ -162,187 +162,7 @@ SIGNAL("get_number2")
 	PARENT = "";
 }
 
-SIGNAL("getted_number2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 8;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number2[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number2[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number2";
-}
-
-SIGNAL("getted_number1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 8;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number1[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("getted_number1[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number1";
-}
-
-SIGNAL("QueueEmiter:inst9|data_out")
+SIGNAL("Waiting:custom_side_1|data_out")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -352,87 +172,177 @@ SIGNAL("QueueEmiter:inst9|data_out")
 	PARENT = "";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[7]")
+SIGNAL("Waiting:custom_side_1|data_out[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[6]")
+SIGNAL("Waiting:custom_side_1|data_out[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[5]")
+SIGNAL("Waiting:custom_side_1|data_out[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[4]")
+SIGNAL("Waiting:custom_side_1|data_out[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[3]")
+SIGNAL("Waiting:custom_side_1|data_out[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[2]")
+SIGNAL("Waiting:custom_side_1|data_out[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[1]")
+SIGNAL("Waiting:custom_side_1|data_out[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|data_out[0]")
+SIGNAL("Waiting:custom_side_1|data_out[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
-	PARENT = "QueueEmiter:inst9|data_out";
+	PARENT = "Waiting:custom_side_1|data_out";
 }
 
-SIGNAL("QueueEmiter:inst9|present_state.idle")
+SIGNAL("Waiting:custom_side_2|data_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|data_out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Waiting:custom_side_2|data_out";
+}
+
+SIGNAL("Waiting:custom_side_2|pull")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -442,7 +352,7 @@ SIGNAL("QueueEmiter:inst9|present_state.idle")
 	PARENT = "";
 }
 
-SIGNAL("QueueEmiter:inst9|present_state.sending")
+SIGNAL("Queue:inst1|present_state.idle")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -452,7 +362,7 @@ SIGNAL("QueueEmiter:inst9|present_state.sending")
 	PARENT = "";
 }
 
-SIGNAL("QueueEmiter:inst9|present_state.sent")
+SIGNAL("Queue:inst1|present_state.init")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -462,7 +372,7 @@ SIGNAL("QueueEmiter:inst9|present_state.sent")
 	PARENT = "";
 }
 
-SIGNAL("QueueEmiter:inst9|present_state.waiting")
+SIGNAL("Queue:inst1|present_state.state_push")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -470,6 +380,306 @@ SIGNAL("QueueEmiter:inst9|present_state.waiting")
 	LSB_INDEX = -1;
 	DIRECTION = BURIED;
 	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|present_state.state_pop")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Waiting:service_side|button")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Waiting:service_side|pull")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Waiting:service_side|push")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|data_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|data_out[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|data_out[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|data_out";
+}
+
+SIGNAL("Queue:inst1|queue.q_a")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|queue.q_a[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|queue.q_a";
+}
+
+SIGNAL("Queue:inst1|front")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 3;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|front[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|front";
+}
+
+SIGNAL("Queue:inst1|front[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|front";
+}
+
+SIGNAL("Queue:inst1|front[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|front";
+}
+
+SIGNAL("Queue:inst1|rear")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 3;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("Queue:inst1|rear[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|rear";
+}
+
+SIGNAL("Queue:inst1|rear[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|rear";
+}
+
+SIGNAL("Queue:inst1|rear[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "Queue:inst1|rear";
 }
 
 TRANSITION_LIST("call_number")
@@ -477,9 +687,9 @@ TRANSITION_LIST("call_number")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 230.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 950.0;
+		LEVEL 0 FOR 760.0;
 	}
 }
 
@@ -575,7 +785,9 @@ TRANSITION_LIST("get_number1")
 	{
 		REPEAT = 1;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 990.0;
+		LEVEL 0 FOR 90.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 890.0;
 	}
 }
 
@@ -584,157 +796,15 @@ TRANSITION_LIST("get_number2")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 60.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL 0 FOR 890.0;
 	}
 }
 
-TRANSITION_LIST("getted_number2[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number2[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number1[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("QueueEmiter:inst9|data_out[7]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[7]")
 {
 	NODE
 	{
@@ -743,7 +813,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[7]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[6]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[6]")
 {
 	NODE
 	{
@@ -752,7 +822,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[6]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[5]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[5]")
 {
 	NODE
 	{
@@ -761,7 +831,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[5]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[4]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[4]")
 {
 	NODE
 	{
@@ -770,7 +840,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[4]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[3]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[3]")
 {
 	NODE
 	{
@@ -779,7 +849,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[3]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[2]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[2]")
 {
 	NODE
 	{
@@ -788,7 +858,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[2]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[1]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[1]")
 {
 	NODE
 	{
@@ -797,7 +867,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[1]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|data_out[0]")
+TRANSITION_LIST("Waiting:custom_side_1|data_out[0]")
 {
 	NODE
 	{
@@ -806,7 +876,7 @@ TRANSITION_LIST("QueueEmiter:inst9|data_out[0]")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|present_state.idle")
+TRANSITION_LIST("Waiting:custom_side_2|data_out[7]")
 {
 	NODE
 	{
@@ -815,7 +885,7 @@ TRANSITION_LIST("QueueEmiter:inst9|present_state.idle")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|present_state.sending")
+TRANSITION_LIST("Waiting:custom_side_2|data_out[6]")
 {
 	NODE
 	{
@@ -824,7 +894,7 @@ TRANSITION_LIST("QueueEmiter:inst9|present_state.sending")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|present_state.sent")
+TRANSITION_LIST("Waiting:custom_side_2|data_out[5]")
 {
 	NODE
 	{
@@ -833,7 +903,313 @@ TRANSITION_LIST("QueueEmiter:inst9|present_state.sent")
 	}
 }
 
-TRANSITION_LIST("QueueEmiter:inst9|present_state.waiting")
+TRANSITION_LIST("Waiting:custom_side_2|data_out[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:custom_side_2|data_out[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:custom_side_2|data_out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:custom_side_2|data_out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:custom_side_2|data_out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:custom_side_2|pull")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|present_state.idle")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|present_state.init")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|present_state.state_push")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|present_state.state_pop")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:service_side|button")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:service_side|pull")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Waiting:service_side|push")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|data_out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|queue.q_a[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|front[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|front[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|front[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|rear[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|rear[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("Queue:inst1|rear[0]")
 {
 	NODE
 	{
@@ -871,7 +1247,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1";
+	CHANNEL = "Waiting:custom_side_1|data_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 3;
@@ -881,7 +1257,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[7]";
+	CHANNEL = "Waiting:custom_side_1|data_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 4;
@@ -891,7 +1267,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[6]";
+	CHANNEL = "Waiting:custom_side_1|data_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 5;
@@ -901,7 +1277,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[5]";
+	CHANNEL = "Waiting:custom_side_1|data_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 6;
@@ -911,7 +1287,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[4]";
+	CHANNEL = "Waiting:custom_side_1|data_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 7;
@@ -921,7 +1297,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[3]";
+	CHANNEL = "Waiting:custom_side_1|data_out[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 8;
@@ -931,7 +1307,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[2]";
+	CHANNEL = "Waiting:custom_side_1|data_out[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 9;
@@ -941,7 +1317,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[1]";
+	CHANNEL = "Waiting:custom_side_1|data_out[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 10;
@@ -951,7 +1327,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number1[0]";
+	CHANNEL = "Waiting:custom_side_1|data_out[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 11;
@@ -961,7 +1337,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2";
+	CHANNEL = "Waiting:custom_side_2|data_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 12;
@@ -971,7 +1347,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[7]";
+	CHANNEL = "Waiting:custom_side_2|data_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 13;
@@ -981,7 +1357,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[6]";
+	CHANNEL = "Waiting:custom_side_2|data_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 14;
@@ -991,7 +1367,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[5]";
+	CHANNEL = "Waiting:custom_side_2|data_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 15;
@@ -1001,7 +1377,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[4]";
+	CHANNEL = "Waiting:custom_side_2|data_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 16;
@@ -1011,7 +1387,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[3]";
+	CHANNEL = "Waiting:custom_side_2|data_out[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 17;
@@ -1021,7 +1397,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[2]";
+	CHANNEL = "Waiting:custom_side_2|data_out[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 18;
@@ -1031,7 +1407,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[1]";
+	CHANNEL = "Waiting:custom_side_2|data_out[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 19;
@@ -1041,7 +1417,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number2[0]";
+	CHANNEL = "Waiting:custom_side_2|data_out[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 20;
@@ -1150,133 +1526,339 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out";
+	CHANNEL = "Waiting:custom_side_2|pull";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 31;
 	TREE_LEVEL = 0;
-	CHILDREN = 32, 33, 34, 35, 36, 37, 38, 39;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[7]";
+	CHANNEL = "Waiting:service_side|button";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 32;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[6]";
+	CHANNEL = "Waiting:service_side|pull";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 33;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[5]";
+	CHANNEL = "Waiting:service_side|push";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 34;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[4]";
+	CHANNEL = "Queue:inst1|present_state.idle";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 35;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[3]";
+	CHANNEL = "Queue:inst1|present_state.init";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 36;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[2]";
+	CHANNEL = "Queue:inst1|present_state.state_push";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 37;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[1]";
+	CHANNEL = "Queue:inst1|present_state.state_pop";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 38;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|data_out[0]";
+	CHANNEL = "Queue:inst1|data_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 39;
-	TREE_LEVEL = 1;
-	PARENT = 31;
+	TREE_LEVEL = 0;
+	CHILDREN = 40, 41, 42, 43, 44, 45, 46, 47;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|present_state.idle";
+	CHANNEL = "Queue:inst1|data_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 40;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 39;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|present_state.waiting";
+	CHANNEL = "Queue:inst1|data_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 41;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 39;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|present_state.sending";
+	CHANNEL = "Queue:inst1|data_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 42;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 39;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "QueueEmiter:inst9|present_state.sent";
+	CHANNEL = "Queue:inst1|data_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 43;
+	TREE_LEVEL = 1;
+	PARENT = 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|data_out[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 44;
+	TREE_LEVEL = 1;
+	PARENT = 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|data_out[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 45;
+	TREE_LEVEL = 1;
+	PARENT = 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|data_out[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 46;
+	TREE_LEVEL = 1;
+	PARENT = 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|data_out[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 47;
+	TREE_LEVEL = 1;
+	PARENT = 39;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 48;
 	TREE_LEVEL = 0;
+	CHILDREN = 49, 50, 51, 52, 53, 54, 55, 56;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 49;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 50;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 51;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 52;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 53;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 54;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 55;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|queue.q_a[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 56;
+	TREE_LEVEL = 1;
+	PARENT = 48;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|front";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 57;
+	TREE_LEVEL = 0;
+	CHILDREN = 58, 59, 60;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|front[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 58;
+	TREE_LEVEL = 1;
+	PARENT = 57;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|front[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 59;
+	TREE_LEVEL = 1;
+	PARENT = 57;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|front[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 60;
+	TREE_LEVEL = 1;
+	PARENT = 57;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|rear";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 61;
+	TREE_LEVEL = 0;
+	CHILDREN = 62, 63, 64;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|rear[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 62;
+	TREE_LEVEL = 1;
+	PARENT = 61;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|rear[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 63;
+	TREE_LEVEL = 1;
+	PARENT = 61;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Queue:inst1|rear[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 64;
+	TREE_LEVEL = 1;
+	PARENT = 61;
 }
 
 TIME_BAR
 {
-	TIME = 27250;
+	TIME = 0;
 	MASTER = TRUE;
 }
 ;

@@ -27,12 +27,24 @@ ARCHITECTURE arch OF Queue IS
   TYPE queue_array IS ARRAY(7 DOWNTO 0) OF word;
   SIGNAL queue : queue_array;
 
-  TYPE states IS(init, idle, state_pop, state_push, state_full, state_empty);
+  TYPE states IS(init, idle, state_pop, state_push);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
+  SIGNAL s_full : std_logic := '0';
+  SIGNAL s_empty : std_logic := '0';
+
   SIGNAL front : INTEGER RANGE 0 TO 7 := 0;
   SIGNAL rear : INTEGER RANGE 0 TO 7 := 0;
+
+  PROCEDURE incr(SIGNAL index : INOUT index_type) IS
+  BEGIN
+    IF index = index_type'high THEN
+      index <= index_type'low;
+    ELSE
+      index <= index + 1;
+    END IF;
+  END PROCEDURE;
 BEGIN
   -- clock trigger
   PROCESS (clock)
@@ -49,31 +61,13 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN init =>
-        next_state <= state_empty;
-
-      WHEN state_push =>
-        IF (front + 1 = rear) THEN
-          next_state <= state_full;
-        ELSE
-          next_state <= idle;
-        END IF;
+        next_state <= idle;
 
       WHEN state_pop =>
-        IF (front = rear + 1) THEN
-          next_state <= state_full;
-        ELSE
-          next_state <= idle;
-        END IF;
+        next_state <= idle;
 
-      WHEN state_empty =>
-        IF (push = '1') THEN
-          next_state <= state_push;
-        END IF;
-
-      WHEN state_full =>
-        IF (pop = '1') THEN
-          next_state <= state_pop;
-        END IF;
+      WHEN state_push =>
+        next_state <= idle;
 
       WHEN idle =>
         IF push = '1' THEN
@@ -92,30 +86,43 @@ BEGIN
   -- state events
   PROCESS (present_state)
   BEGIN
+    s_full <= '0';
+    s_empty <= '0';
+
     CASE present_state IS
       WHEN init =>
         front <= 0;
         rear <= 0;
-
-      WHEN state_push =>
-        front <= front + 1;
-        queue(front) <= data_in;
+        FOR i IN 7 DOWNTO 0 LOOP
+          queue(i) <= (OTHERS => '0'); -- aggregate
+        END LOOP;
 
       WHEN state_pop =>
-        data_out <= queue(rear);
-        rear <= rear + 1;
+        IF (front /= rear) THEN
+          data_out <= queue(rear);
+          rear <= rear + 1;
+        ELSE
+          s_empty <= '1';
+        END IF;
 
-      WHEN state_empty =>
-        full <= '0';
-        empty <= '1';
-
-      WHEN state_full =>
-        full <= '1';
-        empty <= '0';
+      WHEN state_push =>
+        IF (front + 1 /= rear) THEN
+          queue(front) <= data_in;
+          incr(front);
+        ELSE
+          s_full <= '1';
+        END IF;
 
       WHEN idle =>
-        full <= '0';
-        empty <= '0';
+        NULL;
+
     END CASE;
+  END PROCESS;
+
+  -- full/empty update
+  PROCESS (s_full, s_empty)
+  BEGIN
+    full <= s_full;
+    empty <= s_empty;
   END PROCESS;
 END arch;

@@ -30,12 +30,6 @@ ARCHITECTURE arch OF CounterArch IS
 
   SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
 BEGIN
-
-  PROCESS (data_in)
-  BEGIN
-    data_out <= data_in;
-  END PROCESS;
-
   -- clock trigger
   PROCESS (clock)
   BEGIN
@@ -45,17 +39,21 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state)
+  PROCESS (present_state, input1, input2, input3, input4)
   BEGIN
     CASE present_state IS
       WHEN a =>
         next_state <= idle;
+
       WHEN b =>
         next_state <= idle;
+
       WHEN c =>
         next_state <= idle;
+
       WHEN d =>
         next_state <= idle;
+
       WHEN idle =>
         IF (input1 = '1') THEN
           next_state <= a;
@@ -68,13 +66,14 @@ BEGIN
         ELSE
           next_state <= idle;
         END IF;
+
       WHEN OTHERS =>
         next_state <= idle;
     END CASE;
   END PROCESS;
 
   -- state events
-  PROCESS (present_state)
+  PROCESS (present_state, data_in)
   BEGIN
     -- TODO 当前实现会导致二分频
     clock_div <= '1';
@@ -82,17 +81,24 @@ BEGIN
     enable2 <= '0';
     enable3 <= '0';
     enable4 <= '0';
+    data_out <= data_in;
+
     CASE present_state IS
       WHEN a =>
         enable1 <= '1';
+
       WHEN b =>
         enable2 <= '1';
+
       WHEN c =>
         enable3 <= '1';
+
       WHEN d =>
         enable4 <= '1';
+
       WHEN idle =>
         clock_div <= '0';
+
     END CASE;
   END PROCESS;
 END arch;

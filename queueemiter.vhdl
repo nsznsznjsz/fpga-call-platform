@@ -39,7 +39,7 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        IF (changed) THEN
+        IF (changed = '1') THEN
           next_state <= waiting;
         ELSE
           next_state <= idle;
