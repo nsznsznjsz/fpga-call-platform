@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
-ENTITY EmitterArch IS
+ENTITY ManyToOneArch IS
   PORT (
     clock : IN std_logic;
     clock_div : INOUT std_logic;
@@ -26,9 +26,9 @@ ENTITY EmitterArch IS
     data_in4 : IN std_logic_vector(7 DOWNTO 0); -- length
     data_out : OUT std_logic_vector(7 DOWNTO 0) -- length
   );
-END EmitterArch;
+END ManyToOneArch;
 
-ARCHITECTURE arch OF EmitterArch IS
+ARCHITECTURE arch OF ManyToOneArch IS
   TYPE states IS(idle, disabled, a, b, c, d);
   SIGNAL present_state : states;
   SIGNAL next_state : states;

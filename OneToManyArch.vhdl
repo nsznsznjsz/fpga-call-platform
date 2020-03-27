@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
-ENTITY CounterArch IS
+ENTITY OneToManyArch IS
   PORT (
     clock : IN std_logic;
     clock_div : INOUT std_logic;
@@ -21,9 +21,9 @@ ENTITY CounterArch IS
     data_in : IN std_logic_vector(7 DOWNTO 0); -- length
     data_out : OUT std_logic_vector(7 DOWNTO 0) -- length
   );
-END CounterArch;
+END OneToManyArch;
 
-ARCHITECTURE arch OF CounterArch IS
+ARCHITECTURE arch OF OneToManyArch IS
   TYPE states IS(idle, a, b, c, d);
   SIGNAL present_state : states;
   SIGNAL next_state : states;

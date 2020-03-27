@@ -492,6 +492,16 @@ SIGNAL("Queue:inst1|fill_count[0]")
 	PARENT = "Queue:inst1|fill_count";
 }
 
+SIGNAL("OneToManyArch:inst7|clock_div")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
 TRANSITION_LIST("call_number")
 {
 	NODE
@@ -867,6 +877,15 @@ TRANSITION_LIST("Queue:inst1|fill_count[1]")
 }
 
 TRANSITION_LIST("Queue:inst1|fill_count[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("OneToManyArch:inst7|clock_div")
 {
 	NODE
 	{
@@ -1327,6 +1346,15 @@ DISPLAY_LINE
 	TREE_INDEX = 45;
 	TREE_LEVEL = 1;
 	PARENT = 42;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "OneToManyArch:inst7|clock_div";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 46;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR
