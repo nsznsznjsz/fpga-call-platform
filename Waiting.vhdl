@@ -64,7 +64,7 @@ BEGIN
         next_state <= pushing;
 
       WHEN pushing =>
-        waitOrNext(next_state, enable_pull, pushing, success);
+        waitOrNext(next_state, pushed, pushing, success);
 
       WHEN success =>
         next_state <= idle;
