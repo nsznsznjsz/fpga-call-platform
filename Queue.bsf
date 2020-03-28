@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 312 176)
+	(rect 64 64 360 224)
 	(text "Queue" (rect 5 0 36 12)(font "Arial" ))
 	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
@@ -103,8 +103,8 @@ applicable agreement for further details.
 	(port
 		(pt 296 128)
 		(output)
-		(text "fill_count[ram_depth-1..0]" (rect 0 0 126 12)(font "Arial" ))
-		(text "fill_count[ram_depth-1..0]" (rect 149 123 275 135)(font "Arial" ))
+		(text "fill_count[2..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "fill_count[2..0]" (rect 149 123 219 135)(font "Arial" ))
 		(line (pt 296 128)(pt 280 128)(line_width 3))
 	)
 	(parameter
@@ -120,5 +120,5 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 280 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 312 -64 412 16))
+	(annotation_block (parameter)(rect 312 -32 488 16))
 )
