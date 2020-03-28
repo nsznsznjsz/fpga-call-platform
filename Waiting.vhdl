@@ -26,6 +26,21 @@ ARCHITECTURE arch OF Waiting IS
   SIGNAL next_state : states;
 
   SIGNAL data : std_logic_vector(7 DOWNTO 0);
+
+  -- jump next state
+  PROCEDURE waitOrNext(
+    SIGNAL next_state : OUT states;
+    SIGNAL enable : IN std_logic;
+    CONSTANT s_wait : IN states;
+    CONSTANT s_next : IN states
+  ) IS
+  BEGIN
+    IF (enable = '1') THEN
+      next_state <= s_next;
+    ELSE
+      next_state <= s_wait;
+    END IF;
+  END PROCEDURE;
 BEGIN
   -- clock trigger
   PROCESS (clock)
@@ -40,28 +55,16 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        IF (button = '1') THEN
-          next_state <= pulling;
-        ELSE
-          next_state <= idle;
-        END IF;
+        waitOrNext(next_state, button, idle, pulling);
 
       WHEN pulling =>
-        IF (enable_pull = '1') THEN
-          next_state <= pulled;
-        ELSE
-          next_state <= pulling;
-        END IF;
+        waitOrNext(next_state, enable_pull, pulling, pulled);
 
       WHEN pulled =>
         next_state <= pushing;
 
       WHEN pushing =>
-        IF (pushed = '1') THEN
-          next_state <= success;
-        ELSE
-          next_state <= pushing;
-        END IF;
+        waitOrNext(next_state, enable_pull, pushing, success);
 
       WHEN success =>
         next_state <= idle;
@@ -83,14 +86,14 @@ BEGIN
 
       WHEN pulling =>
         pull <= '1';
-        data(7 DOWNTO 0) <= data_in(7 DOWNTO 0);
+        data <= data_in;
 
       WHEN pulled =>
         pull <= '0';
 
       WHEN pushing =>
         push <= '1';
-        data_out(7 DOWNTO 0) <= data(7 DOWNTO 0);
+        data_out <= data;
 
       WHEN success =>
         push <= '0';
