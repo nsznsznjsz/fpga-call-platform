@@ -1,0 +1,113 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 280 176)
+	(text "Customs" (rect 5 0 54 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "clock" (rect 21 27 50 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "enable_out" (rect 0 0 62 14)(font "Arial" (font_size 8)))
+		(text "enable_out" (rect 21 43 83 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "get_number_1" (rect 0 0 81 14)(font "Arial" (font_size 8)))
+		(text "get_number_1" (rect 21 59 102 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "get_number_2" (rect 0 0 81 14)(font "Arial" (font_size 8)))
+		(text "get_number_2" (rect 21 75 102 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "get_number_3" (rect 0 0 81 14)(font "Arial" (font_size 8)))
+		(text "get_number_3" (rect 21 91 102 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "get_number_4" (rect 0 0 81 14)(font "Arial" (font_size 8)))
+		(text "get_number_4" (rect 21 107 102 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "pull" (rect 0 0 18 14)(font "Arial" (font_size 8)))
+		(text "pull" (rect 225 27 243 41)(font "Arial" (font_size 8)))
+		(line (pt 264 32)(pt 248 32)(line_width 1))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "data_out[7..0]" (rect 0 0 77 14)(font "Arial" (font_size 8)))
+		(text "data_out[7..0]" (rect 166 43 243 57)(font "Arial" (font_size 8)))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(port
+		(pt 264 64)
+		(output)
+		(text "getted_number_1[7..0]" (rect 0 0 127 14)(font "Arial" (font_size 8)))
+		(text "getted_number_1[7..0]" (rect 116 59 243 73)(font "Arial" (font_size 8)))
+		(line (pt 264 64)(pt 248 64)(line_width 3))
+	)
+	(port
+		(pt 264 80)
+		(output)
+		(text "getted_number_2[7..0]" (rect 0 0 127 14)(font "Arial" (font_size 8)))
+		(text "getted_number_2[7..0]" (rect 116 75 243 89)(font "Arial" (font_size 8)))
+		(line (pt 264 80)(pt 248 80)(line_width 3))
+	)
+	(port
+		(pt 264 96)
+		(output)
+		(text "getted_number_3[7..0]" (rect 0 0 127 14)(font "Arial" (font_size 8)))
+		(text "getted_number_3[7..0]" (rect 116 91 243 105)(font "Arial" (font_size 8)))
+		(line (pt 264 96)(pt 248 96)(line_width 3))
+	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "getted_number_4[7..0]" (rect 0 0 127 14)(font "Arial" (font_size 8)))
+		(text "getted_number_4[7..0]" (rect 116 107 243 121)(font "Arial" (font_size 8)))
+		(line (pt 264 112)(pt 248 112)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 144)(line_width 1))
+	)
+)

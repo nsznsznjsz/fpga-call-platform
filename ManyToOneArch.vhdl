@@ -7,7 +7,7 @@ ENTITY ManyToOneArch IS
   PORT (
     clock : IN std_logic;
 
-    pull : INOUT std_logic;
+    push : INOUT std_logic;
 
     enable_out : IN std_logic;
 
@@ -87,7 +87,7 @@ BEGIN
   PROCESS (present_state, data_in1, data_in2, data_in3, data_in4)
   BEGIN
     -- TODO 当前实现会导致二分频
-    pull <= '1';
+    push <= '1';
     emitted1 <= '0';
     emitted2 <= '0';
     emitted3 <= '0';
@@ -112,10 +112,10 @@ BEGIN
         emitted4 <= '1';
 
       WHEN disabled =>
-        pull <= '0';
+        push <= '0';
 
       WHEN idle =>
-        pull <= '0';
+        push <= '0';
     END CASE;
   END PROCESS;
 END arch;
