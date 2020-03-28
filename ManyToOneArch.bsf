@@ -131,8 +131,8 @@ applicable agreement for further details.
 	(port
 		(pt 192 32)
 		(bidir)
-		(text "clock_div" (rect 0 0 47 12)(font "Arial" ))
-		(text "clock_div" (rect 124 27 171 39)(font "Arial" ))
+		(text "pull" (rect 0 0 16 12)(font "Arial" ))
+		(text "pull" (rect 155 27 171 39)(font "Arial" ))
 		(line (pt 192 32)(pt 176 32)(line_width 1))
 	)
 	(drawing

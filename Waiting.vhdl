@@ -36,7 +36,7 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state)
+  PROCESS (present_state, button, enable_pull, pushed)
   BEGIN
     CASE present_state IS
       WHEN idle =>
@@ -72,8 +72,9 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state)
+  PROCESS (present_state, data_in, data)
   BEGIN
+    -- make latchs: data, data_out
     push <= '0';
     pull <= '0';
 
@@ -82,10 +83,10 @@ BEGIN
 
       WHEN pulling =>
         pull <= '1';
+        data(7 DOWNTO 0) <= data_in(7 DOWNTO 0);
 
       WHEN pulled =>
         pull <= '0';
-        data(7 DOWNTO 0) <= data_in(7 DOWNTO 0);
 
       WHEN pushing =>
         push <= '1';

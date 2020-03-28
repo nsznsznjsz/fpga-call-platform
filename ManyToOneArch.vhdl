@@ -6,7 +6,8 @@ USE ieee.std_logic_unsigned.ALL;
 ENTITY ManyToOneArch IS
   PORT (
     clock : IN std_logic;
-    clock_div : INOUT std_logic;
+
+    pull : INOUT std_logic;
 
     enable_out : IN std_logic;
 
@@ -36,7 +37,7 @@ ARCHITECTURE arch OF ManyToOneArch IS
   SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
 BEGIN
   -- clock trigger
-  PROCESS (clock)
+  PROCESS (clock, enable_out)
   BEGIN
     IF (enable_out = '0') THEN
       present_state <= disabled;
@@ -46,7 +47,7 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state)
+  PROCESS (present_state, enable1, enable2, enable3, enable4)
   BEGIN
     CASE present_state IS
       WHEN a =>
@@ -86,11 +87,12 @@ BEGIN
   PROCESS (present_state, data_in1, data_in2, data_in3, data_in4)
   BEGIN
     -- TODO 当前实现会导致二分频
-    clock_div <= '1';
+    pull <= '1';
     emitted1 <= '0';
     emitted2 <= '0';
     emitted3 <= '0';
     emitted4 <= '0';
+    data_out <= (OTHERS => '0');
 
     CASE present_state IS
       WHEN a =>
@@ -110,10 +112,10 @@ BEGIN
         emitted4 <= '1';
 
       WHEN disabled =>
-        clock_div <= '0';
+        pull <= '0';
 
       WHEN idle =>
-        clock_div <= '0';
+        pull <= '0';
     END CASE;
   END PROCESS;
 END arch;
