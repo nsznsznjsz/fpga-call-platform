@@ -7,9 +7,8 @@ ENTITY ManyToOneArch IS
   PORT (
     clock : IN std_logic;
 
-    push : INOUT std_logic;
-
-    enable_out : IN std_logic;
+    push : OUT std_logic;
+    enable_push : IN std_logic;
 
     enable1 : IN std_logic;
     enable2 : IN std_logic;
@@ -37,9 +36,9 @@ ARCHITECTURE arch OF ManyToOneArch IS
   SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
 BEGIN
   -- clock trigger
-  PROCESS (clock, enable_out)
+  PROCESS (clock, enable_push)
   BEGIN
-    IF (enable_out = '0') THEN
+    IF (enable_push = '0') THEN
       present_state <= disabled;
     ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
@@ -86,7 +85,6 @@ BEGIN
   -- state events
   PROCESS (present_state, data_in1, data_in2, data_in3, data_in4)
   BEGIN
-    -- TODO 当前实现会导致二分频
     push <= '1';
     emitted1 <= '0';
     emitted2 <= '0';
