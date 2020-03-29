@@ -3,6 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
+-- 多个数据依次进入一个队列, 1 -> 2 -> 3 -> 4
 ENTITY ManyToOneArch IS
   PORT (
     clock : IN std_logic;

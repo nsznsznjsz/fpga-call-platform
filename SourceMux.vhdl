@@ -64,6 +64,19 @@ ARCHITECTURE arch OF SourceMux IS
       next_state <= s_wait;
     END IF;
   END PROCEDURE;
+
+  -- copy data_in to data if enable
+  PROCEDURE copyOrNot(
+    SIGNAL enable : IN std_logic;
+    SIGNAL data : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    SIGNAL data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
+  ) IS
+  BEGIN
+    IF (enable = '1') THEN
+      data <= data_in;
+    END IF;
+  END PROCEDURE;
+
 BEGIN
   -- Copy internal signals to output
   empty <= empty_i;
@@ -78,45 +91,27 @@ BEGIN
     '0';
 
   -- Copy input to internal signals
-  PROCESS (enable_pull1, data_in1)
+  PROCESS (clock)
   BEGIN
-    IF rising_edge(enable_pull1) THEN
-      data1 <= data_in1;
-    END IF;
-  END PROCESS;
-
-  PROCESS (enable_pull2, data_in2)
-  BEGIN
-    IF rising_edge(enable_pull2) THEN
-      data2 <= data_in2;
-    END IF;
-  END PROCESS;
-
-  PROCESS (enable_pull3, data_in3)
-  BEGIN
-    IF rising_edge(enable_pull3) THEN
-      data3 <= data_in3;
-    END IF;
-  END PROCESS;
-
-  PROCESS (enable_pull4, data_in4)
-  BEGIN
-    IF rising_edge(enable_pull4) THEN
-      data4 <= data_in4;
+    IF (clock'event AND clock = '1') THEN
+      copyOrNot(enable_pull1, data1, data_in1);
+      copyOrNot(enable_pull2, data2, data_in2);
+      copyOrNot(enable_pull3, data3, data_in3);
+      copyOrNot(enable_pull4, data4, data_in4);
     END IF;
   END PROCESS;
 
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF rising_edge(clock) THEN
+    IF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
 
   -- state change
   PROCESS (
-    present_state,
+    present_state, pull,
     enable_pull1, enable_pull2, enable_pull3, enable_pull4,
     empty_i, empty1, empty2, empty3, empty4
     )

@@ -2622,7 +2622,7 @@ SIGNAL("SourceMux:source_mux|present_state.c_end")
 	PARENT = "";
 }
 
-SIGNAL("test_port")
+SIGNAL("test_port_a1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
@@ -2632,84 +2632,194 @@ SIGNAL("test_port")
 	PARENT = "";
 }
 
-SIGNAL("test_port[7]")
+SIGNAL("test_port_a1[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[6]")
+SIGNAL("test_port_a1[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[5]")
+SIGNAL("test_port_a1[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[4]")
+SIGNAL("test_port_a1[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[3]")
+SIGNAL("test_port_a1[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[2]")
+SIGNAL("test_port_a1[2]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[1]")
+SIGNAL("test_port_a1[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
 }
 
-SIGNAL("test_port[0]")
+SIGNAL("test_port_a1[0]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "test_port";
+	PARENT = "test_port_a1";
+}
+
+SIGNAL("test_port_a2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("test_port_b1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("test_port_b1[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b1[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "test_port_b1";
+}
+
+SIGNAL("test_port_b2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 SIGNAL("test_port_2")
@@ -2800,16 +2910,6 @@ SIGNAL("test_port_2[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "test_port_2";
-}
-
-SIGNAL("test_port13")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "";
 }
 
 TRANSITION_LIST("clock")
@@ -4975,7 +5075,7 @@ TRANSITION_LIST("SourceMux:source_mux|present_state.c_end")
 	}
 }
 
-TRANSITION_LIST("test_port[7]")
+TRANSITION_LIST("test_port_a1[7]")
 {
 	NODE
 	{
@@ -4984,7 +5084,7 @@ TRANSITION_LIST("test_port[7]")
 	}
 }
 
-TRANSITION_LIST("test_port[6]")
+TRANSITION_LIST("test_port_a1[6]")
 {
 	NODE
 	{
@@ -4993,7 +5093,7 @@ TRANSITION_LIST("test_port[6]")
 	}
 }
 
-TRANSITION_LIST("test_port[5]")
+TRANSITION_LIST("test_port_a1[5]")
 {
 	NODE
 	{
@@ -5002,7 +5102,7 @@ TRANSITION_LIST("test_port[5]")
 	}
 }
 
-TRANSITION_LIST("test_port[4]")
+TRANSITION_LIST("test_port_a1[4]")
 {
 	NODE
 	{
@@ -5011,7 +5111,7 @@ TRANSITION_LIST("test_port[4]")
 	}
 }
 
-TRANSITION_LIST("test_port[3]")
+TRANSITION_LIST("test_port_a1[3]")
 {
 	NODE
 	{
@@ -5020,7 +5120,7 @@ TRANSITION_LIST("test_port[3]")
 	}
 }
 
-TRANSITION_LIST("test_port[2]")
+TRANSITION_LIST("test_port_a1[2]")
 {
 	NODE
 	{
@@ -5029,7 +5129,7 @@ TRANSITION_LIST("test_port[2]")
 	}
 }
 
-TRANSITION_LIST("test_port[1]")
+TRANSITION_LIST("test_port_a1[1]")
 {
 	NODE
 	{
@@ -5038,7 +5138,97 @@ TRANSITION_LIST("test_port[1]")
 	}
 }
 
-TRANSITION_LIST("test_port[0]")
+TRANSITION_LIST("test_port_a1[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_a2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b1[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("test_port_b2")
 {
 	NODE
 	{
@@ -5111,15 +5301,6 @@ TRANSITION_LIST("test_port_2[1]")
 }
 
 TRANSITION_LIST("test_port_2[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("test_port13")
 {
 	NODE
 	{
@@ -7671,7 +7852,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port";
+	CHANNEL = "test_port_a1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 259;
@@ -7681,7 +7862,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[7]";
+	CHANNEL = "test_port_a1[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 260;
@@ -7691,7 +7872,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[6]";
+	CHANNEL = "test_port_a1[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 261;
@@ -7701,7 +7882,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[5]";
+	CHANNEL = "test_port_a1[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 262;
@@ -7711,7 +7892,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[4]";
+	CHANNEL = "test_port_a1[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 263;
@@ -7721,7 +7902,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[3]";
+	CHANNEL = "test_port_a1[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 264;
@@ -7731,7 +7912,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[2]";
+	CHANNEL = "test_port_a1[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 265;
@@ -7741,7 +7922,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[1]";
+	CHANNEL = "test_port_a1[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 266;
@@ -7751,7 +7932,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port[0]";
+	CHANNEL = "test_port_a1[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 267;
@@ -7761,12 +7942,120 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "test_port_2";
+	CHANNEL = "test_port_a2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 268;
 	TREE_LEVEL = 0;
-	CHILDREN = 269, 270, 271, 272, 273, 274, 275, 276;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 269;
+	TREE_LEVEL = 0;
+	CHILDREN = 270, 271, 272, 273, 274, 275, 276, 277;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 270;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 271;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 272;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 273;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 274;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 275;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 276;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b1[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 277;
+	TREE_LEVEL = 1;
+	PARENT = 269;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_b2";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 278;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "test_port_2";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 279;
+	TREE_LEVEL = 0;
+	CHILDREN = 280, 281, 282, 283, 284, 285, 286, 287;
 }
 
 DISPLAY_LINE
@@ -7774,9 +8063,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 269;
+	TREE_INDEX = 280;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7784,9 +8073,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 270;
+	TREE_INDEX = 281;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7794,9 +8083,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 271;
+	TREE_INDEX = 282;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7804,9 +8093,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 272;
+	TREE_INDEX = 283;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7814,9 +8103,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 273;
+	TREE_INDEX = 284;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7824,9 +8113,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 274;
+	TREE_INDEX = 285;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7834,9 +8123,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 275;
+	TREE_INDEX = 286;
 	TREE_LEVEL = 1;
-	PARENT = 268;
+	PARENT = 279;
 }
 
 DISPLAY_LINE
@@ -7844,18 +8133,9 @@ DISPLAY_LINE
 	CHANNEL = "test_port_2[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 276;
+	TREE_INDEX = 287;
 	TREE_LEVEL = 1;
-	PARENT = 268;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "test_port13";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 277;
-	TREE_LEVEL = 0;
+	PARENT = 279;
 }
 
 TIME_BAR

@@ -29,7 +29,13 @@ ENTITY OneToManyArch IS
 END OneToManyArch;
 
 ARCHITECTURE arch OF OneToManyArch IS
-  TYPE states IS(idle, a_init, a_wait, a_end, b_init, b_wait, b_end, c_init, c_wait, c_end, d_init, d_wait, d_end);
+  TYPE states IS(
+  idle,
+  a_init, a_wait, a_end,
+  b_init, b_wait, b_end,
+  c_init, c_wait, c_end,
+  d_init, d_wait, d_end
+  );
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -52,17 +58,19 @@ ARCHITECTURE arch OF OneToManyArch IS
   END PROCEDURE;
 BEGIN
   -- Copy input to internal signals
-  PROCESS (enable_pull, data_in)
+  PROCESS (clock)
   BEGIN
-    IF rising_edge(enable_pull) THEN
-      data <= data_in;
+    IF (clock'event AND clock = '1') THEN
+      IF (enable_pull = '1') THEN
+        data <= data_in;
+      END IF;
     END IF;
   END PROCESS;
 
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF rising_edge(clock) THEN
+    IF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;

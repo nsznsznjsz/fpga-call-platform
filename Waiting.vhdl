@@ -77,7 +77,7 @@ BEGIN
   -- state events
   PROCESS (present_state, data_in, data)
   BEGIN
-    -- make latchs: data, data_out
+    -- make latches: data, data_out
     push <= '0';
     pull <= '0';
 

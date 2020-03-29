@@ -2,4 +2,7 @@
 
 ## TODOS
 
--[ ] services empty
+- [ ] print ports
+- [ ] services emptdy
+- [ ] counter reset
+- [ ] group flag
