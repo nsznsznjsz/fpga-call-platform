@@ -51,7 +51,7 @@ ARCHITECTURE arch OF OneToManyArch IS
     END IF;
   END PROCEDURE;
 BEGIN
-  -- wait enable
+  -- Copy input to internal signals
   PROCESS (enable_pull, data_in)
   BEGIN
     IF rising_edge(enable_pull) THEN
@@ -62,7 +62,7 @@ BEGIN
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF (clock'event AND clock = '1') THEN
+    IF rising_edge(clock) THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
@@ -133,7 +133,6 @@ BEGIN
     enable2 <= '0';
     enable3 <= '0';
     enable4 <= '0';
-    data <= data;
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
