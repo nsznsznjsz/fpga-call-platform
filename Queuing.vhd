@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 
 LIBRARY work;
 
-ENTITY Customs IS
+ENTITY Queuing IS
   PORT (
     clock : IN STD_LOGIC;
 
@@ -24,9 +24,9 @@ ENTITY Customs IS
     getted_number_3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     getted_number_4 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
-END Customs;
+END Queuing;
 
-ARCHITECTURE arch OF Customs IS
+ARCHITECTURE arch OF Queuing IS
 
   COMPONENT MultiCounter
     PORT (
