@@ -5,27 +5,30 @@ USE ieee.std_logic_unsigned.ALL;
 
 -- 多个数据依次进入一个队列, 1 -> 2 -> 3 -> 4
 ENTITY ManyToOneArch IS
+  GENERIC (
+    RAM_WIDTH : NATURAL := 16
+  );
   PORT (
     clock : IN std_logic;
 
     push : OUT std_logic;
     enable_push : IN std_logic;
 
-    enable1 : IN std_logic;
-    enable2 : IN std_logic;
-    enable3 : IN std_logic;
-    enable4 : IN std_logic;
+    enable_1 : IN std_logic;
+    enable_2 : IN std_logic;
+    enable_3 : IN std_logic;
+    enable_4 : IN std_logic;
 
-    emitted1 : OUT std_logic;
-    emitted2 : OUT std_logic;
-    emitted3 : OUT std_logic;
-    emitted4 : OUT std_logic;
+    emitted_1 : OUT std_logic;
+    emitted_2 : OUT std_logic;
+    emitted_3 : OUT std_logic;
+    emitted_4 : OUT std_logic;
 
-    data_in1 : IN std_logic_vector(7 DOWNTO 0); -- length
-    data_in2 : IN std_logic_vector(7 DOWNTO 0); -- length
-    data_in3 : IN std_logic_vector(7 DOWNTO 0); -- length
-    data_in4 : IN std_logic_vector(7 DOWNTO 0); -- length
-    data_out : OUT std_logic_vector(7 DOWNTO 0) -- length
+    data_in_1 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    data_in_2 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    data_in_3 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    data_in_4 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
   );
 END ManyToOneArch;
 
@@ -41,13 +44,13 @@ BEGIN
   BEGIN
     IF (enable_push = '0') THEN
       present_state <= disabled;
-    ELSIF (clock'event AND clock = '1') THEN
+      ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, enable1, enable2, enable3, enable4)
+  PROCESS (present_state, enable_1, enable_2, enable_3, enable_4)
   BEGIN
     CASE present_state IS
       WHEN a =>
@@ -66,13 +69,13 @@ BEGIN
         next_state <= idle;
 
       WHEN idle =>
-        IF (enable1 = '1') THEN
+        IF (enable_1 = '1') THEN
           next_state <= a;
-        ELSIF (enable2 = '1') THEN
+        ELSIF (enable_2 = '1') THEN
           next_state <= b;
-        ELSIF (enable3 = '1') THEN
+        ELSIF (enable_3 = '1') THEN
           next_state <= c;
-        ELSIF (enable4 = '1') THEN
+        ELSIF (enable_4 = '1') THEN
           next_state <= d;
         ELSE
           next_state <= idle;
@@ -84,31 +87,31 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state, data_in1, data_in2, data_in3, data_in4)
+  PROCESS (present_state, data_in_1, data_in_2, data_in_3, data_in_4)
   BEGIN
     push <= '1';
-    emitted1 <= '0';
-    emitted2 <= '0';
-    emitted3 <= '0';
-    emitted4 <= '0';
+    emitted_1 <= '0';
+    emitted_2 <= '0';
+    emitted_3 <= '0';
+    emitted_4 <= '0';
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
       WHEN a =>
-        data_out(7 DOWNTO 0) <= data_in1(7 DOWNTO 0);
-        emitted1 <= '1';
+        data_out <= data_in_1;
+        emitted_1 <= '1';
 
       WHEN b =>
-        data_out(7 DOWNTO 0) <= data_in2(7 DOWNTO 0);
-        emitted2 <= '1';
+        data_out <= data_in_2;
+        emitted_2 <= '1';
 
       WHEN c =>
-        data_out(7 DOWNTO 0) <= data_in3(7 DOWNTO 0);
-        emitted3 <= '1';
+        data_out <= data_in_3;
+        emitted_3 <= '1';
 
       WHEN d =>
-        data_out(7 DOWNTO 0) <= data_in4(7 DOWNTO 0);
-        emitted4 <= '1';
+        data_out <= data_in_4;
+        emitted_4 <= '1';
 
       WHEN disabled =>
         push <= '0';

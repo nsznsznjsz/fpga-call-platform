@@ -3,8 +3,8 @@ USE ieee.std_logic_1164.ALL;
 
 ENTITY Queue IS
   GENERIC (
-    RAM_WIDTH : NATURAL := 8;
-    RAM_DEPTH : NATURAL := 8
+    RAM_WIDTH : NATURAL := 16;
+    RAM_DEPTH : NATURAL := 32
   );
   PORT (
     clock : IN std_logic;

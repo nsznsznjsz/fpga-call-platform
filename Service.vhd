@@ -3,88 +3,113 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
+-- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Service IS
+  GENERIC (
+    RAM_WIDTH : NATURAL := 16
+  );
   PORT (
     clock : IN std_logic;
+    call : IN std_logic; -- 叫号
+    recall : IN std_logic; -- 重新叫号
 
-    call : IN std_logic; -- 叫号, 打开 enable_in, enable_out
-    recall : IN std_logic; -- 重新叫号, 打开 enable_out
+    pull : OUT std_logic; -- 申请取号
+    enable_pull : IN std_logic; -- 允许取号
 
-    enable_in : OUT std_logic; -- 打开后等待下一数据后关闭
-    enable_out : OUT std_logic; -- 打开后一段时间自动关闭
+    push : OUT std_logic; -- 申请发送
+    pushed : IN std_logic; -- 已发送
 
-    data_in : IN std_logic_vector(7 DOWNTO 0);
-    data_out : OUT std_logic_vector(7 DOWNTO 0)
+    data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+    data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
   );
 END Service;
 
-ARCHITECTURE rtl OF Service IS
-  CONSTANT enable_out_length : INTEGER := 1;
-  SIGNAL enable_out_count : INTEGER RANGE 0 TO enable_out_length;
+ARCHITECTURE arch OF Service IS
+  TYPE states IS(idle, pulling, pulled, pushing, success);
+  SIGNAL present_state : states;
+  SIGNAL next_state : states;
 
-  SIGNAL data : std_logic_vector(7 DOWNTO 0);
+  SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
 
-  SIGNAL s_enable_in : std_logic; -- 接收数据后手动关闭
-  SIGNAL s_enable_out : std_logic; -- n clock 后自动关闭
+  -- jump next state
+  PROCEDURE waitOrNext(
+    SIGNAL next_state : OUT states;
+    SIGNAL enable : IN std_logic;
+    CONSTANT s_wait : IN states;
+    CONSTANT s_next : IN states
+  ) IS
+  BEGIN
+    IF (enable = '1') THEN
+      next_state <= s_next;
+      ELSE
+      next_state <= s_wait;
+    END IF;
+  END PROCEDURE;
 BEGIN
-  -- 叫号
-  call_next : PROCESS (call)
-  BEGIN
-    s_enable_in <= '1';
-    s_enable_out <= '1';
-  END PROCESS;
-
-  -- 重新叫号
-  recall_current : PROCESS (call)
-  BEGIN
-    s_enable_out <= '1';
-  END PROCESS;
-
-  -- 自动回落 enable_out
-  heartbeat : PROCESS (clock)
+  -- clock trigger
+  PROCESS (clock)
   BEGIN
     IF (clock'event AND clock = '1') THEN
-      IF (enable_out_count = enable_out_length) THEN
-        s_enable_out <= '0';
-        enable_out_count <= 0;
-      ELSE
-        enable_out_count <= enable_out_count + 1;
-      END IF;
+      present_state <= next_state;
     END IF;
   END PROCESS;
 
-  -- 输入 data
-  data_receiver : PROCESS (s_enable_in, data_in)
+  -- state change
+  PROCESS (present_state, call, recall, enable_pull, pushed)
   BEGIN
-    IF (data_in'event AND s_enable_in = '1') THEN
-      data <= data_in;
-      s_enable_in <= '0';
-    END IF;
+    CASE present_state IS
+      WHEN idle =>
+        IF (call = '1') THEN
+          next_state <= pulling;
+        ELSIF (recall = '1') THEN
+          next_state <= pushing;
+        ELSE
+          next_state <= idle;
+        END IF;
+
+      WHEN pulling =>
+        waitOrNext(next_state, enable_pull, pulling, pulled);
+
+      WHEN pulled =>
+        next_state <= pushing;
+
+      WHEN pushing =>
+        waitOrNext(next_state, pushed, pushing, success);
+
+      WHEN success =>
+        next_state <= idle;
+
+      WHEN OTHERS =>
+        next_state <= idle;
+    END CASE;
   END PROCESS;
 
-  -- 输出 data
-  data_output : PROCESS (s_enable_out, data)
+  -- state events
+  PROCESS (present_state, data_in, data)
   BEGIN
-    IF (s_enable_out'event) THEN
-      enable_out <= s_enable_out;
+    -- make latches: data, data_out
+    push <= '0';
+    pull <= '0';
 
-      IF (s_enable_out = '1') THEN
+    CASE present_state IS
+      WHEN idle => NULL;
+
+      WHEN pulling =>
+        pull <= '1';
+        data <= data_in;
+
+      WHEN pulled =>
+        pull <= '0';
+
+      WHEN pushing =>
+        push <= '1';
         data_out <= data;
-      ELSE
-        data_out <= "00000000";
-      END IF;
-    END IF;
-  END PROCESS;
 
-  -- 监听 s_enable_in
-  output_enable_in : PROCESS (s_enable_in)
-  BEGIN
-    enable_in <= s_enable_in;
-  END PROCESS;
+      WHEN success =>
+        push <= '0';
 
-  -- 监听 s_enable_out
-  output_enable_out : PROCESS (s_enable_in)
-  BEGIN
-    enable_out <= s_enable_out;
+      WHEN OTHERS => NULL;
+
+    END CASE;
   END PROCESS;
-END rtl;
+END arch;

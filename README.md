@@ -6,22 +6,31 @@
 
 > Use 16 bits
 
-- bit 0-1: screen flag, 00/01: queuing / called number;
-- bit 2-3: vip flag, 01: yes;
-- bit 4~5: groups flag, 00/01/10/11: group a/b/c/d;
+- bit 0-1: screen flag
+  - 00: non flag
+  - 01/10: queuing / called number;
+
+- bit 2~5: groups flag
+  - 0000: non flag
+  - 1xxx: vip
+  - x001: group a
+  - x010: group b
+
 - bit 6~7: error description
   - 00: non error
   - 01: unknown
-  - 10: queue is empty
-  - 11: queue is full
-- bit 8~15: numbers, 0: error, others: numbers;
+  - 10/11: queue is empty / full
+
+- bit 8~15: numbers
+  - 0: error
+  - others: numbers;
 
 ## TODOS
 
-- [ ] screen: print ports, decoding
+- [ ] screen: decoding flags
 - [ ] services: throw error when queue is empty
 - [ ] customs: throw error when queue is full
-- [ ] counter reset
+- [ ] service: recall
 - [ ] groups flag
 - [ ] screen flag
 

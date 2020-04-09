@@ -5,7 +5,7 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY OneToManyArch IS
   GENERIC (
-    RAM_WIDTH : NATURAL := 8
+    RAM_WIDTH : NATURAL := 16
   );
   PORT (
     clock : IN std_logic;
@@ -13,15 +13,15 @@ ENTITY OneToManyArch IS
     pull : OUT std_logic;
     enable_pull : IN std_logic;
 
-    input1 : IN std_logic;
-    input2 : IN std_logic;
-    input3 : IN std_logic;
-    input4 : IN std_logic;
+    input_1 : IN std_logic;
+    input_2 : IN std_logic;
+    input_3 : IN std_logic;
+    input_4 : IN std_logic;
 
-    enable1 : OUT std_logic;
-    enable2 : OUT std_logic;
-    enable3 : OUT std_logic;
-    enable4 : OUT std_logic;
+    enable_1 : OUT std_logic;
+    enable_2 : OUT std_logic;
+    enable_3 : OUT std_logic;
+    enable_4 : OUT std_logic;
 
     data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
     data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
@@ -52,11 +52,12 @@ ARCHITECTURE arch OF OneToManyArch IS
   BEGIN
     IF (enable = '1') THEN
       next_state <= s_next;
-    ELSE
+      ELSE
       next_state <= s_wait;
     END IF;
   END PROCEDURE;
 BEGIN
+
   -- Copy input to internal signals
   PROCESS (clock)
   BEGIN
@@ -76,17 +77,17 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, enable_pull, input1, input2, input3, input4)
+  PROCESS (present_state, enable_pull, input_1, input_2, input_3, input_4)
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        IF (input1 = '1') THEN
+        IF (input_1 = '1') THEN
           next_state <= a_init;
-        ELSIF (input2 = '1') THEN
+        ELSIF (input_2 = '1') THEN
           next_state <= b_init;
-        ELSIF (input3 = '1') THEN
+        ELSIF (input_3 = '1') THEN
           next_state <= c_init;
-        ELSIF (input4 = '1') THEN
+        ELSIF (input_4 = '1') THEN
           next_state <= d_init;
         ELSE
           next_state <= idle;
@@ -137,10 +138,10 @@ BEGIN
   PROCESS (present_state, data)
   BEGIN
     pull <= '0';
-    enable1 <= '0';
-    enable2 <= '0';
-    enable3 <= '0';
-    enable4 <= '0';
+    enable_1 <= '0';
+    enable_2 <= '0';
+    enable_3 <= '0';
+    enable_4 <= '0';
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
@@ -151,7 +152,7 @@ BEGIN
         NULL;
 
       WHEN a_end =>
-        enable1 <= '1';
+        enable_1 <= '1';
         data_out <= data;
 
       WHEN b_init =>
@@ -161,7 +162,7 @@ BEGIN
         NULL;
 
       WHEN b_end =>
-        enable2 <= '1';
+        enable_2 <= '1';
         data_out <= data;
 
       WHEN c_init =>
@@ -171,7 +172,7 @@ BEGIN
         NULL;
 
       WHEN c_end =>
-        enable3 <= '1';
+        enable_3 <= '1';
         data_out <= data;
 
       WHEN d_init =>
@@ -181,7 +182,7 @@ BEGIN
         NULL;
 
       WHEN d_end =>
-        enable4 <= '1';
+        enable_4 <= '1';
         data_out <= data;
 
       WHEN idle =>

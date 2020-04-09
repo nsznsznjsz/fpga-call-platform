@@ -103,18 +103,18 @@ applicable agreement for further details.
 	(port
 		(pt 296 128)
 		(output)
-		(text "fill_count[2..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "fill_count[2..0]" (rect 149 123 219 135)(font "Arial" ))
+		(text "fill_count[4..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "fill_count[4..0]" (rect 149 123 219 135)(font "Arial" ))
 		(line (pt 296 128)(pt 280 128)(line_width 3))
 	)
 	(parameter
 		"RAM_WIDTH"
-		"8"
+		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"RAM_DEPTH"
-		"8"
+		"32"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

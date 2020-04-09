@@ -3,8 +3,12 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
--- 取号器
+-- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Waiting IS
+  GENERIC (
+    RAM_WIDTH : NATURAL := 16;
+    FLAGS : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0') -- flag width
+  );
   PORT (
     clock : IN std_logic;
     button : IN std_logic; -- 用户取号
@@ -15,8 +19,8 @@ ENTITY Waiting IS
     push : OUT std_logic; -- 申请发送
     pushed : IN std_logic; -- 已发送
 
-    data_in : IN std_logic_vector(7 DOWNTO 0);
-    data_out : OUT std_logic_vector(7 DOWNTO 0)
+    data_in : IN std_logic_vector(RAM_WIDTH - 9 DOWNTO 0);
+    data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
   );
 END Waiting;
 
@@ -25,7 +29,7 @@ ARCHITECTURE arch OF Waiting IS
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
-  SIGNAL data : std_logic_vector(7 DOWNTO 0);
+  SIGNAL data : std_logic_vector(RAM_WIDTH - 9 DOWNTO 0);
 
   -- jump next state
   PROCEDURE waitOrNext(
@@ -37,7 +41,7 @@ ARCHITECTURE arch OF Waiting IS
   BEGIN
     IF (enable = '1') THEN
       next_state <= s_next;
-    ELSE
+      ELSE
       next_state <= s_wait;
     END IF;
   END PROCEDURE;
@@ -93,7 +97,7 @@ BEGIN
 
       WHEN pushing =>
         push <= '1';
-        data_out <= data;
+        data_out <= FLAGS & data;
 
       WHEN success =>
         push <= '0';
