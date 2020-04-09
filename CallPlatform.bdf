@@ -342,67 +342,67 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 152 1416 320 1432)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "get_number_vip1" (rect 9 0 93 12)(font "Arial" ))
-	(pt 168 8)
+	(rect 136 1416 320 1432)
+	(text "INPUT" (rect 149 0 177 10)(font "Arial" (font_size 6)))
+	(text "get_number_vip_a1" (rect 5 0 101 12)(font "Arial" ))
+	(pt 184 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12)(line_width 1))
-		(line (pt 92 4)(pt 117 4)(line_width 1))
-		(line (pt 121 8)(pt 168 8)(line_width 1))
-		(line (pt 92 12)(pt 92 4)(line_width 1))
-		(line (pt 117 4)(pt 121 8)(line_width 1))
-		(line (pt 117 12)(pt 121 8)(line_width 1))
+		(line (pt 108 12)(pt 133 12)(line_width 1))
+		(line (pt 108 4)(pt 133 4)(line_width 1))
+		(line (pt 137 8)(pt 184 8)(line_width 1))
+		(line (pt 108 12)(pt 108 4)(line_width 1))
+		(line (pt 133 4)(pt 137 8)(line_width 1))
+		(line (pt 133 12)(pt 137 8)(line_width 1))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 152 7 172 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 152 1432 320 1448)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "get_number_vip2" (rect 9 0 93 12)(font "Arial" ))
-	(pt 168 8)
+	(rect 136 1432 320 1448)
+	(text "INPUT" (rect 149 0 177 10)(font "Arial" (font_size 6)))
+	(text "get_number_vip_a2" (rect 5 0 101 12)(font "Arial" ))
+	(pt 184 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12)(line_width 1))
-		(line (pt 92 4)(pt 117 4)(line_width 1))
-		(line (pt 121 8)(pt 168 8)(line_width 1))
-		(line (pt 92 12)(pt 92 4)(line_width 1))
-		(line (pt 117 4)(pt 121 8)(line_width 1))
-		(line (pt 117 12)(pt 121 8)(line_width 1))
+		(line (pt 108 12)(pt 133 12)(line_width 1))
+		(line (pt 108 4)(pt 133 4)(line_width 1))
+		(line (pt 137 8)(pt 184 8)(line_width 1))
+		(line (pt 108 12)(pt 108 4)(line_width 1))
+		(line (pt 133 4)(pt 137 8)(line_width 1))
+		(line (pt 133 12)(pt 137 8)(line_width 1))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 152 7 172 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 152 1448 320 1464)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "get_number_vip3" (rect 9 0 93 12)(font "Arial" ))
-	(pt 168 8)
+	(rect 136 1448 320 1464)
+	(text "INPUT" (rect 149 0 177 10)(font "Arial" (font_size 6)))
+	(text "get_number_vip_b1" (rect 5 0 101 12)(font "Arial" ))
+	(pt 184 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12)(line_width 1))
-		(line (pt 92 4)(pt 117 4)(line_width 1))
-		(line (pt 121 8)(pt 168 8)(line_width 1))
-		(line (pt 92 12)(pt 92 4)(line_width 1))
-		(line (pt 117 4)(pt 121 8)(line_width 1))
-		(line (pt 117 12)(pt 121 8)(line_width 1))
+		(line (pt 108 12)(pt 133 12)(line_width 1))
+		(line (pt 108 4)(pt 133 4)(line_width 1))
+		(line (pt 137 8)(pt 184 8)(line_width 1))
+		(line (pt 108 12)(pt 108 4)(line_width 1))
+		(line (pt 133 4)(pt 137 8)(line_width 1))
+		(line (pt 133 12)(pt 137 8)(line_width 1))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 152 7 172 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(input)
-	(rect 152 1464 320 1480)
-	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "get_number_vip4" (rect 9 0 93 12)(font "Arial" ))
-	(pt 168 8)
+	(rect 136 1464 320 1480)
+	(text "INPUT" (rect 149 0 177 10)(font "Arial" (font_size 6)))
+	(text "get_number_vip_b2" (rect 5 0 101 12)(font "Arial" ))
+	(pt 184 8)
 	(drawing
-		(line (pt 92 12)(pt 117 12)(line_width 1))
-		(line (pt 92 4)(pt 117 4)(line_width 1))
-		(line (pt 121 8)(pt 168 8)(line_width 1))
-		(line (pt 92 12)(pt 92 4)(line_width 1))
-		(line (pt 117 4)(pt 121 8)(line_width 1))
-		(line (pt 117 12)(pt 121 8)(line_width 1))
+		(line (pt 108 12)(pt 133 12)(line_width 1))
+		(line (pt 108 4)(pt 133 4)(line_width 1))
+		(line (pt 137 8)(pt 184 8)(line_width 1))
+		(line (pt 108 12)(pt 108 4)(line_width 1))
+		(line (pt 133 4)(pt 137 8)(line_width 1))
+		(line (pt 133 12)(pt 137 8)(line_width 1))
 	)
-	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 152 7 172 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -521,70 +521,6 @@ applicable agreement for further details.
 	(rect 2248 1024 2465 1040)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "getted_number_b4[15..0]" (rect 90 0 212 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8)(line_width 1))
-		(line (pt 52 4)(pt 78 4)(line_width 1))
-		(line (pt 52 12)(pt 78 12)(line_width 1))
-		(line (pt 52 12)(pt 52 4)(line_width 1))
-		(line (pt 78 4)(pt 82 8)(line_width 1))
-		(line (pt 82 8)(pt 78 12)(line_width 1))
-		(line (pt 78 12)(pt 82 8)(line_width 1))
-	)
-)
-(pin
-	(output)
-	(rect 2248 1528 2475 1544)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "getted_number_vip1[15..0]" (rect 90 0 222 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8)(line_width 1))
-		(line (pt 52 4)(pt 78 4)(line_width 1))
-		(line (pt 52 12)(pt 78 12)(line_width 1))
-		(line (pt 52 12)(pt 52 4)(line_width 1))
-		(line (pt 78 4)(pt 82 8)(line_width 1))
-		(line (pt 82 8)(pt 78 12)(line_width 1))
-		(line (pt 78 12)(pt 82 8)(line_width 1))
-	)
-)
-(pin
-	(output)
-	(rect 2248 1544 2475 1560)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "getted_number_vip2[15..0]" (rect 90 0 222 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8)(line_width 1))
-		(line (pt 52 4)(pt 78 4)(line_width 1))
-		(line (pt 52 12)(pt 78 12)(line_width 1))
-		(line (pt 52 12)(pt 52 4)(line_width 1))
-		(line (pt 78 4)(pt 82 8)(line_width 1))
-		(line (pt 82 8)(pt 78 12)(line_width 1))
-		(line (pt 78 12)(pt 82 8)(line_width 1))
-	)
-)
-(pin
-	(output)
-	(rect 2248 1560 2475 1576)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "getted_number_vip3[15..0]" (rect 90 0 222 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8)(line_width 1))
-		(line (pt 52 4)(pt 78 4)(line_width 1))
-		(line (pt 52 12)(pt 78 12)(line_width 1))
-		(line (pt 52 12)(pt 52 4)(line_width 1))
-		(line (pt 78 4)(pt 82 8)(line_width 1))
-		(line (pt 82 8)(pt 78 12)(line_width 1))
-		(line (pt 78 12)(pt 82 8)(line_width 1))
-	)
-)
-(pin
-	(output)
-	(rect 2248 1576 2475 1592)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "getted_number_vip4[15..0]" (rect 90 0 222 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(line_width 1))
@@ -953,6 +889,70 @@ applicable agreement for further details.
 	(rect 2248 608 2443 624)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "queue_count_a[4..0]" (rect 90 0 190 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 2248 1528 2486 1544)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "getted_number_vip_a1[15..0]" (rect 90 0 233 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 2248 1544 2486 1560)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "getted_number_vip_a2[15..0]" (rect 90 0 233 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 2248 1560 2486 1576)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "getted_number_vip_b1[15..0]" (rect 90 0 233 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 2248 1576 2486 1592)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "getted_number_vip_b2[15..0]" (rect 90 0 233 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(line_width 1))
@@ -1961,9 +1961,9 @@ applicable agreement for further details.
 	(annotation_block (parameter)(rect 1544 1232 1720 1264))
 )
 (symbol
-	(rect 520 1488 808 1648)
+	(rect 520 408 808 568)
 	(text "Waitings" (rect 5 0 47 12)(font "Arial" ))
-	(text "inst" (rect 8 144 25 156)(font "Arial" ))
+	(text "inst2" (rect 8 144 31 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -2062,28 +2062,28 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"FLAGS_1"
-		"00000000"
+		"0001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_2"
-		"00000000"
+		"0001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_3"
-		"00000000"
+		"0001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_4"
-		"00000000"
+		"0001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 272 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 312 1224 512 1312))
+	(annotation_block (parameter)(rect 328 128 512 216))
 )
 (symbol
 	(rect 520 936 808 1096)
@@ -2187,33 +2187,33 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"FLAGS_1"
-		"00000000"
+		"0010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_2"
-		"00000000"
+		"0010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_3"
-		"00000000"
+		"0010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_4"
-		"00000000"
+		"0010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 272 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 312 688 512 776))
+	(annotation_block (parameter)(rect 328 688 512 776))
 )
 (symbol
-	(rect 520 408 808 568)
+	(rect 520 1488 808 1648)
 	(text "Waitings" (rect 5 0 47 12)(font "Arial" ))
-	(text "inst2" (rect 8 144 31 156)(font "Arial" ))
+	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -2312,28 +2312,28 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"FLAGS_1"
-		"00000000"
+		"1001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_2"
-		"00000000"
+		"1001"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_3"
-		"00000000"
+		"1010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_4"
-		"00000000"
+		"1010"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 272 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 312 128 512 216))
+	(annotation_block (parameter)(rect 328 1224 512 1312))
 )
 (connector
 	(pt 520 440)

@@ -7,7 +7,7 @@ USE ieee.std_logic_unsigned.ALL;
 ENTITY Waiting IS
   GENERIC (
     RAM_WIDTH : NATURAL := 16;
-    FLAGS : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0') -- flag width
+    FLAGS : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0') -- flag width
   );
   PORT (
     clock : IN std_logic;
@@ -25,6 +25,13 @@ ENTITY Waiting IS
 END Waiting;
 
 ARCHITECTURE arch OF Waiting IS
+  CONSTANT FLAG_SCREEN_WAITING : std_logic_vector(1 DOWNTO 0) := "10";
+  CONSTANT FLAG_SCREEN_SERVICE : std_logic_vector(1 DOWNTO 0) := "11";
+  CONSTANT FLAG_ERROR_FREE : std_logic_vector(1 DOWNTO 0) := "00";
+  CONSTANT FLAG_ERROR_QUEUE_EMPTY : std_logic_vector(1 DOWNTO 0) := "10";
+  CONSTANT FLAG_ERROR_QUEUE_FULL : std_logic_vector(1 DOWNTO 0) := "11";
+  CONSTANT FLAG_ERROR_UNKNOWN : std_logic_vector(1 DOWNTO 0) := "01";
+
   TYPE states IS(idle, pulling, pulled, pushing, success);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
@@ -65,6 +72,7 @@ BEGIN
         waitOrNext(next_state, enable_pull, pulling, pulled);
 
       WHEN pulled =>
+        -- TODO go push_error state when queue full
         next_state <= pushing;
 
       WHEN pushing =>
@@ -97,7 +105,7 @@ BEGIN
 
       WHEN pushing =>
         push <= '1';
-        data_out <= FLAGS & data;
+        data_out <= FLAG_SCREEN_WAITING & FLAGS & FLAG_ERROR_FREE & data;
 
       WHEN success =>
         push <= '0';

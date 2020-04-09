@@ -232,46 +232,6 @@ SIGNAL("get_number_b4")
 	PARENT = "";
 }
 
-SIGNAL("get_number_vip1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("get_number_vip2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("get_number_vip3")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("get_number_vip4")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("push_a1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -3432,686 +3392,6 @@ SIGNAL("getted_number_b4[0]")
 	PARENT = "getted_number_b4";
 }
 
-SIGNAL("getted_number_vip1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number_vip1[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip1[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip1";
-}
-
-SIGNAL("getted_number_vip2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number_vip2[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip2[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip2";
-}
-
-SIGNAL("getted_number_vip3")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number_vip3[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip3[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip3";
-}
-
-SIGNAL("getted_number_vip4")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("getted_number_vip4[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
-SIGNAL("getted_number_vip4[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "getted_number_vip4";
-}
-
 SIGNAL("queue_count_a")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -4292,63 +3572,723 @@ SIGNAL("queue_count_vip[0]")
 	PARENT = "queue_count_vip";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.idle")
+SIGNAL("getted_number_vip_a1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.pulled")
+SIGNAL("getted_number_vip_a1[15]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a1[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a1";
+}
+
+SIGNAL("getted_number_vip_a2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.pulling")
+SIGNAL("getted_number_vip_a2[15]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_a2[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_a2";
+}
+
+SIGNAL("getted_number_vip_b1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.pushing")
+SIGNAL("getted_number_vip_b1[15]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b1[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b1";
+}
+
+SIGNAL("getted_number_vip_b2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 16;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.pushing~feeder")
+SIGNAL("getted_number_vip_b2[15]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[14]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[13]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[12]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[11]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[10]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("getted_number_vip_b2[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "getted_number_vip_b2";
+}
+
+SIGNAL("get_number_vip_a1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
 	PARENT = "";
 }
 
-SIGNAL("services:services_a|Service:b2v_service_1|present_state.success")
+SIGNAL("get_number_vip_a2")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
-	DIRECTION = BURIED;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("get_number_vip_b1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("get_number_vip_b2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
 	PARENT = "";
 }
 
@@ -4577,46 +4517,6 @@ TRANSITION_LIST("get_number_b3")
 }
 
 TRANSITION_LIST("get_number_b4")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("get_number_vip1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 90.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 840.0;
-	}
-}
-
-TRANSITION_LIST("get_number_vip2")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("get_number_vip3")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("get_number_vip4")
 {
 	NODE
 	{
@@ -7307,582 +7207,6 @@ TRANSITION_LIST("getted_number_b4[0]")
 	}
 }
 
-TRANSITION_LIST("getted_number_vip1[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip1[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip2[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip3[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("getted_number_vip4[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
 TRANSITION_LIST("queue_count_a[4]")
 {
 	NODE
@@ -8018,57 +7342,619 @@ TRANSITION_LIST("queue_count_vip[0]")
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.idle")
+TRANSITION_LIST("getted_number_vip_a1[15]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.pulled")
+TRANSITION_LIST("getted_number_vip_a1[14]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.pulling")
+TRANSITION_LIST("getted_number_vip_a1[13]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.pushing")
+TRANSITION_LIST("getted_number_vip_a1[12]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.pushing~feeder")
+TRANSITION_LIST("getted_number_vip_a1[11]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("services:services_a|Service:b2v_service_1|present_state.success")
+TRANSITION_LIST("getted_number_vip_a1[10]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a1[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_a2[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b1[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[15]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[14]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[13]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[12]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[11]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[10]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("getted_number_vip_b2[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("get_number_vip_a1")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 90.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 840.0;
+	}
+}
+
+TRANSITION_LIST("get_number_vip_a2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("get_number_vip_b1")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("get_number_vip_b2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -8164,7 +8050,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "get_number_vip1";
+	CHANNEL = "get_number_vip_a1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 10;
@@ -8173,7 +8059,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "get_number_vip2";
+	CHANNEL = "get_number_vip_a2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 11;
@@ -8182,7 +8068,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "get_number_vip3";
+	CHANNEL = "get_number_vip_b1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 12;
@@ -8191,7 +8077,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "get_number_vip4";
+	CHANNEL = "get_number_vip_b2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 13;
@@ -9560,7 +9446,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1";
+	CHANNEL = "getted_number_vip_a1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 150;
@@ -9570,7 +9456,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[15]";
+	CHANNEL = "getted_number_vip_a1[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 151;
@@ -9580,7 +9466,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[14]";
+	CHANNEL = "getted_number_vip_a1[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 152;
@@ -9590,7 +9476,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[13]";
+	CHANNEL = "getted_number_vip_a1[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 153;
@@ -9600,7 +9486,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[12]";
+	CHANNEL = "getted_number_vip_a1[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 154;
@@ -9610,7 +9496,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[11]";
+	CHANNEL = "getted_number_vip_a1[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 155;
@@ -9620,7 +9506,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[10]";
+	CHANNEL = "getted_number_vip_a1[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 156;
@@ -9630,7 +9516,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[9]";
+	CHANNEL = "getted_number_vip_a1[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 157;
@@ -9640,7 +9526,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[8]";
+	CHANNEL = "getted_number_vip_a1[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 158;
@@ -9650,7 +9536,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[7]";
+	CHANNEL = "getted_number_vip_a1[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 159;
@@ -9660,7 +9546,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[6]";
+	CHANNEL = "getted_number_vip_a1[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 160;
@@ -9670,7 +9556,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[5]";
+	CHANNEL = "getted_number_vip_a1[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 161;
@@ -9680,7 +9566,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[4]";
+	CHANNEL = "getted_number_vip_a1[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 162;
@@ -9690,7 +9576,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[3]";
+	CHANNEL = "getted_number_vip_a1[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 163;
@@ -9700,7 +9586,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[2]";
+	CHANNEL = "getted_number_vip_a1[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 164;
@@ -9710,7 +9596,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[1]";
+	CHANNEL = "getted_number_vip_a1[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 165;
@@ -9720,7 +9606,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip1[0]";
+	CHANNEL = "getted_number_vip_a1[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 166;
@@ -9730,7 +9616,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2";
+	CHANNEL = "getted_number_vip_a2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 167;
@@ -9740,7 +9626,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[15]";
+	CHANNEL = "getted_number_vip_a2[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 168;
@@ -9750,7 +9636,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[14]";
+	CHANNEL = "getted_number_vip_a2[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 169;
@@ -9760,7 +9646,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[13]";
+	CHANNEL = "getted_number_vip_a2[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 170;
@@ -9770,7 +9656,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[12]";
+	CHANNEL = "getted_number_vip_a2[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 171;
@@ -9780,7 +9666,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[11]";
+	CHANNEL = "getted_number_vip_a2[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 172;
@@ -9790,7 +9676,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[10]";
+	CHANNEL = "getted_number_vip_a2[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 173;
@@ -9800,7 +9686,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[9]";
+	CHANNEL = "getted_number_vip_a2[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 174;
@@ -9810,7 +9696,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[8]";
+	CHANNEL = "getted_number_vip_a2[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 175;
@@ -9820,7 +9706,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[7]";
+	CHANNEL = "getted_number_vip_a2[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 176;
@@ -9830,7 +9716,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[6]";
+	CHANNEL = "getted_number_vip_a2[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 177;
@@ -9840,7 +9726,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[5]";
+	CHANNEL = "getted_number_vip_a2[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 178;
@@ -9850,7 +9736,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[4]";
+	CHANNEL = "getted_number_vip_a2[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 179;
@@ -9860,7 +9746,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[3]";
+	CHANNEL = "getted_number_vip_a2[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 180;
@@ -9870,7 +9756,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[2]";
+	CHANNEL = "getted_number_vip_a2[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 181;
@@ -9880,7 +9766,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[1]";
+	CHANNEL = "getted_number_vip_a2[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 182;
@@ -9890,7 +9776,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip2[0]";
+	CHANNEL = "getted_number_vip_a2[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 183;
@@ -9900,7 +9786,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3";
+	CHANNEL = "getted_number_vip_b1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 184;
@@ -9910,7 +9796,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[15]";
+	CHANNEL = "getted_number_vip_b1[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 185;
@@ -9920,7 +9806,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[14]";
+	CHANNEL = "getted_number_vip_b1[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 186;
@@ -9930,7 +9816,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[13]";
+	CHANNEL = "getted_number_vip_b1[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 187;
@@ -9940,7 +9826,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[12]";
+	CHANNEL = "getted_number_vip_b1[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 188;
@@ -9950,7 +9836,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[11]";
+	CHANNEL = "getted_number_vip_b1[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 189;
@@ -9960,7 +9846,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[10]";
+	CHANNEL = "getted_number_vip_b1[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 190;
@@ -9970,7 +9856,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[9]";
+	CHANNEL = "getted_number_vip_b1[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 191;
@@ -9980,7 +9866,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[8]";
+	CHANNEL = "getted_number_vip_b1[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 192;
@@ -9990,7 +9876,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[7]";
+	CHANNEL = "getted_number_vip_b1[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 193;
@@ -10000,7 +9886,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[6]";
+	CHANNEL = "getted_number_vip_b1[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 194;
@@ -10010,7 +9896,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[5]";
+	CHANNEL = "getted_number_vip_b1[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 195;
@@ -10020,7 +9906,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[4]";
+	CHANNEL = "getted_number_vip_b1[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 196;
@@ -10030,7 +9916,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[3]";
+	CHANNEL = "getted_number_vip_b1[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 197;
@@ -10040,7 +9926,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[2]";
+	CHANNEL = "getted_number_vip_b1[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 198;
@@ -10050,7 +9936,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[1]";
+	CHANNEL = "getted_number_vip_b1[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 199;
@@ -10060,7 +9946,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip3[0]";
+	CHANNEL = "getted_number_vip_b1[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 200;
@@ -10070,7 +9956,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4";
+	CHANNEL = "getted_number_vip_b2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 201;
@@ -10080,7 +9966,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[15]";
+	CHANNEL = "getted_number_vip_b2[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 202;
@@ -10090,7 +9976,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[14]";
+	CHANNEL = "getted_number_vip_b2[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 203;
@@ -10100,7 +9986,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[13]";
+	CHANNEL = "getted_number_vip_b2[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 204;
@@ -10110,7 +9996,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[12]";
+	CHANNEL = "getted_number_vip_b2[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 205;
@@ -10120,7 +10006,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[11]";
+	CHANNEL = "getted_number_vip_b2[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 206;
@@ -10130,7 +10016,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[10]";
+	CHANNEL = "getted_number_vip_b2[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 207;
@@ -10140,7 +10026,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[9]";
+	CHANNEL = "getted_number_vip_b2[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 208;
@@ -10150,7 +10036,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[8]";
+	CHANNEL = "getted_number_vip_b2[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 209;
@@ -10160,7 +10046,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[7]";
+	CHANNEL = "getted_number_vip_b2[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 210;
@@ -10170,7 +10056,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[6]";
+	CHANNEL = "getted_number_vip_b2[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 211;
@@ -10180,7 +10066,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[5]";
+	CHANNEL = "getted_number_vip_b2[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 212;
@@ -10190,7 +10076,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[4]";
+	CHANNEL = "getted_number_vip_b2[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 213;
@@ -10200,7 +10086,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[3]";
+	CHANNEL = "getted_number_vip_b2[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 214;
@@ -10210,7 +10096,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[2]";
+	CHANNEL = "getted_number_vip_b2[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 215;
@@ -10220,7 +10106,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[1]";
+	CHANNEL = "getted_number_vip_b2[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 216;
@@ -10230,7 +10116,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "getted_number_vip4[0]";
+	CHANNEL = "getted_number_vip_b2[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 217;
@@ -12296,60 +12182,6 @@ DISPLAY_LINE
 	TREE_INDEX = 425;
 	TREE_LEVEL = 1;
 	PARENT = 420;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.idle";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 426;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.pulled";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 427;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.pulling";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 428;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.pushing";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 429;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.pushing~feeder";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 430;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "services:services_a|Service:b2v_service_1|present_state.success";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 431;
-	TREE_LEVEL = 0;
 }
 
 TIME_BAR

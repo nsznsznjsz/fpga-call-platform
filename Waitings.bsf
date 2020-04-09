@@ -121,22 +121,22 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"FLAGS_1"
-		"00000000"
+		"00000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_2"
-		"00000000"
+		"00000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_3"
-		"00000000"
+		"00000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_4"
-		"00000000"
+		"00000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing

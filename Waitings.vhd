@@ -7,16 +7,16 @@ LIBRARY work;
 ENTITY Waitings IS
   GENERIC (
     RAM_WIDTH : NATURAL := 16;
-    FLAGS_1 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_2 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_3 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_4 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0') -- flag width
+    FLAGS_1 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
+    FLAGS_2 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
+    FLAGS_3 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
+    FLAGS_4 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0') -- flag width
   );
   PORT (
     clock : IN STD_LOGIC;
     reset : IN std_logic;
 
-    -- for queues
+    -- for queue
     pull : OUT STD_LOGIC;
     enable_out : IN STD_LOGIC;
     data_out : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
@@ -90,7 +90,7 @@ ARCHITECTURE arch OF Waitings IS
   COMPONENT Waiting
     GENERIC (
       RAM_WIDTH : NATURAL;
-      FLAGS : STD_LOGIC_VECTOR(7 DOWNTO 0) -- flag width
+      FLAGS : STD_LOGIC_VECTOR(3 DOWNTO 0) -- flag width
     );
     PORT (
       clock : IN std_logic;
