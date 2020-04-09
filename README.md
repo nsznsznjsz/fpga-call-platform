@@ -2,13 +2,17 @@
 
 ## Data Definition
 
-> All undefined code is forbidden
+### Summary
 
-> Use 16 bits
+Use 16 bits, 8 bit data and 8 bit flags(include 4 bit group flag)
+
+All undefined code is forbidden
+
+### Detail
 
 - bit 0-1: screen flag
   - 00: non flag
-  - 01/10: queuing / called number;
+  - 10/11: waiting / called number;
 
 - bit 2~5: groups flag
   - 0000: non flag
@@ -23,26 +27,28 @@
 
 - bit 8~15: numbers
   - 0: error
-  - others: numbers;
+  - others: numbers
 
 ## TODOS
 
 - [ ] screen: decoding flags
+- [ ] screen: print queue
 - [ ] services: throw error when queue is empty
 - [ ] customs: throw error when queue is full
 - [ ] service: recall
-- [ ] groups flag
-- [ ] screen flag
+- [x] groups flag
+- [x] screen flag
 
 ## ISSUES
 
 - A端取到 A1 号后, b端应取到 B1 or B2?
+- How Many Screens?
 
 ## Detail Design
 
 ### 单个组件流程
 
-> see Watting's RTL for details
+> see Waiting's RTL for details
 
 1. 按钮按下, 请求取数据
 2. 等待允许取数据
@@ -55,10 +61,10 @@
 
 #### 取数据
 
-- Customs 端: Watting -> MultiCounter -> Counter
-- Services 端: Watting -> Arch -> Queue
+- Customs 端: Waiting -> MultiCounter -> Counter
+- Services 端: Waiting -> Arch -> Queue
 
 #### 推数据
 
-- Customs 端: Watting -> Arch -> Queue
-- Services 端: Watting -> Arch -> Screen
+- Customs 端: Waiting -> Arch -> Queue
+- Services 端: Waiting -> Arch -> Screen
