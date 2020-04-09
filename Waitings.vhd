@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.ALL;
 LIBRARY work;
 
 -- ¿Í»§¶ËÈ¡ºÅÆ÷
-ENTITY Queuing IS
+ENTITY Waitings IS
   GENERIC (
     RAM_WIDTH : NATURAL := 16;
     FLAGS_1 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0'); -- flag width
@@ -33,9 +33,9 @@ ENTITY Queuing IS
     getted_number_3 : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
     getted_number_4 : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0)
   );
-END Queuing;
+END Waitings;
 
-ARCHITECTURE arch OF Queuing IS
+ARCHITECTURE arch OF Waitings IS
 
   COMPONENT MultiCounter
     GENERIC (

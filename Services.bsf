@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "symbol" (version "1.1"))
 (symbol
 	(rect 16 16 320 208)
-	(text "services" (rect 5 0 47 12)(font "Arial" ))
+	(text "Services" (rect 5 0 48 12)(font "Arial" ))
 	(text "inst" (rect 8 176 25 188)(font "Arial" ))
 	(port
 		(pt 0 32)

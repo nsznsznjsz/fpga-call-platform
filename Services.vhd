@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 
 LIBRARY work;
 
-ENTITY services IS
+ENTITY Services IS
   GENERIC (
     RAM_WIDTH : NATURAL := 16
   );
@@ -30,9 +30,9 @@ ENTITY services IS
     data_out_3 : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
     data_out_4 : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0)
   );
-END services;
+END Services;
 
-ARCHITECTURE bdf_type OF services IS
+ARCHITECTURE bdf_type OF Services IS
 
   COMPONENT Service IS
     GENERIC (
