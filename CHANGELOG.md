@@ -13,3 +13,9 @@
 ## 0.1.3 (5e14b23)
 
 - feat: update flags, see readme for detail
+
+## 0.1.4 (bee5059)
+
+- feat: add decoder
+- refactor(Waiting/Service): output a default value (an ERROR) when it is not `pushing` state
+- refactor: create config package

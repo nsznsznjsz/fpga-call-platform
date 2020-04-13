@@ -39,7 +39,9 @@ All undefined code is forbidden
 - [ ] *: reset
 - [x] groups flag
 - [x] screen flag
-- [ ] refactor: use library
+- [x] refactor: use library
+- [ ] refacotr(flag): use config for bit range 
+- [ ] decoder: output length locked
 
 ## ISSUES
 
