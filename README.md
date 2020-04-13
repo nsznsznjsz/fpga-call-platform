@@ -36,8 +36,10 @@ All undefined code is forbidden
 - [ ] services: throw error when queue is empty
 - [ ] customs: throw error when queue is full
 - [ ] service: recall
+- [ ] *: reset
 - [x] groups flag
 - [x] screen flag
+- [ ] refactor: use library
 
 ## ISSUES
 

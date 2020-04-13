@@ -40,7 +40,7 @@ ARCHITECTURE arch OF Waiting IS
   CONSTANT FLAG_GROUP_A : std_logic_vector(3 DOWNTO 0) := "0001";
   CONSTANT FLAG_GROUP_B : std_logic_vector(3 DOWNTO 0) := "0010";
   CONSTANT FLAG_GROUP_VIPA : std_logic_vector(3 DOWNTO 0) := "1001";
-  CONSTANT FLAG_GROUP_VIPB : std_logic_vector(3 DOWNTO 0) := "1001";
+  CONSTANT FLAG_GROUP_VIPB : std_logic_vector(3 DOWNTO 0) := "1010";
 
   CONSTANT FLAG_ERROR_FREE : std_logic_vector(1 DOWNTO 0) := "00";
   CONSTANT FLAG_ERROR_QUEUE_EMPTY : std_logic_vector(1 DOWNTO 0) := "10";
@@ -51,7 +51,8 @@ ARCHITECTURE arch OF Waiting IS
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
-  SIGNAL data : std_logic_vector(RAM_WIDTH - 9 DOWNTO 0);
+  SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+  CONSTANT ALL_ZERO : std_logic_vector(RAM_WIDTH - 9 DOWNTO 0) := (OTHERS => '0');
 
   -- jump next state
   PROCEDURE waitOrNext(
@@ -107,20 +108,29 @@ BEGIN
     -- make latches: data, data_out
     push <= '0';
     pull <= '0';
+    data_out <=
+      FLAG_SCREEN_WAITING -- 2 bit
+      & FLAG_GROUP_FREE -- 4 bit
+      & FLAG_ERROR_UNKNOWN -- 2 bit
+      & ALL_ZERO;
 
     CASE present_state IS
       WHEN idle => NULL;
 
       WHEN pulling =>
         pull <= '1';
-        data <= data_in;
+        data <=
+          FLAG_SCREEN_WAITING -- 2 bit
+          & FLAGS -- 4 bit
+          & FLAG_ERROR_FREE -- 2 bit
+          & data_in;
 
       WHEN pulled =>
         pull <= '0';
 
       WHEN pushing =>
         push <= '1';
-        data_out <= FLAG_SCREEN_WAITING & FLAGS & FLAG_ERROR_FREE & data;
+        data_out <= data;
 
       WHEN success =>
         push <= '0';
