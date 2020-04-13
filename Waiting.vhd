@@ -9,7 +9,7 @@ USE work.config.ALL;
 -- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Waiting IS
   GENERIC (
-    FLAGS : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0') -- flag width
+    FLAGS : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0') -- flag width
   );
   PORT (
     clock : IN std_logic;
@@ -21,7 +21,7 @@ ENTITY Waiting IS
     push : OUT std_logic; -- 申请发送
     pushed : IN std_logic; -- 已发送
 
-    data_in : IN std_logic_vector(RAM_WIDTH - 9 DOWNTO 0);
+    data_in : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
   );
 END Waiting;
@@ -32,7 +32,7 @@ ARCHITECTURE arch OF Waiting IS
   SIGNAL next_state : states;
 
   SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
-  CONSTANT ALL_ZERO : std_logic_vector(RAM_WIDTH - 9 DOWNTO 0) := (OTHERS => '0');
+  CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
 
   -- jump next state
   PROCEDURE waitOrNext(
@@ -92,7 +92,7 @@ BEGIN
       FLAG_SCREEN_WAITING -- 2 bit
       & FLAG_GROUP_FREE -- 4 bit
       & FLAG_ERROR_UNKNOWN -- 2 bit
-      & ALL_ZERO;
+      & DATA_DEFAULT;
 
     CASE present_state IS
       WHEN idle => NULL;

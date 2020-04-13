@@ -33,7 +33,7 @@ ARCHITECTURE arch OF Service IS
   SIGNAL next_state : states;
 
   SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
-  CONSTANT ALL_ZERO : std_logic_vector(RAM_WIDTH - 9 DOWNTO 0) := (OTHERS => '0');
+  CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
 
   -- jump next state
   PROCEDURE waitOrNext(
@@ -95,10 +95,10 @@ BEGIN
     push <= '0';
     pull <= '0';
     data_out <=
-      FLAG_SCREEN_SERVICE -- 2 bit
-      & FLAG_GROUP_FREE -- 4 bit
-      & FLAG_ERROR_UNKNOWN -- 2 bit
-      & ALL_ZERO;
+      FLAG_SCREEN_SERVICE
+      & FLAG_GROUP_FREE
+      & FLAG_ERROR_UNKNOWN
+      & DATA_DEFAULT;
 
     CASE present_state IS
       WHEN idle => NULL;
@@ -106,8 +106,8 @@ BEGIN
       WHEN pulling =>
         pull <= '1';
         data <=
-          FLAG_SCREEN_SERVICE -- 2 bit
-          & data_in(RAM_WIDTH - 3 DOWNTO 0);
+          FLAG_SCREEN_SERVICE
+          & data_in(FLAG_SCREEN_LOW - 1 DOWNTO 0);
 
       WHEN pulled =>
         pull <= '0';

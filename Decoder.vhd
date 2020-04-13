@@ -8,7 +8,7 @@ USE work.config.ALL;
 ENTITY Decoder IS
   PORT (
     data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
-    data_out : OUT std_logic_vector(WORD_LENGTH * 8 - 1 DOWNTO 0)
+    data_out : OUT std_logic_vector(WORD_WIDTH * 8 - 1 DOWNTO 0)
   );
 END Decoder;
 
@@ -37,8 +37,8 @@ ARCHITECTURE arch OF Decoder IS
   CONSTANT d8 : ASCII := "00111000";
   CONSTANT d9 : ASCII := "00111001";
 
-  SUBTYPE NUM IS std_logic_vector((WORD_LENGTH - 3) * 8 - 1 DOWNTO 0);
-  TYPE NUMBERS IS ARRAY(0 TO WORD_LENGTH - 4) OF ASCII;
+  SUBTYPE NUM IS std_logic_vector((WORD_WIDTH - 3) * 8 - 1 DOWNTO 0);
+  TYPE NUMBERS IS ARRAY(0 TO WORD_WIDTH - 4) OF ASCII;
 
   FUNCTION to_number(num : NUMBERS) RETURN STD_LOGIC_VECTOR IS
     VARIABLE number : STD_LOGIC_VECTOR((num'length * 8) - 1 DOWNTO 0);
@@ -55,16 +55,16 @@ BEGIN
     VARIABLE groups : std_logic_vector(15 DOWNTO 0);
     VARIABLE numbers : NUMBERS;
     VARIABLE number : NUM;
-    VARIABLE scan : INTEGER; -- TODO range refactor needed
+    VARIABLE scan : INTEGER;
   BEGIN
-    IF (data_in(RAM_WIDTH - 7 DOWNTO RAM_WIDTH - 8) = FLAG_ERROR_FREE) THEN
-      CASE(data_in(RAM_WIDTH - 1 DOWNTO RAM_WIDTH - 2)) IS
+    IF (data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) = FLAG_ERROR_FREE) THEN
+      CASE(data_in(FLAG_SCREEN_HIGH DOWNTO FLAG_SCREEN_LOW)) IS
       WHEN FLAG_SCREEN_WAITING => screen := W;
       WHEN FLAG_SCREEN_SERVICE => screen := S;
       WHEN OTHERS => screen := X;
       END CASE;
 
-      CASE (data_in(RAM_WIDTH - 3 DOWNTO RAM_WIDTH - 6)) IS
+      CASE (data_in(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW)) IS
         WHEN FLAG_GROUP_A => groups := G & A;
         WHEN FLAG_GROUP_B => groups := G & B;
         WHEN FLAG_GROUP_VIPA => groups := V & A;
@@ -72,7 +72,7 @@ BEGIN
         WHEN OTHERS => groups := X & X;
       END CASE;
 
-      scan := to_integer(unsigned(data_in(RAM_WIDTH - 9 DOWNTO 0)));
+      scan := to_integer(unsigned(data_in(DATA_WIDTH - 1 DOWNTO 0)));
       FOR i IN numbers'RANGE LOOP
         CASE (scan MOD 10) IS
           WHEN 0 => numbers(i) := d0;
@@ -93,7 +93,7 @@ BEGIN
       number := to_number(numbers);
       data_out <= screen & groups & number;
     ELSE
-      data_out <= E & R & R & O & R; -- TODO length error
+      data_out <= E & R & R & O & R; -- TODO length locked at 5
     END IF;
   END PROCESS;
 END arch;

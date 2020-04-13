@@ -7,10 +7,10 @@ USE work.config.ALL;
 -- 客户端取号器
 ENTITY Waitings IS
   GENERIC (
-    FLAGS_1 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_2 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_3 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
-    FLAGS_4 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0') -- flag width
+    FLAGS_1 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    FLAGS_2 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    FLAGS_3 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    FLAGS_4 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0')
   );
   PORT (
     clock : IN STD_LOGIC;
@@ -101,7 +101,7 @@ ARCHITECTURE arch OF Waitings IS
       push : OUT std_logic; -- 申请发送
       pushed : IN std_logic; -- 已发送
 
-      data_in : IN std_logic_vector(RAM_WIDTH - 9 DOWNTO 0);
+      data_in : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
       data_out : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
     );
   END COMPONENT;
@@ -121,7 +121,7 @@ ARCHITECTURE arch OF Waitings IS
   SIGNAL s_getted_number_3 : STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
   SIGNAL s_getted_number_4 : STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
 
-  SIGNAL data : STD_LOGIC_VECTOR(RAM_WIDTH - 9 DOWNTO 0);
+  SIGNAL data : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
 
   SIGNAL enable_1 : STD_LOGIC;
   SIGNAL enable_2 : STD_LOGIC;
