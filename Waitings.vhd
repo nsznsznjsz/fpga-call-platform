@@ -2,11 +2,11 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
 LIBRARY work;
+USE work.config.ALL;
 
 -- ¿Í»§¶ËÈ¡ºÅÆ÷
 ENTITY Waitings IS
   GENERIC (
-    RAM_WIDTH : NATURAL := 16;
     FLAGS_1 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
     FLAGS_2 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
     FLAGS_3 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); -- flag width
@@ -89,7 +89,6 @@ ARCHITECTURE arch OF Waitings IS
 
   COMPONENT Waiting
     GENERIC (
-      RAM_WIDTH : NATURAL;
       FLAGS : STD_LOGIC_VECTOR(3 DOWNTO 0) -- flag width
     );
     PORT (
@@ -183,7 +182,6 @@ BEGIN
 
   b2v_custom_side_1 : Waiting
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH,
     FLAGS => FLAGS_1
   )
   PORT MAP(
@@ -199,7 +197,6 @@ BEGIN
 
   b2v_custom_side_2 : Waiting
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH,
     FLAGS => FLAGS_2
   )
   PORT MAP(
@@ -215,7 +212,6 @@ BEGIN
 
   b2v_custom_side_3 : Waiting
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH,
     FLAGS => FLAGS_3
   )
   PORT MAP(
@@ -231,7 +227,6 @@ BEGIN
 
   b2v_custom_side_4 : Waiting
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH,
     FLAGS => FLAGS_4
   )
   PORT MAP(

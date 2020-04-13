@@ -3,10 +3,13 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
+LIBRARY work;
+USE work.config.ALL;
+
 ENTITY SourceMux IS
-  GENERIC (
-    RAM_WIDTH : NATURAL := 8
-  );
+  -- GENERIC (
+  --   RAM_WIDTH : NATURAL := 16
+  -- );
   PORT (
     clock : IN std_logic;
 

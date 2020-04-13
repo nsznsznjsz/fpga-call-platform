@@ -1,11 +1,14 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
+LIBRARY work;
+USE work.config.ALL;
+
 ENTITY Queue IS
-  GENERIC (
-    RAM_WIDTH : NATURAL := 16;
-    RAM_DEPTH : NATURAL := 32
-  );
+  -- GENERIC (
+  --   RAM_WIDTH : NATURAL := 16;
+  --   RAM_DEPTH : NATURAL := 32
+  -- );
   PORT (
     clock : IN std_logic;
     reset : IN std_logic;

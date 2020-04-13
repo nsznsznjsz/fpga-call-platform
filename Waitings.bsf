@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 304 176)
+	(rect 16 16 256 176)
 	(text "Waitings" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
@@ -73,74 +73,69 @@ applicable agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 1))
 	)
 	(port
-		(pt 288 32)
+		(pt 240 32)
 		(output)
 		(text "pull" (rect 0 0 16 12)(font "Arial" ))
-		(text "pull" (rect 251 27 267 39)(font "Arial" ))
-		(line (pt 288 32)(pt 272 32)(line_width 1))
+		(text "pull" (rect 203 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 1))
 	)
 	(port
-		(pt 288 48)
+		(pt 240 48)
 		(output)
-		(text "data_out[ram_width-1..0]" (rect 0 0 121 12)(font "Arial" ))
-		(text "data_out[ram_width-1..0]" (rect 146 43 267 55)(font "Arial" ))
-		(line (pt 288 48)(pt 272 48)(line_width 3))
+		(text "data_out[15..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_out[15..0]" (rect 145 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
 	(port
-		(pt 288 64)
+		(pt 240 64)
 		(output)
-		(text "getted_number_1[ram_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
-		(text "getted_number_1[ram_width-1..0]" (rect 103 59 267 71)(font "Arial" ))
-		(line (pt 288 64)(pt 272 64)(line_width 3))
+		(text "getted_number_1[15..0]" (rect 0 0 116 12)(font "Arial" ))
+		(text "getted_number_1[15..0]" (rect 103 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
 	(port
-		(pt 288 80)
+		(pt 240 80)
 		(output)
-		(text "getted_number_2[ram_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
-		(text "getted_number_2[ram_width-1..0]" (rect 103 75 267 87)(font "Arial" ))
-		(line (pt 288 80)(pt 272 80)(line_width 3))
+		(text "getted_number_2[15..0]" (rect 0 0 116 12)(font "Arial" ))
+		(text "getted_number_2[15..0]" (rect 103 75 219 87)(font "Arial" ))
+		(line (pt 240 80)(pt 224 80)(line_width 3))
 	)
 	(port
-		(pt 288 96)
+		(pt 240 96)
 		(output)
-		(text "getted_number_3[ram_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
-		(text "getted_number_3[ram_width-1..0]" (rect 103 91 267 103)(font "Arial" ))
-		(line (pt 288 96)(pt 272 96)(line_width 3))
+		(text "getted_number_3[15..0]" (rect 0 0 116 12)(font "Arial" ))
+		(text "getted_number_3[15..0]" (rect 103 91 219 103)(font "Arial" ))
+		(line (pt 240 96)(pt 224 96)(line_width 3))
 	)
 	(port
-		(pt 288 112)
+		(pt 240 112)
 		(output)
-		(text "getted_number_4[ram_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
-		(text "getted_number_4[ram_width-1..0]" (rect 103 107 267 119)(font "Arial" ))
-		(line (pt 288 112)(pt 272 112)(line_width 3))
+		(text "getted_number_4[15..0]" (rect 0 0 116 12)(font "Arial" ))
+		(text "getted_number_4[15..0]" (rect 103 107 219 119)(font "Arial" ))
+		(line (pt 240 112)(pt 224 112)(line_width 3))
 	)
-	(parameter
-		"RAM_WIDTH"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"FLAGS_1"
-		"00000"
+		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_2"
-		"00000"
+		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_3"
-		"00000"
+		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"FLAGS_4"
-		"00000"
+		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 272 144)(line_width 1))
+		(rectangle (rect 16 16 224 144)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 304 -64 404 16))
+	(annotation_block (parameter)(rect 256 -64 356 16))
 )

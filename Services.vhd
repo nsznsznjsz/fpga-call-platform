@@ -2,11 +2,9 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
 LIBRARY work;
+USE work.config.ALL;
 
 ENTITY Services IS
-  GENERIC (
-    RAM_WIDTH : NATURAL := 16
-  );
   PORT (
     clock : IN STD_LOGIC;
 
@@ -35,9 +33,6 @@ END Services;
 ARCHITECTURE bdf_type OF Services IS
 
   COMPONENT Service IS
-    GENERIC (
-      RAM_WIDTH : NATURAL := 16
-    );
     PORT (
       clock : IN std_logic;
       call : IN std_logic; -- ½ÐºÅ
@@ -95,9 +90,6 @@ ARCHITECTURE bdf_type OF Services IS
 BEGIN
 
   b2v_service_1 : Service
-  GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
-  )
   PORT MAP(
     clock => clock,
     call => call_1,
@@ -111,9 +103,6 @@ BEGIN
   );
 
   b2v_service_2 : Service
-  GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
-  )
   PORT MAP(
     clock => clock,
     call => call_2,
@@ -127,9 +116,6 @@ BEGIN
   );
 
   b2v_service_3 : Service
-  GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
-  )
   PORT MAP(
     clock => clock,
     call => call_3,
@@ -143,9 +129,6 @@ BEGIN
   );
 
   b2v_service_4 : Service
-  GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
-  )
   PORT MAP(
     clock => clock,
     call => call_4,
