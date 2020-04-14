@@ -42,6 +42,7 @@ All undefined code is forbidden
 - [x] refactor: use library
 - [ ] refacotr(flag): use config for bit range 
 - [ ] decoder: output length locked
+- [ ] refactor: change pins type (set all pins as virtual pins now) 
 
 ## ISSUES
 

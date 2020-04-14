@@ -16,7 +16,7 @@ PACKAGE Config IS
 
   -- If you are updating FLAGS, you need: 
   -- 1. Update README
-  -- 2. (Change Width) Update `Waiting`, `Service` and `Decoder`
+  -- 2. (Change order) Update `Waiting`, `Service` and `Decoder`
 
   -- screen flags
   CONSTANT FLAG_SCREEN_WIDTH : NATURAL := 2;
