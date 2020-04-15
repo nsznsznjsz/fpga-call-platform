@@ -6,13 +6,15 @@ USE ieee.std_logic_unsigned.ALL;
 LIBRARY work;
 USE work.config.ALL;
 
--- 数据源 -> 取号 -> 发射 -> 接收器
+-- 数据源 -> Waiting -> 发射器 -> 接收器
+-- 不处理 队列为满 的错误, 交由发射器处理
 ENTITY Waiting IS
   GENERIC (
     GROUP_FLAG : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0') -- flag width
   );
   PORT (
     clock : IN std_logic;
+    reset : IN std_logic;
     button : IN std_logic; -- 用户取号
 
     pull : OUT std_logic; -- 申请取号
@@ -27,7 +29,7 @@ ENTITY Waiting IS
 END Waiting;
 
 ARCHITECTURE arch OF Waiting IS
-  TYPE states IS(idle, pulling, pulled, pushing, success);
+  TYPE states IS(idle, pulling, pulled, pushing, success, queue_full);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -35,24 +37,25 @@ ARCHITECTURE arch OF Waiting IS
   CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
 
   -- jump next state
-  PROCEDURE waitOrNext(
-    SIGNAL next_state : OUT states;
-    SIGNAL enable : IN std_logic;
-    CONSTANT s_wait : IN states;
-    CONSTANT s_next : IN states
-  ) IS
+  FUNCTION ifElse(
+    condition : std_logic;
+    onTrue : states;
+    onFalse : states
+  ) RETURN states IS
   BEGIN
-    IF (enable = '1') THEN
-      next_state <= s_next;
+    IF (condition = '1') THEN
+      RETURN onTrue;
     ELSE
-      next_state <= s_wait;
+      RETURN onFalse;
     END IF;
-  END PROCEDURE;
+  END FUNCTION;
 BEGIN
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF (clock'event AND clock = '1') THEN
+    IF (reset = '1') THEN
+      present_state <= idle;
+    ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
@@ -62,17 +65,16 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        waitOrNext(next_state, button, idle, pulling);
+        next_state <= ifElse(button, pulling, idle);
 
       WHEN pulling =>
-        waitOrNext(next_state, enable_pull, pulling, pulled);
+        next_state <= ifElse(enable_pull, pulled, pulling);
 
       WHEN pulled =>
-        -- TODO go push_error state when queue full
         next_state <= pushing;
 
       WHEN pushing =>
-        waitOrNext(next_state, pushed, pushing, success);
+        next_state <= ifElse(pushed, success, pushing);
 
       WHEN success =>
         next_state <= idle;

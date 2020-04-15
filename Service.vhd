@@ -17,6 +17,7 @@ ENTITY Service IS
     recall : IN std_logic; -- 重新叫号
 
     pull : OUT std_logic; -- 申请取号
+    empty : IN std_logic; -- 队列为空
     enable_pull : IN std_logic; -- 允许取号
 
     push : OUT std_logic; -- 申请发送
@@ -28,7 +29,7 @@ ENTITY Service IS
 END Service;
 
 ARCHITECTURE arch OF Service IS
-  TYPE states IS(idle, pulling, pulled, pushing, success);
+  TYPE states IS(idle, pulling, pulled, pushing, queue_empty, success);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -36,19 +37,18 @@ ARCHITECTURE arch OF Service IS
   CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
 
   -- jump next state
-  PROCEDURE waitOrNext(
-    SIGNAL next_state : OUT states;
-    SIGNAL enable : IN std_logic;
-    CONSTANT s_wait : IN states;
-    CONSTANT s_next : IN states
-  ) IS
+  FUNCTION ifElse(
+    condition : std_logic;
+    onTrue : states;
+    onFalse : states
+  ) RETURN states IS
   BEGIN
-    IF (enable = '1') THEN
-      next_state <= s_next;
+    IF (condition = '1') THEN
+      RETURN onTrue;
     ELSE
-      next_state <= s_wait;
+      RETURN onFalse;
     END IF;
-  END PROCEDURE;
+  END FUNCTION;
 BEGIN
   -- clock trigger
   PROCESS (clock)
@@ -72,13 +72,16 @@ BEGIN
         END IF;
 
       WHEN pulling =>
-        waitOrNext(next_state, enable_pull, pulling, pulled);
+        next_state <= ifElse(enable_pull, pulled, pulling);
 
       WHEN pulled =>
+        next_state <= ifElse(empty, queue_empty, pushing);
+
+      WHEN queue_empty =>
         next_state <= pushing;
 
       WHEN pushing =>
-        waitOrNext(next_state, pushed, pushing, success);
+        next_state <= ifElse(pushed, success, pushing);
 
       WHEN success =>
         next_state <= idle;
@@ -95,10 +98,10 @@ BEGIN
     push <= '0';
     pull <= '0';
     data_out <=
-      FLAG_SCREEN_SERVICE
-      & FLAG_GROUP_FREE
-      & FLAG_ERROR_UNKNOWN
-      & DATA_DEFAULT;
+      FLAG_SCREEN_SERVICE &
+      FLAG_GROUP_FREE &
+      FLAG_ERROR_UNKNOWN &
+      DATA_DEFAULT;
 
     CASE present_state IS
       WHEN idle => NULL;
@@ -106,11 +109,19 @@ BEGIN
       WHEN pulling =>
         pull <= '1';
         data <=
-          FLAG_SCREEN_SERVICE
-          & data_in(FLAG_SCREEN_LOW - 1 DOWNTO 0);
+          FLAG_SCREEN_SERVICE &
+          data_in(FLAG_SCREEN_LOW - 1 DOWNTO 0);
 
       WHEN pulled =>
         pull <= '0';
+
+      WHEN queue_empty =>
+        push <= '1';
+        data <=
+          FLAG_SCREEN_SERVICE &
+          data(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW) &
+          FLAG_ERROR_QUEUE_EMPTY &
+          data(DATA_WIDTH - 1 DOWNTO 0);
 
       WHEN pushing =>
         push <= '1';
