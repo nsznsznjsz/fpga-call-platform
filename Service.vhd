@@ -13,6 +13,7 @@ ENTITY Service IS
   );
   PORT (
     clock : IN std_logic;
+    reset : IN std_logic;
     call : IN std_logic; -- ½ÐºÅ
     recall : IN std_logic; -- ÖØÐÂ½ÐºÅ
 
@@ -53,7 +54,9 @@ BEGIN
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF (clock'event AND clock = '1') THEN
+    IF (reset = '1') THEN
+      present_state <= idle;
+    ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
