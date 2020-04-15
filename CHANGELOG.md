@@ -19,3 +19,7 @@
 - feat: add decoder
 - refactor(Waiting/Service): output a default value (an ERROR) when it is not `pushing` state
 - refactor: create config package
+
+## 0.1.5
+- feat(Service): recall number
+- refactor: rename waiting parameter `FLAGS` to `GROUP_FLAG`
