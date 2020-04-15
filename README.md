@@ -31,23 +31,16 @@ All undefined code is forbidden
 
 ## TODOS
 
-- [ ] screen: decoding flags
-- [ ] screen: print queue
-- [ ] services: throw error when queue is empty
-- [ ] customs: throw error when queue is full
-- [x] service: recall
-- [ ] *: reset
-- [x] groups flag
-- [x] screen flag
-- [x] refactor: use library
-- [ ] refacotr(flag): use config for bit range 
-- [ ] decoder: output length locked
-- [ ] refactor: change pins type (set all pins as virtual pins now) 
+- [ ] feat(*): reset
+- [ ] feat(screen): print queue
+- [ ] feat(customs): throw error when queue is full
+- [ ] feat(service): normal service should call vip (eg: `Service A` can call `VIP A`) 
+- [ ] fix(decoder): output length locked
+- [ ] refactor(*): change pins type (set all pins as virtual pins now)
 
 ## ISSUES
 
-- A端取到 A1 号后, b端应取到 B1 or B2?
-- How Many Screens?
+- 假设号码`01`闪烁3次, 闪烁中`02`进来了, 是继续显示`01`然后再显示`02`, 还是直接显示`02`
 
 ## Detail Design
 
