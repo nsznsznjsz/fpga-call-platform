@@ -7,10 +7,10 @@ USE work.config.ALL;
 -- ¿Í»§¶ËÈ¡ºÅÆ÷
 ENTITY Waitings IS
   GENERIC (
-    FLAGS_1 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
-    FLAGS_2 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
-    FLAGS_3 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
-    FLAGS_4 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0')
+    GROUP_FLAG_1 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    GROUP_FLAG_2 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    GROUP_FLAG_3 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+    GROUP_FLAG_4 : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0')
   );
   PORT (
     clock : IN STD_LOGIC;
@@ -89,7 +89,7 @@ ARCHITECTURE arch OF Waitings IS
 
   COMPONENT Waiting
     GENERIC (
-      FLAGS : STD_LOGIC_VECTOR(3 DOWNTO 0) -- flag width
+      GROUP_FLAG : STD_LOGIC_VECTOR(3 DOWNTO 0) -- flag width
     );
     PORT (
       clock : IN std_logic;
@@ -182,7 +182,7 @@ BEGIN
 
   b2v_custom_side_1 : Waiting
   GENERIC MAP(
-    FLAGS => FLAGS_1
+    GROUP_FLAG => GROUP_FLAG_1
   )
   PORT MAP(
     clock => clock,
@@ -197,7 +197,7 @@ BEGIN
 
   b2v_custom_side_2 : Waiting
   GENERIC MAP(
-    FLAGS => FLAGS_2
+    GROUP_FLAG => GROUP_FLAG_2
   )
   PORT MAP(
     clock => clock,
@@ -212,7 +212,7 @@ BEGIN
 
   b2v_custom_side_3 : Waiting
   GENERIC MAP(
-    FLAGS => FLAGS_3
+    GROUP_FLAG => GROUP_FLAG_3
   )
   PORT MAP(
     clock => clock,
@@ -227,7 +227,7 @@ BEGIN
 
   b2v_custom_side_4 : Waiting
   GENERIC MAP(
-    FLAGS => FLAGS_4
+    GROUP_FLAG => GROUP_FLAG_4
   )
   PORT MAP(
     clock => clock,

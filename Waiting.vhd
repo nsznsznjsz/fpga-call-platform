@@ -9,7 +9,7 @@ USE work.config.ALL;
 -- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Waiting IS
   GENERIC (
-    FLAGS : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0') -- flag width
+    GROUP_FLAG : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0') -- flag width
   );
   PORT (
     clock : IN std_logic;
@@ -101,7 +101,7 @@ BEGIN
         pull <= '1';
         data <=
           FLAG_SCREEN_WAITING -- 2 bit
-          & FLAGS -- 4 bit
+          & GROUP_FLAG -- 4 bit
           & FLAG_ERROR_FREE -- 2 bit
           & data_in;
 

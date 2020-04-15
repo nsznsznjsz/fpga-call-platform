@@ -115,22 +115,22 @@ applicable agreement for further details.
 		(line (pt 240 112)(pt 224 112)(line_width 3))
 	)
 	(parameter
-		"FLAGS_1"
+		"GROUP_FLAG_1"
 		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"FLAGS_2"
+		"GROUP_FLAG_2"
 		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"FLAGS_3"
+		"GROUP_FLAG_3"
 		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"FLAGS_4"
+		"GROUP_FLAG_4"
 		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
