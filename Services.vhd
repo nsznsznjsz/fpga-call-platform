@@ -7,11 +7,17 @@ USE work.config.ALL;
 ENTITY Services IS
   PORT (
     clock : IN STD_LOGIC;
+    reset : IN STD_LOGIC;
 
     call_1 : IN STD_LOGIC;
     call_2 : IN STD_LOGIC;
     call_3 : IN STD_LOGIC;
     call_4 : IN STD_LOGIC;
+
+    recall_1 : IN STD_LOGIC;
+    recall_2 : IN STD_LOGIC;
+    recall_3 : IN STD_LOGIC;
+    recall_4 : IN STD_LOGIC;
 
     pull : OUT STD_LOGIC;
     enable_pull : IN STD_LOGIC;
@@ -82,11 +88,6 @@ ARCHITECTURE bdf_type OF Services IS
   SIGNAL enable_pull_3 : STD_LOGIC;
   SIGNAL enable_pull_4 : STD_LOGIC;
 
-  -- TODO
-  SIGNAL recall_1 : STD_LOGIC := '0';
-  SIGNAL recall_2 : STD_LOGIC := '0';
-  SIGNAL recall_3 : STD_LOGIC := '0';
-  SIGNAL recall_4 : STD_LOGIC := '0';
 BEGIN
 
   b2v_service_1 : Service
