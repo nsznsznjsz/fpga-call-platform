@@ -29,7 +29,7 @@ ENTITY Waiting IS
 END Waiting;
 
 ARCHITECTURE arch OF Waiting IS
-  TYPE states IS(idle, pulling, pulled, pushing, success, queue_full);
+  TYPE states IS(idle, pulling, pushing);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -68,16 +68,10 @@ BEGIN
         next_state <= ifElse(button, pulling, idle);
 
       WHEN pulling =>
-        next_state <= ifElse(enable_pull, pulled, pulling);
-
-      WHEN pulled =>
-        next_state <= pushing;
+        next_state <= ifElse(enable_pull, pushing, pulling);
 
       WHEN pushing =>
-        next_state <= ifElse(pushed, success, pushing);
-
-      WHEN success =>
-        next_state <= idle;
+        next_state <= ifElse(pushed, idle, pushing);
 
       WHEN OTHERS =>
         next_state <= idle;
@@ -107,15 +101,9 @@ BEGIN
           & FLAG_ERROR_FREE -- 2 bit
           & data_in;
 
-      WHEN pulled =>
-        pull <= '0';
-
       WHEN pushing =>
         push <= '1';
         data_out <= data;
-
-      WHEN success =>
-        push <= '0';
 
       WHEN OTHERS => NULL;
 

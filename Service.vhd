@@ -29,7 +29,7 @@ ENTITY Service IS
 END Service;
 
 ARCHITECTURE arch OF Service IS
-  TYPE states IS(idle, pulling, pulled, pushing, queue_empty, success);
+  TYPE states IS(idle, pulling, pulled, queue_empty, pushing);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -81,10 +81,7 @@ BEGIN
         next_state <= pushing;
 
       WHEN pushing =>
-        next_state <= ifElse(pushed, success, pushing);
-
-      WHEN success =>
-        next_state <= idle;
+        next_state <= ifElse(pushed, idle, pushing);
 
       WHEN OTHERS =>
         next_state <= idle;
@@ -126,9 +123,6 @@ BEGIN
       WHEN pushing =>
         push <= '1';
         data_out <= data;
-
-      WHEN success =>
-        push <= '0';
 
       WHEN OTHERS => NULL;
 
