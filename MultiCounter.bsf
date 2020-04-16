@@ -96,8 +96,8 @@ applicable agreement for further details.
 	(port
 		(pt 160 96)
 		(output)
-		(text "data_out[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "data_out[15..0]" (rect 65 91 139 103)(font "Arial" ))
+		(text "data_out[7..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "data_out[7..0]" (rect 71 91 139 103)(font "Arial" ))
 		(line (pt 160 96)(pt 144 96)(line_width 3))
 	)
 	(drawing

@@ -19,7 +19,7 @@ ENTITY MultiCounter IS
     enable_3 : OUT STD_LOGIC;
     enable_4 : OUT STD_LOGIC;
 
-    data_out : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0)
+    data_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
   );
 END MultiCounter;
 
@@ -36,13 +36,13 @@ ARCHITECTURE arch OF MultiCounter IS
       input_2 : IN STD_LOGIC;
       input_3 : IN STD_LOGIC;
       input_4 : IN STD_LOGIC;
-      data_in : IN STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
+      data_in : IN STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
       pull : OUT STD_LOGIC;
       enable_1 : OUT STD_LOGIC;
       enable_2 : OUT STD_LOGIC;
       enable_3 : OUT STD_LOGIC;
       enable_4 : OUT STD_LOGIC;
-      data_out : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0)
+      data_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
     );
   END COMPONENT;
 
@@ -53,11 +53,11 @@ ARCHITECTURE arch OF MultiCounter IS
     PORT (
       clock : IN STD_LOGIC;
       reset : IN STD_LOGIC;
-      data_out : OUT STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0)
+      data_out : OUT STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0)
     );
   END COMPONENT;
 
-  SIGNAL data : STD_LOGIC_VECTOR(RAM_WIDTH - 1 DOWNTO 0);
+  SIGNAL data : STD_LOGIC_VECTOR(DATA_WIDTH - 1 DOWNTO 0);
   SIGNAL arch_enable_pull : STD_LOGIC;
   SIGNAL arch_pull : STD_LOGIC;
 BEGIN

@@ -34,7 +34,7 @@ ENTITY ManyToOneArch IS
 END ManyToOneArch;
 
 ARCHITECTURE arch OF ManyToOneArch IS
-  TYPE states IS(idle, a, b, c, d, pushing, success);
+  TYPE states IS(idle, a, b, c, d, pushing);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -85,10 +85,7 @@ BEGIN
         next_state <= pushing;
 
       WHEN pushing =>
-        next_state <= ifElse(pushed, success, pushing);
-
-      WHEN success =>
-        next_state <= idle;
+        next_state <= ifElse(pushed, idle, pushing);
 
       WHEN OTHERS =>
         next_state <= idle;
