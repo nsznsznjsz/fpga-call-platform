@@ -70,7 +70,7 @@ BEGIN
   END PROCESS;
 
   -- clock trigger
-  PROCESS (clock)
+  PROCESS (clock, reset)
   BEGIN
     IF (reset = '1') THEN
       present_state <= idle;

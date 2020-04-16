@@ -49,7 +49,7 @@ ARCHITECTURE arch OF Service IS
   END FUNCTION;
 BEGIN
   -- clock trigger
-  PROCESS (clock)
+  PROCESS (clock, reset)
   BEGIN
     IF (reset = '1') THEN
       present_state <= idle;
@@ -59,7 +59,7 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, call, recall, enable_pull, pushed)
+  PROCESS (present_state, call, recall, enable_pull, empty, pushed)
   BEGIN
     CASE present_state IS
       WHEN idle =>

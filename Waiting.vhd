@@ -51,7 +51,7 @@ ARCHITECTURE arch OF Waiting IS
   END FUNCTION;
 BEGIN
   -- clock trigger
-  PROCESS (clock)
+  PROCESS (clock, reset)
   BEGIN
     IF (reset = '1') THEN
       present_state <= idle;

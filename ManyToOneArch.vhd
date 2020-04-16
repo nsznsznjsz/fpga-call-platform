@@ -93,7 +93,7 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state, data_in_1, data_in_2, data_in_3, data_in_4)
+  PROCESS (present_state, data, data_in_1, data_in_2, data_in_3, data_in_4)
   BEGIN
     -- make latchs: data
     push <= '0';
