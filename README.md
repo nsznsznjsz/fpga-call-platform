@@ -14,16 +14,16 @@ All undefined code is forbidden
   - 00: non flag
   - 10/11: waiting / called number;
 
-- bit 2~5: groups flag
+- bit 2~3: error description
+  - 00: non error
+  - 01: unknown
+  - 10/11: queue is empty / full
+
+- bit 4~7: groups flag
   - 0000: non flag
   - 1xxx: vip
   - x001: group a
   - x010: group b
-
-- bit 6~7: error description
-  - 00: non error
-  - 01: unknown
-  - 10/11: queue is empty / full
 
 - bit 8~15: numbers
   - 0: error
@@ -31,7 +31,6 @@ All undefined code is forbidden
 
 ## TODOS
 
-- [ ] feat(*): reset
 - [ ] feat(screen): print queue
 - [ ] feat(customs): throw error when queue is full
 - [ ] feat(service): normal service should call vip (eg: `Service A` can call `VIP A`) 
@@ -44,7 +43,28 @@ All undefined code is forbidden
 
 ## Detail Design
 
-### 单个组件流程
+### 宏观组件
+
+所有组件数据交换流程均遵循[单组件流程](#单组件流程)
+
+#### Multi Waitings
+
+1. 将用户操作转换为对 `Counter` 取数据和 `A / B / VipA / VipB` 四个队列的入队列操作
+2. 将数据推入 `Screen` 队列显示
+
+#### Multi Services
+
+1. 将用户操作转换为 `A / B / VIP` 三个队列的出队列操作
+2. 将数据推入 `Screen` 队列显示
+
+#### Multi Queues
+
+1. 对左侧而言, 显示四个操作受限的队列 `A / B / VipA / VipB` (只能入队列)
+2. 对右侧而言, 显示三个操作受限的队列 `A / B / VIP` (只能出队列)
+3. 内部逻辑: 右侧`A`队列先取`VipA`再取`A`, `B`队列同理, 右侧`VIP`队列等效于左侧`VipA + VipB`
+4. 内部实现: TODO
+
+### 单组件流程
 
 > see Waiting's RTL for details
 
