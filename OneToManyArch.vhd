@@ -9,6 +9,7 @@ ENTITY OneToManyArch IS
   );
   PORT (
     clock : IN std_logic;
+    reset : IN std_logic;
 
     pull : OUT std_logic;
     enable_pull : IN std_logic;
@@ -52,7 +53,7 @@ ARCHITECTURE arch OF OneToManyArch IS
   BEGIN
     IF (enable = '1') THEN
       next_state <= s_next;
-      ELSE
+    ELSE
       next_state <= s_wait;
     END IF;
   END PROCEDURE;
@@ -71,7 +72,9 @@ BEGIN
   -- clock trigger
   PROCESS (clock)
   BEGIN
-    IF (clock'event AND clock = '1') THEN
+    IF (reset = '1') THEN
+      present_state <= idle;
+    ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
