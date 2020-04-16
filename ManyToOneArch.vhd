@@ -38,7 +38,7 @@ ARCHITECTURE arch OF ManyToOneArch IS
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
-  SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
+  SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
 
   -- jump next state
   FUNCTION ifElse(
@@ -95,6 +95,7 @@ BEGIN
   -- state events
   PROCESS (present_state, data_in_1, data_in_2, data_in_3, data_in_4)
   BEGIN
+    -- make latchs: data
     push <= '0';
     emitted_1 <= '0';
     emitted_2 <= '0';
@@ -104,23 +105,24 @@ BEGIN
 
     CASE present_state IS
       WHEN a =>
-        data_out <= data_in_1;
         emitted_1 <= '1';
+        data <= data_in_1;
 
       WHEN b =>
-        data_out <= data_in_2;
         emitted_2 <= '1';
+        data <= data_in_2;
 
       WHEN c =>
-        data_out <= data_in_3;
         emitted_3 <= '1';
+        data <= data_in_3;
 
       WHEN d =>
-        data_out <= data_in_4;
         emitted_4 <= '1';
+        data <= data_in_4;
 
       WHEN pushing =>
         push <= '1';
+        data_out <= data;
 
       WHEN idle => NULL;
     END CASE;
