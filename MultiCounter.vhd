@@ -2,11 +2,9 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
 LIBRARY work;
+USE work.config.ALL;
 
 ENTITY MultiCounter IS
-  GENERIC (
-    RAM_WIDTH : NATURAL := 8
-  );
   PORT (
     clock : IN STD_LOGIC;
     reset : IN STD_LOGIC;
@@ -67,7 +65,7 @@ BEGIN
 
   b2v_count_arch1 : OneToManyArch
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
+    RAM_WIDTH => DATA_WIDTH
   )
   PORT MAP(
     clock => clock,
@@ -92,7 +90,7 @@ BEGIN
 
   b2v_counter1 : Counter
   GENERIC MAP(
-    RAM_WIDTH => RAM_WIDTH
+    RAM_WIDTH => DATA_WIDTH
   )
   PORT MAP(
     clock => arch_pull,
