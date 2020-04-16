@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 304 208)
+	(rect 16 16 208 208)
 	(text "Service" (rect 5 0 42 12)(font "Arial" ))
 	(text "inst" (rect 8 176 25 188)(font "Arial" ))
 	(port
@@ -75,38 +75,32 @@ applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "data_in[ram_width-1..0]" (rect 0 0 114 12)(font "Arial" ))
-		(text "data_in[ram_width-1..0]" (rect 21 139 135 151)(font "Arial" ))
+		(text "data_in[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "data_in[15..0]" (rect 21 139 88 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
-		(pt 288 32)
+		(pt 192 32)
 		(output)
 		(text "pull" (rect 0 0 16 12)(font "Arial" ))
-		(text "pull" (rect 251 27 267 39)(font "Arial" ))
-		(line (pt 288 32)(pt 272 32)(line_width 1))
+		(text "pull" (rect 155 27 171 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 1))
 	)
 	(port
-		(pt 288 48)
+		(pt 192 48)
 		(output)
 		(text "push" (rect 0 0 23 12)(font "Arial" ))
-		(text "push" (rect 244 43 267 55)(font "Arial" ))
-		(line (pt 288 48)(pt 272 48)(line_width 1))
+		(text "push" (rect 148 43 171 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48)(line_width 1))
 	)
 	(port
-		(pt 288 64)
+		(pt 192 64)
 		(output)
-		(text "data_out[ram_width-1..0]" (rect 0 0 121 12)(font "Arial" ))
-		(text "data_out[ram_width-1..0]" (rect 146 59 267 71)(font "Arial" ))
-		(line (pt 288 64)(pt 272 64)(line_width 3))
+		(text "data_out[15..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "data_out[15..0]" (rect 97 59 171 71)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64)(line_width 3))
 	)
-	(parameter
-		"RAM_WIDTH"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 272 176)(line_width 1))
+		(rectangle (rect 16 16 176 176)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 304 -64 404 16))
 )

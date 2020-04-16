@@ -8,9 +8,6 @@ USE work.config.ALL;
 
 -- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Service IS
-  GENERIC (
-    RAM_WIDTH : NATURAL := 16
-  );
   PORT (
     clock : IN std_logic;
     reset : IN std_logic;
