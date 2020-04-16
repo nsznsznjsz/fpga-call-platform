@@ -3,16 +3,17 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
 
--- 多个数据依次进入一个队列, 1 -> 2 -> 3 -> 4
+-- 多个数据依次进入一个队列, 1 > 2 > 3 > 4
 ENTITY ManyToOneArch IS
   GENERIC (
     RAM_WIDTH : NATURAL := 16
   );
   PORT (
     clock : IN std_logic;
+    reset : IN std_logic;
 
     push : OUT std_logic;
-    enable_push : IN std_logic;
+    pushed : IN std_logic;
 
     enable_1 : IN std_logic;
     enable_2 : IN std_logic;
@@ -33,41 +34,40 @@ ENTITY ManyToOneArch IS
 END ManyToOneArch;
 
 ARCHITECTURE arch OF ManyToOneArch IS
-  TYPE states IS(idle, disabled, a, b, c, d);
+  TYPE states IS(idle, a, b, c, d, pushing, success);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
   SIGNAL active : INTEGER RANGE 0 TO 4 := 0;
+
+  -- jump next state
+  FUNCTION ifElse(
+    condition : std_logic;
+    onTrue : states;
+    onFalse : states
+  ) RETURN states IS
+  BEGIN
+    IF (condition = '1') THEN
+      RETURN onTrue;
+    ELSE
+      RETURN onFalse;
+    END IF;
+  END FUNCTION;
 BEGIN
   -- clock trigger
-  PROCESS (clock, enable_push)
+  PROCESS (clock, reset)
   BEGIN
-    IF (enable_push = '0') THEN
-      present_state <= disabled;
-      ELSIF (clock'event AND clock = '1') THEN
+    IF (reset = '1') THEN
+      present_state <= idle;
+    ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
     END IF;
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, enable_1, enable_2, enable_3, enable_4)
+  PROCESS (present_state, enable_1, enable_2, enable_3, enable_4, pushed)
   BEGIN
     CASE present_state IS
-      WHEN a =>
-        next_state <= idle;
-
-      WHEN b =>
-        next_state <= idle;
-
-      WHEN c =>
-        next_state <= idle;
-
-      WHEN d =>
-        next_state <= idle;
-
-      WHEN disabled =>
-        next_state <= idle;
-
       WHEN idle =>
         IF (enable_1 = '1') THEN
           next_state <= a;
@@ -81,6 +81,15 @@ BEGIN
           next_state <= idle;
         END IF;
 
+      WHEN a | b | c | d =>
+        next_state <= pushing;
+
+      WHEN pushing =>
+        next_state <= ifElse(pushed, success, pushing);
+
+      WHEN success =>
+        next_state <= idle;
+
       WHEN OTHERS =>
         next_state <= idle;
     END CASE;
@@ -89,7 +98,7 @@ BEGIN
   -- state events
   PROCESS (present_state, data_in_1, data_in_2, data_in_3, data_in_4)
   BEGIN
-    push <= '1';
+    push <= '0';
     emitted_1 <= '0';
     emitted_2 <= '0';
     emitted_3 <= '0';
@@ -113,11 +122,10 @@ BEGIN
         data_out <= data_in_4;
         emitted_4 <= '1';
 
-      WHEN disabled =>
-        push <= '0';
+      WHEN pushing =>
+        push <= '1';
 
-      WHEN idle =>
-        push <= '0';
+      WHEN idle => NULL;
     END CASE;
   END PROCESS;
 END arch;
