@@ -182,7 +182,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 88 0 256 16)
+	(rect 88 16 256 32)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "pushed_a" (rect 9 0 56 12)(font "Arial" ))
 	(pt 168 8)
@@ -3067,14 +3067,6 @@ applicable agreement for further details.
 	(pt 1512 -88)
 )
 (connector
-	(pt 2496 184)
-	(pt 2496 8)
-)
-(connector
-	(pt 2496 8)
-	(pt 256 8)
-)
-(connector
 	(pt 568 -168)
 	(pt 568 152)
 )
@@ -3269,6 +3261,14 @@ applicable agreement for further details.
 	(pt 2888 232)
 	(pt 3016 232)
 	(bus)
+)
+(connector
+	(pt 2496 184)
+	(pt 2496 24)
+)
+(connector
+	(pt 2496 24)
+	(pt 256 24)
 )
 (junction (pt 568 152))
 (junction (pt 560 168))

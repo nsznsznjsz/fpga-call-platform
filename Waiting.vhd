@@ -10,7 +10,7 @@ USE work.config.ALL;
 -- 不处理 队列为满 的错误, 交由发射器处理
 ENTITY Waiting IS
   GENERIC (
-    GROUP_FLAG : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0') -- flag width
+    GROUP_FLAG : STD_LOGIC_VECTOR(FLAG_GROUP_WIDTH - 1 DOWNTO 0) := (OTHERS => '0')
   );
   PORT (
     clock : IN std_logic;
@@ -85,10 +85,10 @@ BEGIN
     push <= '0';
     pull <= '0';
     data_out <=
-      FLAG_SCREEN_WAITING -- 2 bit
-      & FLAG_GROUP_FREE -- 4 bit
-      & FLAG_ERROR_UNKNOWN -- 2 bit
-      & DATA_DEFAULT;
+      FLAG_SCREEN_WAITING &
+      FLAG_ERROR_UNKNOWN &
+      GROUP_FLAG &
+      DATA_DEFAULT;
 
     CASE present_state IS
       WHEN idle => NULL;
@@ -96,10 +96,10 @@ BEGIN
       WHEN pulling =>
         pull <= '1';
         data <=
-          FLAG_SCREEN_WAITING -- 2 bit
-          & GROUP_FLAG -- 4 bit
-          & FLAG_ERROR_FREE -- 2 bit
-          & data_in;
+          FLAG_SCREEN_WAITING &
+          FLAG_ERROR_FREE &
+          GROUP_FLAG &
+          data_in;
 
       WHEN pushing =>
         push <= '1';

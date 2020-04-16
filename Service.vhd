@@ -96,8 +96,8 @@ BEGIN
     pull <= '0';
     data_out <=
       FLAG_SCREEN_SERVICE &
-      FLAG_GROUP_FREE &
       FLAG_ERROR_UNKNOWN &
+      FLAG_GROUP_FREE &
       DATA_DEFAULT;
 
     CASE present_state IS
@@ -116,9 +116,8 @@ BEGIN
         push <= '1';
         data <=
           FLAG_SCREEN_SERVICE &
-          data(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW) &
           FLAG_ERROR_QUEUE_EMPTY &
-          data(DATA_WIDTH - 1 DOWNTO 0);
+          data(FLAG_GROUP_HIGH DOWNTO 0);
 
       WHEN pushing =>
         push <= '1';
