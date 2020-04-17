@@ -27,7 +27,7 @@ ENTITY Service IS
 END Service;
 
 ARCHITECTURE arch OF Service IS
-  TYPE states IS(idle, pulling, pulled, queue_empty, pushing);
+  TYPE states IS(idle, start, queue_empty, pulling, pushing);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -71,14 +71,14 @@ BEGIN
           next_state <= idle;
         END IF;
 
-      WHEN pulling =>
-        next_state <= ifElse(enable_pull, pulled, pulling);
-
-      WHEN pulled =>
-        next_state <= ifElse(empty, queue_empty, pushing);
+      WHEN start =>
+        next_state <= ifElse(empty, queue_empty, pulling);
 
       WHEN queue_empty =>
         next_state <= pushing;
+
+      WHEN pulling =>
+        next_state <= ifElse(enable_pull, pushing, pulling);
 
       WHEN pushing =>
         next_state <= ifElse(pushed, idle, pushing);
@@ -109,11 +109,7 @@ BEGIN
           FLAG_SCREEN_SERVICE &
           data_in(FLAG_SCREEN_LOW - 1 DOWNTO 0);
 
-      WHEN pulled =>
-        pull <= '0';
-
       WHEN queue_empty =>
-        push <= '1';
         data <=
           FLAG_SCREEN_SERVICE &
           FLAG_ERROR_QUEUE_EMPTY &
