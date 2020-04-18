@@ -68,12 +68,14 @@ All undefined code is forbidden
 
 > see Waiting's RTL for details
 
-1. 按钮按下, 请求取数据
-2. 等待允许取数据
-3. 取到数据, 更新flags, 把数据推出去
-4. 等待数据推出去
-5. 数据成功推出去了
-6. 等待下次按钮按下
+1. 按钮按下, 请求取数据 (pull = '1')
+2. 等待允许取数据 (wait enable_pull)
+3. 取到数据 
+4. 更新flags
+5. 把数据推出去 (push = '1')
+6. 等待数据推出去 (wait pushed)
+7. 数据成功推出去了 
+8. 等待下次按钮按下 (wait button)
 
 ### 组件层面
 

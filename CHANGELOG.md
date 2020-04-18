@@ -23,3 +23,13 @@
 ## 0.1.5
 - feat(Service): recall number
 - refactor: rename waiting parameter `FLAGS` to `GROUP_FLAG`
+
+## 0.1.6
+
+- feat(Waiting): normal waiting and vip waiting use the same counter now
+- feat(Service): normal service can call vip first now
+- feat(*): support reset
+- refactor(Waiting): rename ports, use more common names
+- refactor(Arch): remove latch of N-1 Arch
+- refactor(Arch): remove useless state
+- refactor(*): remove `Waitings` `Services`
