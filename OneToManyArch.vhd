@@ -57,17 +57,6 @@ ARCHITECTURE arch OF OneToManyArch IS
     END IF;
   END FUNCTION;
 BEGIN
-
-  -- Copy input to internal signals
-  PROCESS (clock)
-  BEGIN
-    IF (clock'event AND clock = '1') THEN
-      IF (enable_pull = '1') THEN
-        data <= data_in;
-      END IF;
-    END IF;
-  END PROCESS;
-
   -- clock trigger
   PROCESS (clock, reset)
   BEGIN
@@ -107,7 +96,7 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state, data)
+  PROCESS (present_state, data, data_in)
   BEGIN
     pull <= '0';
     enable_1 <= '0';
@@ -118,7 +107,7 @@ BEGIN
 
     CASE present_state IS
       WHEN a_init | b_init | c_init | d_init => pull <= '1';
-      WHEN a_wait | b_wait | c_wait | d_wait => NULL;
+      WHEN a_wait | b_wait | c_wait | d_wait => data <= data_in;
 
       WHEN a_end =>
         enable_1 <= '1';
@@ -136,7 +125,7 @@ BEGIN
         enable_4 <= '1';
         data_out <= data;
 
-      WHEN idle => NULL;
+      WHEN idle => data <= (OTHERS => '0');
     END CASE;
   END PROCESS;
 END arch;
