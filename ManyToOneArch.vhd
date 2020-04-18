@@ -36,15 +36,13 @@ END ManyToOneArch;
 ARCHITECTURE arch OF ManyToOneArch IS
   TYPE states IS(
   idle,
-  a_init, a_wait, a_end,
-  b_init, b_wait, b_end,
-  c_init, c_wait, c_end,
-  d_init, d_wait, d_end
+  a_wait, a_end,
+  b_wait, b_end,
+  c_wait, c_end,
+  d_wait, d_end
   );
   SIGNAL present_state : states;
   SIGNAL next_state : states;
-
-  SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
 
   -- jump next state
   FUNCTION ifElse(
@@ -76,21 +74,16 @@ BEGIN
     CASE present_state IS
       WHEN idle =>
         IF (push_1 = '1') THEN
-          next_state <= a_init;
+          next_state <= a_wait;
         ELSIF (push_2 = '1') THEN
-          next_state <= b_init;
+          next_state <= b_wait;
         ELSIF (push_3 = '1') THEN
-          next_state <= c_init;
+          next_state <= c_wait;
         ELSIF (push_4 = '1') THEN
-          next_state <= d_init;
+          next_state <= d_wait;
         ELSE
           next_state <= idle;
         END IF;
-
-      WHEN a_init => next_state <= a_wait;
-      WHEN b_init => next_state <= b_wait;
-      WHEN c_init => next_state <= c_wait;
-      WHEN d_init => next_state <= d_wait;
 
       WHEN a_wait => next_state <= ifElse(pushed, a_end, a_wait);
       WHEN b_wait => next_state <= ifElse(pushed, b_end, b_wait);
@@ -104,9 +97,8 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state, data, data_in_1, data_in_2, data_in_3, data_in_4)
+  PROCESS (present_state, data_in_1, data_in_2, data_in_3, data_in_4)
   BEGIN
-    -- make latchs: data
     push <= '0';
     pushed_1 <= '0';
     pushed_2 <= '0';
@@ -115,14 +107,21 @@ BEGIN
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
-      WHEN a_init => data <= data_in_1;
-      WHEN b_init => data <= data_in_2;
-      WHEN c_init => data <= data_in_3;
-      WHEN d_init => data <= data_in_4;
-
-      WHEN a_wait | b_wait | c_wait | d_wait =>
+      WHEN a_wait =>
         push <= '1';
-        data_out <= data;
+        data_out <= data_in_1;
+
+      WHEN b_wait =>
+        push <= '1';
+        data_out <= data_in_2;
+
+      WHEN c_wait =>
+        push <= '1';
+        data_out <= data_in_3;
+
+      WHEN d_wait =>
+        push <= '1';
+        data_out <= data_in_4;
 
       WHEN a_end => pushed_1 <= '1';
       WHEN b_end => pushed_2 <= '1';
