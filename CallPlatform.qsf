@@ -86,10 +86,13 @@ set_global_assignment -name VHDL_FILE MultiCounter.vhd
 set_global_assignment -name VHDL_FILE Counter.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE CallPlatform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE MultiServices.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE MultiWaitings.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE MultiQueues.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE SourceMux.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE OneToManyArch.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Decoder.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waiting.vwf
+set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS OFF
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
