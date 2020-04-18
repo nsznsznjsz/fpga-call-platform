@@ -44,19 +44,18 @@ ARCHITECTURE arch OF OneToManyArch IS
   SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
 
   -- jump next state
-  PROCEDURE waitOrNext(
-    SIGNAL next_state : OUT states;
-    SIGNAL enable : IN std_logic;
-    CONSTANT s_wait : IN states;
-    CONSTANT s_next : IN states
-  ) IS
+  FUNCTION ifElse(
+    condition : std_logic;
+    onTrue : states;
+    onFalse : states
+  ) RETURN states IS
   BEGIN
-    IF (enable = '1') THEN
-      next_state <= s_next;
+    IF (condition = '1') THEN
+      RETURN onTrue;
     ELSE
-      next_state <= s_wait;
+      RETURN onFalse;
     END IF;
-  END PROCEDURE;
+  END FUNCTION;
 BEGIN
 
   -- Copy input to internal signals
@@ -96,44 +95,14 @@ BEGIN
           next_state <= idle;
         END IF;
 
-      WHEN a_init =>
-        waitOrNext(next_state, enable_pull, a_wait, a_end);
+      WHEN a_init | a_wait => next_state <= ifElse(enable_pull, a_end, a_wait);
+      WHEN b_init | b_wait => next_state <= ifElse(enable_pull, b_end, b_wait);
+      WHEN c_init | c_wait => next_state <= ifElse(enable_pull, c_end, c_wait);
+      WHEN d_init | d_wait => next_state <= ifElse(enable_pull, d_end, d_wait);
 
-      WHEN a_wait =>
-        waitOrNext(next_state, enable_pull, a_wait, a_end);
+      WHEN a_end | b_end | c_end | d_end => next_state <= idle;
 
-      WHEN a_end =>
-        next_state <= idle;
-
-      WHEN b_init =>
-        waitOrNext(next_state, enable_pull, b_wait, b_end);
-
-      WHEN b_wait =>
-        waitOrNext(next_state, enable_pull, b_wait, b_end);
-
-      WHEN b_end =>
-        next_state <= idle;
-
-      WHEN c_init =>
-        waitOrNext(next_state, enable_pull, c_wait, c_end);
-
-      WHEN c_wait =>
-        waitOrNext(next_state, enable_pull, c_wait, c_end);
-
-      WHEN c_end =>
-        next_state <= idle;
-
-      WHEN d_init =>
-        waitOrNext(next_state, enable_pull, d_wait, d_end);
-
-      WHEN d_wait =>
-        waitOrNext(next_state, enable_pull, d_wait, d_end);
-
-      WHEN d_end =>
-        next_state <= idle;
-
-      WHEN OTHERS =>
-        next_state <= idle;
+      WHEN OTHERS => next_state <= idle;
     END CASE;
   END PROCESS;
 
@@ -148,49 +117,26 @@ BEGIN
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
-      WHEN a_init =>
-        pull <= '1';
-
-      WHEN a_wait =>
-        NULL;
+      WHEN a_init | b_init | c_init | d_init => pull <= '1';
+      WHEN a_wait | b_wait | c_wait | d_wait => NULL;
 
       WHEN a_end =>
         enable_1 <= '1';
         data_out <= data;
 
-      WHEN b_init =>
-        pull <= '1';
-
-      WHEN b_wait =>
-        NULL;
-
       WHEN b_end =>
         enable_2 <= '1';
         data_out <= data;
-
-      WHEN c_init =>
-        pull <= '1';
-
-      WHEN c_wait =>
-        NULL;
 
       WHEN c_end =>
         enable_3 <= '1';
         data_out <= data;
 
-      WHEN d_init =>
-        pull <= '1';
-
-      WHEN d_wait =>
-        NULL;
-
       WHEN d_end =>
         enable_4 <= '1';
         data_out <= data;
 
-      WHEN idle =>
-        NULL;
-
+      WHEN idle => NULL;
     END CASE;
   END PROCESS;
 END arch;

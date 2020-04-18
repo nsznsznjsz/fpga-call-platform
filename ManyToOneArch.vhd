@@ -15,15 +15,15 @@ ENTITY ManyToOneArch IS
     push : OUT std_logic;
     pushed : IN std_logic;
 
-    enable_1 : IN std_logic;
-    enable_2 : IN std_logic;
-    enable_3 : IN std_logic;
-    enable_4 : IN std_logic;
+    push_1 : IN std_logic;
+    push_2 : IN std_logic;
+    push_3 : IN std_logic;
+    push_4 : IN std_logic;
 
-    emitted_1 : OUT std_logic;
-    emitted_2 : OUT std_logic;
-    emitted_3 : OUT std_logic;
-    emitted_4 : OUT std_logic;
+    pushed_1 : OUT std_logic;
+    pushed_2 : OUT std_logic;
+    pushed_3 : OUT std_logic;
+    pushed_4 : OUT std_logic;
 
     data_in_1 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
     data_in_2 : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
@@ -34,7 +34,13 @@ ENTITY ManyToOneArch IS
 END ManyToOneArch;
 
 ARCHITECTURE arch OF ManyToOneArch IS
-  TYPE states IS(idle, a, b, c, d, pushing);
+  TYPE states IS(
+  idle,
+  a_init, a_wait, a_end,
+  b_init, b_wait, b_end,
+  c_init, c_wait, c_end,
+  d_init, d_wait, d_end
+  );
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -65,30 +71,35 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, enable_1, enable_2, enable_3, enable_4, pushed)
+  PROCESS (present_state, push_1, push_2, push_3, push_4, pushed)
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        IF (enable_1 = '1') THEN
-          next_state <= a;
-        ELSIF (enable_2 = '1') THEN
-          next_state <= b;
-        ELSIF (enable_3 = '1') THEN
-          next_state <= c;
-        ELSIF (enable_4 = '1') THEN
-          next_state <= d;
+        IF (push_1 = '1') THEN
+          next_state <= a_init;
+        ELSIF (push_2 = '1') THEN
+          next_state <= b_init;
+        ELSIF (push_3 = '1') THEN
+          next_state <= c_init;
+        ELSIF (push_4 = '1') THEN
+          next_state <= d_init;
         ELSE
           next_state <= idle;
         END IF;
 
-      WHEN a | b | c | d =>
-        next_state <= pushing;
+      WHEN a_init => next_state <= a_wait;
+      WHEN b_init => next_state <= c_wait;
+      WHEN c_init => next_state <= c_wait;
+      WHEN d_init => next_state <= d_wait;
 
-      WHEN pushing =>
-        next_state <= ifElse(pushed, idle, pushing);
+      WHEN a_wait => next_state <= ifElse(pushed, a_end, a_wait);
+      WHEN b_wait => next_state <= ifElse(pushed, b_end, b_wait);
+      WHEN c_wait => next_state <= ifElse(pushed, c_end, c_wait);
+      WHEN d_wait => next_state <= ifElse(pushed, d_end, d_wait);
 
-      WHEN OTHERS =>
-        next_state <= idle;
+      WHEN a_end | b_end | c_end | d_end => next_state <= idle;
+
+      WHEN OTHERS => next_state <= idle;
     END CASE;
   END PROCESS;
 
@@ -97,32 +108,26 @@ BEGIN
   BEGIN
     -- make latchs: data
     push <= '0';
-    emitted_1 <= '0';
-    emitted_2 <= '0';
-    emitted_3 <= '0';
-    emitted_4 <= '0';
+    pushed_1 <= '0';
+    pushed_2 <= '0';
+    pushed_3 <= '0';
+    pushed_4 <= '0';
     data_out <= (OTHERS => '0');
 
     CASE present_state IS
-      WHEN a =>
-        emitted_1 <= '1';
-        data <= data_in_1;
+      WHEN a_init => data <= data_in_1;
+      WHEN b_init => data <= data_in_2;
+      WHEN c_init => data <= data_in_3;
+      WHEN d_init => data <= data_in_4;
 
-      WHEN b =>
-        emitted_2 <= '1';
-        data <= data_in_2;
-
-      WHEN c =>
-        emitted_3 <= '1';
-        data <= data_in_3;
-
-      WHEN d =>
-        emitted_4 <= '1';
-        data <= data_in_4;
-
-      WHEN pushing =>
+      WHEN a_wait | b_wait | c_wait | d_wait =>
         push <= '1';
         data_out <= data;
+
+      WHEN a_end => pushed_1 <= '1';
+      WHEN b_end => pushed_2 <= '1';
+      WHEN c_end => pushed_3 <= '1';
+      WHEN d_end => pushed_4 <= '1';
 
       WHEN idle => NULL;
     END CASE;
