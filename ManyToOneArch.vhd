@@ -88,7 +88,7 @@ BEGIN
         END IF;
 
       WHEN a_init => next_state <= a_wait;
-      WHEN b_init => next_state <= c_wait;
+      WHEN b_init => next_state <= b_wait;
       WHEN c_init => next_state <= c_wait;
       WHEN d_init => next_state <= d_wait;
 
