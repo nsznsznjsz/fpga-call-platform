@@ -15,9 +15,9 @@ All undefined code is forbidden
   - 10/11: waiting / called number;
 
 - bit 2~3: error description
-  - 00: non error
-  - 01: unknown
-  - 10/11: queue is empty / full
+  - 11: non error
+  - 00: unknown
+  - 10/01: queue is empty / full
 
 - bit 4~7: groups flag
   - 0000: non flag
