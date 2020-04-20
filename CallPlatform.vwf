@@ -4352,46 +4352,6 @@ SIGNAL("getted_vip_b[0]")
 	PARENT = "getted_vip_b";
 }
 
-SIGNAL("MultiServices:services|OneToManyArch:arch_a|present_state.idle")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
-SIGNAL("MultiServices:services|OneToManyArch:arch_a|present_state.a_init")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
-SIGNAL("MultiServices:services|OneToManyArch:arch_a|present_state.a_wait")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
-SIGNAL("MultiServices:services|OneToManyArch:arch_a|present_state.a_end")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
 SIGNAL("MultiServices:services|Service:service_a1|present_state.idle")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -4490,13 +4450,7 @@ TRANSITION_LIST("recall_a1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 350.0;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 1 FOR 10.0;
-		}
-		LEVEL 0 FOR 640.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -6820,29 +6774,27 @@ TRANSITION_LIST("call_vip_1")
 		{
 			REPEAT = 1;
 			LEVEL 0 FOR 90.0;
-			NODE
-			{
-				REPEAT = 1;
-				LEVEL 1 FOR 10.0;
-			}
+			LEVEL 1 FOR 10.0;
 		}
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 70.0;
+			LEVEL 0 FOR 90.0;
 			LEVEL 1 FOR 10.0;
-			NODE
-			{
-				REPEAT = 1;
-				LEVEL 0 FOR 90.0;
-				NODE
-				{
-					REPEAT = 1;
-					LEVEL 1 FOR 10.0;
-				}
-			}
 		}
-		LEVEL 0 FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 90.0;
+			LEVEL 1 FOR 10.0;
+		}
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 90.0;
+			LEVEL 1 FOR 10.0;
+		}
+		LEVEL 0 FOR 160.0;
 	}
 }
 
@@ -8336,42 +8288,6 @@ TRANSITION_LIST("getted_vip_b[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("MultiServices:services|OneToManyArch:arch_a|present_state.idle")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL U FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("MultiServices:services|OneToManyArch:arch_a|present_state.a_init")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL U FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("MultiServices:services|OneToManyArch:arch_a|present_state.a_wait")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL U FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("MultiServices:services|OneToManyArch:arch_a|present_state.a_end")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL U FOR 1000.0;
 	}
 }
 
@@ -12738,7 +12654,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|OneToManyArch:arch_a|present_state.idle";
+	CHANNEL = "MultiServices:services|Service:service_a1|present_state.idle";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 432;
@@ -12747,7 +12663,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|OneToManyArch:arch_a|present_state.a_init";
+	CHANNEL = "MultiServices:services|Service:service_a1|present_state.pulling";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 433;
@@ -12756,7 +12672,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|OneToManyArch:arch_a|present_state.a_wait";
+	CHANNEL = "MultiServices:services|Service:service_a1|present_state.pushing";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 434;
@@ -12765,7 +12681,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|OneToManyArch:arch_a|present_state.a_end";
+	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.idle";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 435;
@@ -12774,7 +12690,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|Service:service_a1|present_state.idle";
+	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.a_init";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 436;
@@ -12783,7 +12699,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|Service:service_a1|present_state.pulling";
+	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.a_wait";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 437;
@@ -12792,46 +12708,10 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "MultiServices:services|Service:service_a1|present_state.pushing";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 438;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.idle";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 439;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.a_init";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 440;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.a_wait";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
-	TREE_INDEX = 441;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
 	CHANNEL = "MultiQueues:queues|SourceMux:mux_a|present_state.a_end";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
-	TREE_INDEX = 442;
+	TREE_INDEX = 438;
 	TREE_LEVEL = 0;
 }
 
