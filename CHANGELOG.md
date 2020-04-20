@@ -33,3 +33,9 @@
 - refactor(Arch): remove latch of N-1 Arch
 - refactor(Arch): remove useless state
 - refactor(*): remove `Waitings` `Services`
+
+## 0.1.7
+
+- feat(Queue): `Queue VIP` include `Queue B` and `Queue A`
+- fix(*): update error flag, decode a error when (others => '0')
+- fix(*): `Service A` can't call `Queue A`
