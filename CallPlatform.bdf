@@ -1559,14 +1559,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1168 32)
-	(pt 1192 32)
-)
-(connector
-	(pt 1192 32)
-	(pt 1192 456)
-)
-(connector
 	(pt 368 352)
 	(pt 344 352)
 )
@@ -1595,24 +1587,8 @@ applicable agreement for further details.
 	(pt 336 464)
 )
 (connector
-	(pt 1168 16)
-	(pt 1184 16)
-)
-(connector
-	(pt 1184 16)
-	(pt 1184 448)
-)
-(connector
 	(pt 352 448)
 	(pt 1184 448)
-)
-(connector
-	(pt 1168 48)
-	(pt 1200 48)
-)
-(connector
-	(pt 1200 48)
-	(pt 1200 464)
 )
 (connector
 	(pt 336 464)
@@ -2037,6 +2013,30 @@ applicable agreement for further details.
 (connector
 	(pt -16 32)
 	(pt 344 32)
+)
+(connector
+	(pt 1184 48)
+	(pt 1168 48)
+)
+(connector
+	(pt 1184 48)
+	(pt 1184 448)
+)
+(connector
+	(pt 1192 32)
+	(pt 1168 32)
+)
+(connector
+	(pt 1192 32)
+	(pt 1192 456)
+)
+(connector
+	(pt 1200 16)
+	(pt 1168 16)
+)
+(connector
+	(pt 1200 16)
+	(pt 1200 464)
 )
 (junction (pt -8 16))
 (junction (pt 352 16))
