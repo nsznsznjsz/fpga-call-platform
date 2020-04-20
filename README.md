@@ -60,11 +60,10 @@ All undefined code is forbidden
 
 ## TODOS
 
-- [ ] feat(screen): print queue
-- [ ] feat(customs): throw error when queue is full
-- [ ] feat(service): normal service should call vip (eg: `Service A` can call `VIP A`) 
-- [ ] fix(decoder): output length locked
-- [ ] refactor(*): change pins type (set all pins as virtual pins now)
+- [ ] Screen: print queue
+- [ ] Waiting: throw error when queue is full
+- [ ] Decoder: output length locked
+- [ ] change pins type (set all pins as virtual pins now)
 
 ## ISSUES
 

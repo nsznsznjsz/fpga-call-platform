@@ -39,3 +39,8 @@
 - feat(Queue): `Queue VIP` include `Queue B` and `Queue A`
 - fix(*): update error flag, decode a error when (others => '0')
 - fix(*): `Service A` can't call `Queue A`
+
+## 0.2.0
+
+- feat(Waiting): normal waiting and vip waiting use the same counter ([0.1.6](#0.1.6))
+- feat(Service): normal service can call vip first ([0.1.6](#0.1.6))
