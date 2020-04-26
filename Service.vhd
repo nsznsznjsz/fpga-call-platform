@@ -8,6 +8,9 @@ USE work.config.ALL;
 
 -- 数据源 -> 取号 -> 发射 -> 接收器
 ENTITY Service IS
+  GENERIC (
+    RETRY : BOOLEAN := true
+  );
   PORT (
     clock : IN std_logic;
     reset : IN std_logic;
@@ -27,12 +30,23 @@ ENTITY Service IS
 END Service;
 
 ARCHITECTURE arch OF Service IS
-  TYPE states IS(idle, start, queue_empty, pulling, pushing);
+  TYPE states IS(idle, init, queue_empty, pulling, judge, pushing);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
   SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
   CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+
+  FUNCTION neeeRetry(
+    data : std_logic_vector
+  ) RETURN std_logic IS
+  BEGIN
+    IF (RETRY = true AND data(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) = FLAG_ERROR_QUEUE_RETRY) THEN
+      RETURN '1';
+    ELSE
+      RETURN '0';
+    END IF;
+  END FUNCTION;
 
   -- jump next state
   FUNCTION ifElse(
@@ -59,26 +73,29 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, call, recall, enable_pull, empty, pushed)
+  PROCESS (ALL)
   BEGIN
     CASE present_state IS
       WHEN idle =>
         IF (call = '1') THEN
-          next_state <= pulling;
+          next_state <= init;
         ELSIF (recall = '1') THEN
           next_state <= pushing;
         ELSE
           next_state <= idle;
         END IF;
 
-      WHEN start =>
+      WHEN init =>
         next_state <= ifElse(empty, queue_empty, pulling);
 
       WHEN queue_empty =>
         next_state <= pushing;
 
       WHEN pulling =>
-        next_state <= ifElse(enable_pull, pushing, pulling);
+        next_state <= ifElse(enable_pull, judge, pulling);
+
+      WHEN judge =>
+        next_state <= ifElse(neeeRetry(data), init, pushing);
 
       WHEN pushing =>
         next_state <= ifElse(pushed, idle, pushing);
@@ -101,8 +118,6 @@ BEGIN
       DATA_DEFAULT;
 
     CASE present_state IS
-      WHEN idle => NULL;
-
       WHEN pulling =>
         pull <= '1';
         data <=
