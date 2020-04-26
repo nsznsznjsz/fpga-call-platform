@@ -5,7 +5,7 @@ USE ieee.numeric_std.ALL;
 LIBRARY work;
 USE work.config.ALL;
 
-ENTITY VipMixer IS
+ENTITY Synchronizer IS
   PORT (
     clock : IN std_logic;
     reset : IN std_logic;
@@ -40,9 +40,9 @@ ENTITY VipMixer IS
     data_out_b : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
     data_out_vip : OUT std_logic_vector(RAM_WIDTH - 1 DOWNTO 0)
   );
-END VipMixer;
+END Synchronizer;
 
-ARCHITECTURE arch OF VipMixer IS
+ARCHITECTURE arch OF Synchronizer IS
   TYPE states IS(
   resetting, idle,
   a_pull, a_pulling, a_judge, a_empty, a_pushing,

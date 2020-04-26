@@ -1069,8 +1069,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 1184 -40 1424 248)
-	(text "VipMixer" (rect 5 0 46 12)(font "Arial" ))
-	(text "mixer" (rect 8 272 35 284)(font "Arial" ))
+	(text "Synchronizer" (rect 5 0 68 12)(font "Arial" ))
+	(text "inst" (rect 8 272 25 284)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)

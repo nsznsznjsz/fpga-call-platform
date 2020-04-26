@@ -1398,7 +1398,7 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 296 600 576 856)
-	(text "VipQueues" (rect 5 0 68 14)(font "Arial" (font_size 8)))
+	(text "TheVipQueues" (rect 5 0 89 14)(font "Arial" (font_size 8)))
 	(text "inst1" (rect 8 240 31 252)(font "Arial" ))
 	(port
 		(pt 0 32)

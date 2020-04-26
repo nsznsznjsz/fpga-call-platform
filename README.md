@@ -65,7 +65,7 @@ All undefined code is forbidden
 - [ ] Waiting: throw error when queue is full
 - [ ] Decoder: output length locked
 - [ ] change pins type (set all pins as virtual pins now)
-- [ ] VipQueue: catch queue empty after sync
+- [x] VipQueue: catch queue empty after sync
 
 ## ISSUES
 
@@ -132,7 +132,7 @@ All undefined code is forbidden
 - 1 -> N: SourceMux (一个 Entity 从多个数据源取数据)
 - N -> 1: OneToManyArch (多个 Entity 从一个数据源取数据)
 
-### VipMixer
+### Synchronizer
 
 左右侧均为三队列`VipA / VipB / Vip`, 取数据时:
 1. 取数据
