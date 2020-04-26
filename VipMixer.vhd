@@ -41,8 +41,8 @@ END VipMixer;
 ARCHITECTURE arch OF VipMixer IS
   TYPE states IS(
   resetting, idle,
-  a_pull, a_pulling, a_pushing,
-  b_pull, b_pulling, b_pushing,
+  a_pull, a_pulling, a_judge, a_pushing,
+  b_pull, b_pulling, b_judge, b_pushing,
   vip_pull, vip_pulling, vip_judge, vip_pushing
   );
   SIGNAL present_state : states;
@@ -74,8 +74,9 @@ ARCHITECTURE arch OF VipMixer IS
     cur := sliceInt(data);
 
     CASE(data(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW))IS
-      WHEN FLAG_GROUP_A | FLAG_GROUP_VIPA => max := max_a;
-      WHEN FLAG_GROUP_B | FLAG_GROUP_VIPB => max := max_b;
+      -- ingore normal group
+      WHEN FLAG_GROUP_VIPA => max := max_a;
+      WHEN FLAG_GROUP_VIPB => max := max_b;
       WHEN OTHERS => max := 0;
     END CASE;
 
@@ -152,10 +153,12 @@ BEGIN
           next_state <= idle;
         END IF;
 
-      WHEN a_pull | a_pulling => next_state <= ifElse(enable_in_a, a_pushing, a_pulling);
-      WHEN b_pull | b_pulling => next_state <= ifElse(enable_in_b, b_pushing, b_pulling);
-
+      WHEN a_pull | a_pulling => next_state <= ifElse(enable_in_a, a_judge, a_pulling);
+      WHEN b_pull | b_pulling => next_state <= ifElse(enable_in_b, b_judge, b_pulling);
       WHEN vip_pull | vip_pulling => next_state <= ifElse(enable_in_vip, vip_judge, vip_pulling);
+
+      WHEN a_judge => next_state <= ifElse(needRedo(data, max_a, max_b), a_pull, a_pushing);
+      WHEN b_judge => next_state <= ifElse(needRedo(data, max_a, max_b), b_pull, b_pushing);
       WHEN vip_judge => next_state <= ifElse(needRedo(data, max_a, max_b), vip_pull, vip_pushing);
 
       WHEN a_pushing | b_pushing | vip_pushing => next_state <= idle;
@@ -186,13 +189,15 @@ BEGIN
 
     CASE present_state IS
       WHEN a_pull => pull_in_a <= '1';
-      WHEN a_pulling => data_next <= data_in_a;
-
       WHEN b_pull => pull_in_b <= '1';
-      WHEN b_pulling => data_next <= data_in_b;
-
       WHEN vip_pull => pull_in_vip <= '1';
+
+      WHEN a_pulling => data_next <= data_in_a;
+      WHEN b_pulling => data_next <= data_in_b;
       WHEN vip_pulling => data_next <= data_in_vip;
+
+      WHEN a_judge => NULL;
+      WHEN b_judge => NULL;
       WHEN vip_judge => NULL;
 
       WHEN a_pushing =>
@@ -210,8 +215,7 @@ BEGIN
         data_out_vip <= data;
         enable_out_vip <= '1';
 
-      WHEN idle =>
-        data_next <= (OTHERS => '0');
+      WHEN idle => data_next <= (OTHERS => '0');
 
       WHEN OTHERS => NULL;
     END CASE;
