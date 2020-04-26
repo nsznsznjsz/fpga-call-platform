@@ -43,16 +43,17 @@ All undefined code is forbidden
   - 00: non flag
   - 10/11: waiting / called number;
 
-- bit 2~3: error description
-  - 11: non error
-  - 00: unknown
-  - 10/01: queue is empty / full
+- bit 2~4: error description
+  - 111: non error
+  - 001: retry, throw by synchronizer
+  - 010/011: queue is empty / full
+  - 000: unknown
 
-- bit 4~7: groups flag
-  - 0000: non flag
-  - 1xxx: vip
-  - x001: group a
-  - x010: group b
+- bit 5~7: groups flag
+  - 000: non flag
+  - 1xx: vip
+  - x01: group a
+  - x10: group b
 
 - bit 8~15: numbers
   - 0: error
@@ -64,10 +65,12 @@ All undefined code is forbidden
 - [ ] Waiting: throw error when queue is full
 - [ ] Decoder: output length locked
 - [ ] change pins type (set all pins as virtual pins now)
+- [ ] VipQueue: catch queue empty after sync
 
 ## ISSUES
 
 - 假设号码`01`闪烁3次, 闪烁中`02`进来了, 是继续显示`01`然后再显示`02`, 还是直接显示`02`
+- `Screen` 仿真
 
 ## Detail Design
 
@@ -90,7 +93,7 @@ All undefined code is forbidden
 1. 对左侧而言, 显示四个操作受限的队列 `A / B / VipA / VipB` (只能入队列)
 2. 对右侧而言, 显示三个操作受限的队列 `A / B / VIP` (只能出队列)
 3. 内部逻辑: 右侧`A`队列先取`VipA`再取`A`, `B`队列同理, 右侧`VIP`队列等效于左侧`VipA + VipB`
-4. 内部实现: TODO
+4. 内部实现: 五队列`A / B / VipA / VipB / VIP`, 后三者通过`VipMixer`混合
 
 ### 单组件流程
 
@@ -116,3 +119,25 @@ All undefined code is forbidden
 
 - Customs 端: Waiting -> Arch -> Queue
 - Services 端: Waiting -> Arch -> Screen
+
+## Helpers
+
+### push
+
+- 1 -> N: CoupleEmitter (一个 Entity 向多个数据源推数据)
+- N -> 1: ManyToOneArch (多个 Entity 向一个数据源推数据)
+
+### pull
+
+- 1 -> N: SourceMux (一个 Entity 从多个数据源取数据)
+- N -> 1: OneToManyArch (多个 Entity 从一个数据源取数据)
+
+### VipMixer
+
+左右侧均为三队列`VipA / VipB / Vip`, 取数据时:
+1. 取数据
+2. 判断是否大于当前记录的最大值
+3. case 1: 大于, pass
+4. case 2: 小于等于, 则重取数据
+
+亦可视为每次取数据时, 会抛弃队列中前 N 个无用数据, 即同步(Sync)
