@@ -44,3 +44,12 @@
 
 - feat(Waiting): normal waiting and vip waiting use the same counter ([0.1.6](#0.1.6))
 - feat(Service): normal service can call vip first ([0.1.6](#0.1.6))
+
+## 0.3.0
+
+- feat(Queue): sync vip queues, see [readme](./README.md) for details
+- feat(Config): add error_retry flag, error flag width increased to 3, group flag width reduced to 3 corresponding
+- refactor(Waiting): rename `MultiWaitings` to `TheWaitings`
+- refactor(Service): rename `MultiServices` to `TheServices`
+- refactor(Queue): rename `MultiQueues` to `TheQueues`
+- refactor(*): remove useless entity `Waitings` and `Services`
