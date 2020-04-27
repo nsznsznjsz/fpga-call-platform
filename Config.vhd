@@ -12,7 +12,8 @@ PACKAGE Config IS
   CONSTANT RAM_DEPTH : NATURAL := 32;
 
   -- screen
-  CONSTANT WORD_WIDTH : NATURAL := 5;
+  CONSTANT WORD_LENGTH : NATURAL := 5;
+  CONSTANT WORD_WIDTH : NATURAL := WORD_LENGTH * 8;
 
   -- If you are updating FLAGS, you need: 
   -- 1. Update README

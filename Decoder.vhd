@@ -9,13 +9,14 @@ USE work.ascii.ALL;
 ENTITY Decoder IS
   PORT (
     data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
-    data_out : OUT std_logic_vector(WORD_WIDTH * 8 - 1 DOWNTO 0)
+    data_out : OUT std_logic_vector(WORD_WIDTH - 1 DOWNTO 0)
   );
 END Decoder;
 
 ARCHITECTURE arch OF Decoder IS
-  SUBTYPE NUM IS std_logic_vector((WORD_WIDTH - 3) * 8 - 1 DOWNTO 0);
-  TYPE NUMBERS IS ARRAY(0 TO WORD_WIDTH - 4) OF ASCII;
+
+  SUBTYPE NUM IS std_logic_vector((WORD_LENGTH - 3) * 8 - 1 DOWNTO 0);
+  TYPE NUMBERS IS ARRAY(0 TO WORD_LENGTH - 4) OF ASCII;
 
   FUNCTION to_number(num : NUMBERS) RETURN STD_LOGIC_VECTOR IS
     VARIABLE number : STD_LOGIC_VECTOR((num'length * 8) - 1 DOWNTO 0);
