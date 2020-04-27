@@ -47,7 +47,7 @@ All undefined code is forbidden
   - 111: non error
   - 001: retry, throw by synchronizer
   - 010/011: queue is empty / full
-  - 000: unknown
+  - 000: unknown error
 
 - bit 5~7: groups flag
   - 000: non flag
