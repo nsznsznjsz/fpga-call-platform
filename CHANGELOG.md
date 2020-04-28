@@ -53,3 +53,6 @@
 - refactor(Service): rename `MultiServices` to `TheServices`
 - refactor(Queue): rename `MultiQueues` to `TheQueues`
 - refactor(*): remove useless entity `Waitings` and `Services`
+
+## 0.3.1
+- feat(Screen): add screen

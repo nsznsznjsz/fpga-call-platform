@@ -61,16 +61,12 @@ All undefined code is forbidden
 
 ## TODOS
 
-- [ ] Screen: print queue
 - [ ] Waiting: throw error when queue is full
-- [ ] Decoder: output length locked
-- [ ] change pins type (set all pins as virtual pins now)
-- [x] VipQueue: catch queue empty after sync
+- [ ] delete test ports (all virtual pins)
 
 ## ISSUES
 
-- 假设号码`01`闪烁3次, 闪烁中`02`进来了, 是继续显示`01`然后再显示`02`, 还是直接显示`02`
-- `Screen` 仿真
+NONE
 
 ## Detail Design
 
