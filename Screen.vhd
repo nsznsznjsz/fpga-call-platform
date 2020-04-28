@@ -45,6 +45,14 @@ ARCHITECTURE arch OF Screen IS
     );
   END COMPONENT;
 
+  COMPONENT ScreenScroller IS
+    PORT (
+      clock : IN std_logic;
+      reset : IN std_logic;
+      data_out : OUT std_logic_vector(WORD_WIDTH - 1 DOWNTO 0)
+    );
+  END COMPONENT;
+
   COMPONENT ScreenBlinker IS
     GENERIC (
       BLINK : NATURAL := 3
@@ -68,10 +76,14 @@ ARCHITECTURE arch OF Screen IS
   SIGNAL origin : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
   SIGNAL data : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0);
   SIGNAL data_next : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0);
-  SIGNAL DATA_DEFAULT : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0) := X & X & X & X & X;
 
+  -- sub components
   SIGNAL clock_div : std_logic;
 
+  -- scroller
+  SIGNAL scroll_out : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0);
+
+  -- blinker
   SIGNAL blink_start : std_logic;
   SIGNAL blink_finished : std_logic;
   SIGNAL blink_out : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0);
@@ -107,6 +119,13 @@ BEGIN
     clock_div => clock_div
   );
 
+  scroller : ScreenScroller
+  PORT MAP(
+    clock => clock_div,
+    reset => reset OR NOT blink_start,
+    data_out => scroll_out
+  );
+
   blinker : ScreenBlinker
   GENERIC MAP(
     BLINK => BLINK
@@ -126,7 +145,7 @@ BEGIN
   PROCESS (clock, reset)
   BEGIN
     IF (reset = '1') THEN
-      data <= DATA_DEFAULT;
+      data <= scroll_out;
       present_state <= idle;
     ELSIF (clock'event AND clock = '1') THEN
       data <= data_next;
@@ -156,7 +175,7 @@ BEGIN
   PROCESS (present_state, data_in, data)
   BEGIN
     pull <= '0';
-    data_out <= DATA_DEFAULT;
+    data_out <= scroll_out;
 
     CASE present_state IS
       WHEN pulling =>
