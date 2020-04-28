@@ -24,12 +24,22 @@ ENTITY ScreenBlinker IS
 END ScreenBlinker;
 
 ARCHITECTURE arch OF ScreenBlinker IS
-  TYPE states IS(idle, blink_on, blink_off);
+  TYPE states IS(idle, blink_on, blink_off, blink_end);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
   SIGNAL blink_counter : INTEGER RANGE 0 TO 2 * BLINK - 1;
   SIGNAL DATA_DEFAULT : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0) := X & X & X & X & X;
+
+  -- Increment and wrap
+  PROCEDURE incr(SIGNAL index : INOUT INTEGER) IS
+  BEGIN
+    IF (index = 2 * BLINK - 1) THEN
+      index <= 0;
+    ELSE
+      index <= index + 1;
+    END IF;
+  END PROCEDURE;
 BEGIN
 
   -- counter
@@ -38,11 +48,7 @@ BEGIN
     IF (reset = '1' OR present_state = idle) THEN
       blink_counter <= 0;
     ELSIF (clock'event AND clock = '1') THEN
-      IF (blink_counter = 2 * BLINK - 1) THEN
-        blink_counter <= 0;
-      ELSE
-        blink_counter <= blink_counter + 1;
-      END IF;
+      incr(blink_counter);
     END IF;
   END PROCESS;
 
@@ -61,7 +67,7 @@ BEGIN
   BEGIN
     CASE present_state IS
       WHEN idle =>
-        IF start = '1' THEN
+        IF (start = '1') THEN
           next_state <= blink_on;
         ELSE
           next_state <= idle;
@@ -72,7 +78,7 @@ BEGIN
 
       WHEN blink_off =>
         IF (blink_counter = 2 * BLINK - 1) THEN
-          next_state <= idle;
+          next_state <= blink_end;
         ELSE
           next_state <= blink_on;
         END IF;
@@ -88,10 +94,9 @@ BEGIN
     data_out <= DATA_DEFAULT;
 
     CASE present_state IS
-      WHEN idle => finished <= '1';
       WHEN blink_on => data_out <= data_in;
-      WHEN blink_off => data_out <= DATA_DEFAULT;
-      WHEN OTHERS => next_state <= idle;
+      WHEN blink_end => finished <= '1';
+      WHEN OTHERS => NULL;
     END CASE;
   END PROCESS;
 END arch;

@@ -122,7 +122,7 @@ BEGIN
   scroller : ScreenScroller
   PORT MAP(
     clock => clock_div,
-    reset => reset OR NOT blink_start,
+    reset => reset,
     data_out => scroll_out
   );
 
@@ -132,7 +132,7 @@ BEGIN
   )
   PORT MAP(
     clock => clock_div,
-    reset => reset OR NOT blink_start,
+    reset => reset,
 
     start => blink_start,
     finished => blink_finished,
@@ -176,6 +176,7 @@ BEGIN
   BEGIN
     pull <= '0';
     data_out <= scroll_out;
+    blink_start <= '0';
 
     CASE present_state IS
       WHEN pulling =>

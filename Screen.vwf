@@ -749,6 +749,26 @@ SIGNAL("ScreenBlinker:blinker|finished")
 	PARENT = "";
 }
 
+SIGNAL("blink_start")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("ScreenBlinker:blinker|reset")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -1398,6 +1418,24 @@ TRANSITION_LIST("ScreenBlinker:blinker|finished")
 	}
 }
 
+TRANSITION_LIST("blink_start")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("ScreenBlinker:blinker|reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -2025,16 +2063,16 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state";
+	CHANNEL = "blink_start";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = ASCII;
+	RADIX = Unsigned;
 	TREE_INDEX = 63;
 	TREE_LEVEL = 0;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ScreenBlinker:blinker|present_state";
+	CHANNEL = "present_state";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 64;
@@ -2043,12 +2081,30 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ScreenBlinker:blinker|blink_counter";
+	CHANNEL = "ScreenBlinker:blinker|reset";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 65;
 	TREE_LEVEL = 0;
-	CHILDREN = 66, 67, 68;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ScreenBlinker:blinker|present_state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 66;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ScreenBlinker:blinker|blink_counter";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 67;
+	TREE_LEVEL = 0;
+	CHILDREN = 68, 69, 70;
 }
 
 DISPLAY_LINE
@@ -2056,9 +2112,9 @@ DISPLAY_LINE
 	CHANNEL = "ScreenBlinker:blinker|blink_counter[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 66;
+	TREE_INDEX = 68;
 	TREE_LEVEL = 1;
-	PARENT = 65;
+	PARENT = 67;
 }
 
 DISPLAY_LINE
@@ -2066,9 +2122,9 @@ DISPLAY_LINE
 	CHANNEL = "ScreenBlinker:blinker|blink_counter[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 67;
+	TREE_INDEX = 69;
 	TREE_LEVEL = 1;
-	PARENT = 65;
+	PARENT = 67;
 }
 
 DISPLAY_LINE
@@ -2076,9 +2132,9 @@ DISPLAY_LINE
 	CHANNEL = "ScreenBlinker:blinker|blink_counter[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 68;
+	TREE_INDEX = 70;
 	TREE_LEVEL = 1;
-	PARENT = 65;
+	PARENT = 67;
 }
 
 DISPLAY_LINE
@@ -2086,7 +2142,7 @@ DISPLAY_LINE
 	CHANNEL = "ScreenBlinker:blinker|finished";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 69;
+	TREE_INDEX = 71;
 	TREE_LEVEL = 0;
 }
 
