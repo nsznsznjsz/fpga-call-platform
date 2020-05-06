@@ -15,6 +15,7 @@ ENTITY Screen IS
   PORT (
     clock : IN std_logic;
     reset : IN std_logic;
+    enable : IN std_logic;
 
     data_in : IN std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
     data_out : OUT std_logic_vector(WORD_WIDTH - 1 DOWNTO 0);
@@ -69,7 +70,7 @@ ARCHITECTURE arch OF Screen IS
     );
   END COMPONENT;
 
-  TYPE states IS(idle, pulling, on_blink);
+  TYPE states IS(disenable, idle, pulling, on_blink);
   SIGNAL present_state : states;
   SIGNAL next_state : states;
 
@@ -144,8 +145,11 @@ BEGIN
   -- clock trigger
   PROCESS (clock, reset, scroll_out)
   BEGIN
-    IF (reset = '1') THEN
+    IF (enable = '0') THEN
       data <= scroll_out;
+      present_state <= disenable;
+    ELSIF (reset = '1') THEN
+      data <= (OTHERS => '0');
       present_state <= idle;
     ELSIF (clock'event AND clock = '1') THEN
       data <= data_next;
@@ -157,6 +161,9 @@ BEGIN
   PROCESS (ALL)
   BEGIN
     CASE present_state IS
+      WHEN disenable =>
+        next_state <= ifElse(enable, idle, disenable);
+
       WHEN idle =>
         next_state <= ifElse(empty, idle, pulling);
 
@@ -175,10 +182,13 @@ BEGIN
   PROCESS (present_state, data_in, data, scroll_out, blink_out)
   BEGIN
     pull <= '0';
-    data_out <= scroll_out;
+    data_out <= data;
     blink_start <= '0';
 
     CASE present_state IS
+      WHEN disenable =>
+        data_out <= scroll_out;
+
       WHEN pulling =>
         pull <= '1';
         origin <= data_in;
