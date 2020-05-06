@@ -56,3 +56,8 @@
 
 ## 0.3.1
 - feat(Screen): add screen
+
+## 0.3.2
+- feat(Screen): add enable
+- feat(Screen): show student id only disenabled
+- feat(Screen): show last number after blink
