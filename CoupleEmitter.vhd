@@ -58,7 +58,7 @@ BEGIN
   END PROCESS;
 
   -- state change
-  PROCESS (present_state, pushed_1, pushed_2)
+  PROCESS (present_state, push, pushed_1, pushed_2)
   BEGIN
     CASE present_state IS
       WHEN idle => next_state <= ifElse(push, wait_both, idle);

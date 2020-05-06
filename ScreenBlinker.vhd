@@ -43,7 +43,7 @@ ARCHITECTURE arch OF ScreenBlinker IS
 BEGIN
 
   -- counter
-  PROCESS (clock, reset)
+  PROCESS (clock, reset, present_state)
   BEGIN
     IF (reset = '1' OR present_state = idle) THEN
       blink_counter <= 0;

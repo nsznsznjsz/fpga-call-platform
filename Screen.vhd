@@ -142,7 +142,7 @@ BEGIN
   );
 
   -- clock trigger
-  PROCESS (clock, reset)
+  PROCESS (clock, reset, scroll_out)
   BEGIN
     IF (reset = '1') THEN
       data <= scroll_out;
@@ -172,7 +172,7 @@ BEGIN
   END PROCESS;
 
   -- state events
-  PROCESS (present_state, data_in, data)
+  PROCESS (present_state, data_in, data, scroll_out, blink_out)
   BEGIN
     pull <= '0';
     data_out <= scroll_out;
