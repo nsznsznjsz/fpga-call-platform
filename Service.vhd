@@ -35,7 +35,8 @@ ARCHITECTURE arch OF Service IS
   SIGNAL next_state : states;
 
   SIGNAL data : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
-  CONSTANT DATA_DEFAULT : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0) := (OTHERS => '0');
+  SIGNAL data_next : std_logic_vector(RAM_WIDTH - 1 DOWNTO 0);
+  CONSTANT DATA_DEFAULT : std_logic_vector(DATA_HIGH DOWNTO DATA_LOW) := (OTHERS => '0');
 
   FUNCTION neeeRetry(
     data : std_logic_vector
@@ -67,8 +68,10 @@ BEGIN
   BEGIN
     IF (reset = '1') THEN
       present_state <= idle;
+      data <= (OTHERS => '0');
     ELSIF (clock'event AND clock = '1') THEN
       present_state <= next_state;
+      data <= data_next;
     END IF;
   END PROCESS;
 
@@ -111,24 +114,28 @@ BEGIN
     -- make latches: data
     push <= '0';
     pull <= '0';
+    data_next <= data;
     data_out <=
-      FLAG_SCREEN_SERVICE &
-      FLAG_ERROR_UNKNOWN &
-      FLAG_GROUP_FREE &
-      DATA_DEFAULT;
+      FLAG_SCREEN_SERVICE & -- screen: service
+      FLAG_ERROR_UNKNOWN & -- error: unknown
+      FLAG_GROUP_FREE & -- group: non
+      DATA_DEFAULT; -- data: zero
 
     CASE present_state IS
       WHEN pulling =>
         pull <= '1';
-        data <=
-          FLAG_SCREEN_SERVICE &
-          data_in(FLAG_SCREEN_LOW - 1 DOWNTO 0);
+        data_next <=
+          FLAG_SCREEN_SERVICE & -- screen: service
+          data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) & -- error: copy
+          data_in(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW) & -- group: copy
+          data_in(DATA_HIGH DOWNTO DATA_LOW); -- data: copy
 
       WHEN queue_empty =>
-        data <=
-          FLAG_SCREEN_SERVICE &
-          FLAG_ERROR_QUEUE_EMPTY &
-          data(FLAG_GROUP_HIGH DOWNTO 0);
+        data_next <=
+          FLAG_SCREEN_SERVICE & -- screen: service
+          FLAG_ERROR_QUEUE_EMPTY & -- error: empty
+          FLAG_GROUP_FREE & -- group: non
+          DATA_DEFAULT; -- data: zero
 
       WHEN pushing =>
         push <= '1';
