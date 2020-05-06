@@ -29,7 +29,7 @@ ARCHITECTURE arch OF ScreenBlinker IS
   SIGNAL next_state : states;
 
   SIGNAL blink_counter : INTEGER RANGE 0 TO 2 * BLINK - 1;
-  SIGNAL DATA_DEFAULT : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0) := X & X & X & X & X;
+  CONSTANT DATA_DEFAULT : std_logic_vector(WORD_WIDTH - 1 DOWNTO 0) := X & X & X & X & X;
 
   -- Increment and wrap
   PROCEDURE incr(SIGNAL index : INOUT INTEGER) IS
