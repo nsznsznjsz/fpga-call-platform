@@ -61,3 +61,7 @@
 - feat(Screen): add enable
 - feat(Screen): show student id only disenabled
 - feat(Screen): show last number after blink
+
+## 0.3.3
+- fix(Queue): sync logic of synchronizer
+- test: update all testbench
