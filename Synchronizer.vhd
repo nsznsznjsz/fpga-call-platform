@@ -79,9 +79,8 @@ ARCHITECTURE arch OF Synchronizer IS
     cur := sliceInt(data);
 
     CASE(data(FLAG_GROUP_HIGH DOWNTO FLAG_GROUP_LOW))IS
-      -- ingore normal group
-      WHEN FLAG_GROUP_VIPA => max := max_a;
-      WHEN FLAG_GROUP_VIPB => max := max_b;
+      WHEN FLAG_GROUP_A | FLAG_GROUP_VIPA => max := max_a;
+      WHEN FLAG_GROUP_B | FLAG_GROUP_VIPB => max := max_b;
       WHEN OTHERS => max := 0;
     END CASE;
 

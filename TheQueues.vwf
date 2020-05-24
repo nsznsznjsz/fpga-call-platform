@@ -32,6 +32,11 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
+USER_TYPE("__TheQueues|TheQueues:queue|TheVipQueues:inst1|Synchronizer:inst|present_state")
+{
+	VALUES = "Undefined";
+}
+
 SIGNAL("clock")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -1410,6 +1415,17 @@ SIGNAL("pull_vip")
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
 	PARENT = "";
+}
+
+SIGNAL("TheVipQueues:inst1|Synchronizer:inst|present_state")
+{
+	VALUE_TYPE = ENUM;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+	ENUM_NAME = "__TheQueues|TheQueues:queue|TheVipQueues:inst1|Synchronizer:inst|present_state";
 }
 
 TRANSITION_LIST("clock")
@@ -2852,6 +2868,15 @@ TRANSITION_LIST("pull_vip")
 	}
 }
 
+TRANSITION_LIST("TheVipQueues:inst1|Synchronizer:inst|present_state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL Undefined FOR 1000.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -4210,6 +4235,15 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 137;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "TheVipQueues:inst1|Synchronizer:inst|present_state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 138;
 	TREE_LEVEL = 0;
 }
 
