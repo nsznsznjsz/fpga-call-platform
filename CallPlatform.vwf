@@ -67,6 +67,16 @@ USER_TYPE("__MultiQueues:queues|OneToManyArch:arch_a|present_state")
 	VALUES = "Undefined";
 }
 
+USER_TYPE("__TheScreen:screen|Screen:inst|ScreenBlinker:blinker|present_state")
+{
+	VALUES = "Undefined";
+}
+
+USER_TYPE("__TheScreen:screen|Screen:inst|present_state")
+{
+	VALUES = "Undefined";
+}
+
 SIGNAL("clock")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -4826,7 +4836,11 @@ TRANSITION_LIST("reset")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 4000.0;
+		LEVEL 0 FOR 980.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1040.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 1960.0;
 	}
 }
 
@@ -6372,14 +6386,18 @@ TRANSITION_LIST("call_a1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 110.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 220.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 890.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 2100.0;
-		LEVEL 1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 110.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 220.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 890.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 2100.0;
+			LEVEL 1 FOR 10.0;
+		}
 		LEVEL 0 FOR 640.0;
 	}
 }
@@ -9026,8 +9044,8 @@ TRANSITION_LIST("enable")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 3600.0;
-		LEVEL 0 FOR 400.0;
+		LEVEL 1 FOR 3780.0;
+		LEVEL 0 FOR 220.0;
 	}
 }
 

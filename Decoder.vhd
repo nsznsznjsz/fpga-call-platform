@@ -29,13 +29,17 @@ ARCHITECTURE arch OF Decoder IS
 
 BEGIN
   PROCESS (data_in)
+    VARIABLE error_flag : std_logic_vector(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW);
+
     VARIABLE screen : ASCII;
     VARIABLE groups : std_logic_vector(15 DOWNTO 0);
     VARIABLE numbers : NUMBERS;
     VARIABLE number : NUM;
     VARIABLE scan : INTEGER;
   BEGIN
-    IF (data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) = FLAG_ERROR_FREE) THEN
+    error_flag := data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW);
+
+    IF (error_flag = FLAG_ERROR_FREE) THEN
       CASE(data_in(FLAG_SCREEN_HIGH DOWNTO FLAG_SCREEN_LOW)) IS
         WHEN FLAG_SCREEN_WAITING => screen := W;
         WHEN FLAG_SCREEN_SERVICE => screen := S;
@@ -71,14 +75,18 @@ BEGIN
       number := to_number(numbers);
       data_out <= screen & groups & number;
 
-    ELSIF (data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) = FLAG_ERROR_QUEUE_FULL) THEN
+    ELSIF (error_flag = FLAG_ERROR_QUEUE_FULL) THEN
       data_out <= F & U & L & L & L; -- TODO length locked at 5
 
-    ELSIF (data_in(FLAG_ERROR_HIGH DOWNTO FLAG_ERROR_LOW) = FLAG_ERROR_QUEUE_EMPTY) THEN
+    ELSIF (error_flag = FLAG_ERROR_QUEUE_EMPTY) THEN
       data_out <= E & M & P & T & Y; -- TODO length locked at 5
+
+    ELSIF (error_flag = FLAG_ERROR_NON_DATA) THEN
+      data_out <= N & U & L & L & L; -- TODO length locked at 5
 
     ELSE
       data_out <= E & R & R & O & R; -- TODO length locked at 5
+
     END IF;
   END PROCESS;
 END arch;
