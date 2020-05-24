@@ -24,9 +24,9 @@
 > 2. A服务端再叫号, 应叫到 A01 (VIP优先)
 > 
 > **case 2**
-> 1. VIP服务端叫号, 应叫到 A02  (A02 先于 B02 入队列),
-> 2. VIP服务端再叫号, 应叫到 B02, 
-> 3. VIP服务端再叫号, 应叫到 B01,
+> 1. VIP服务端叫号, 应叫到 A02  (A02 先于 B02 入队列)
+> 2. VIP服务端再叫号, 应叫到 B02
+> 3. VIP服务端再叫号, 应叫到 B01
 > 4. VIP服务端再叫号, 应叫到 A01
 
 ## Data Definition
@@ -74,17 +74,17 @@ NONE
 
 所有组件数据交换流程均遵循[单组件流程](#单组件流程)
 
-#### Multi Waitings
+#### The Waitings
 
 1. 将用户操作转换为对 `Counter` 取数据和 `A / B / VipA / VipB` 四个队列的入队列操作
 2. 将数据推入 `Screen` 队列显示
 
-#### Multi Services
+#### The Services
 
 1. 将用户操作转换为 `A / B / VIP` 三个队列的出队列操作
 2. 将数据推入 `Screen` 队列显示
 
-#### Multi Queues
+#### The Queues
 
 1. 对左侧而言, 显示四个操作受限的队列 `A / B / VipA / VipB` (只能入队列)
 2. 对右侧而言, 显示三个操作受限的队列 `A / B / VIP` (只能出队列)
