@@ -332,16 +332,6 @@ SIGNAL("data[0]")
 	PARENT = "data";
 }
 
-SIGNAL("present_state.idle")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = BURIED;
-	PARENT = "";
-}
-
 SIGNAL("input_1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -419,6 +409,16 @@ SIGNAL("enable_4")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("present_state")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
 	PARENT = "";
 }
 
@@ -632,7 +632,9 @@ TRANSITION_LIST("enable_pull")
 		REPEAT = 1;
 		LEVEL 0 FOR 60.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 820.0;
 	}
 }
 
@@ -708,15 +710,6 @@ TRANSITION_LIST("data[0]")
 	}
 }
 
-TRANSITION_LIST("present_state.idle")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL U FOR 1000.0;
-	}
-}
-
 TRANSITION_LIST("input_1")
 {
 	NODE
@@ -733,7 +726,9 @@ TRANSITION_LIST("input_2")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 130.0;
+		LEVEL 0 FOR 820.0;
 	}
 }
 
@@ -788,6 +783,15 @@ TRANSITION_LIST("enable_4")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("present_state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
 	}
 }
 
@@ -1162,7 +1166,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "present_state.idle";
+	CHANNEL = "present_state";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = ASCII;
 	TREE_INDEX = 38;
