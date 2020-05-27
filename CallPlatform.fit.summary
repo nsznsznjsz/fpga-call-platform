@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed May 06 19:04:58 2020
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : CallPlatform
+Top-level Entity Name : CallPlatform
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 4,274 / 68,416 ( 6 % )
+    Total combinational functions : 4,208 / 68,416 ( 6 % )
+    Dedicated logic registers : 684 / 68,416 ( < 1 % )
+Total registers : 684
+Total pins : 302 / 622 ( 49 % )
+Total virtual pins : 160
+Total memory bits : 2,560 / 1,152,000 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
