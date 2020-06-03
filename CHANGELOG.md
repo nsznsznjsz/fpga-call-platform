@@ -65,3 +65,6 @@
 ## 0.3.3
 - fix(Queue): sync logic of synchronizer
 - test: update all testbench
+
+## 1.0.0
+- test: update testbench
